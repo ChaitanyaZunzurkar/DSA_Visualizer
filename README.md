@@ -1,4 +1,4 @@
-# DSA_Visualizer
+# DSA Visualizer
 
 ## Overview
 
