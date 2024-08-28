@@ -1,5 +1,4 @@
-
-import './CourseCard.css';
+import '../Stylesheets/CourseCard.module.css';
 
 function CourseCard({ course, onClick }) {
   return (

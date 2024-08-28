@@ -1,4 +1,4 @@
-import './CourseDetails.css';
+import '../Stylesheets/CourseDetails.module.css';
 
 function CourseDetails({ course, onBack }) {
   return (
