@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import CourseCard from './CourseCard';
-import CourseDetails from './CourseDetails';
-import './COURSES.css';
+import CourseCard from '../Components/CourseCard.jsx';
+import CourseDetails from '../Components/CourseDetails.jsx';
+import styles from '../Stylesheets/COURSES.module.css';
 
 const courses = [
   {
@@ -41,7 +41,7 @@ const courses = [
   },
 ];
 
-function COURSES() {
+export default function COURSES() {
   const [selectedCourse, setSelectedCourse] = useState(null);
 
   const handleCardClick = (course) => {
@@ -53,22 +53,19 @@ function COURSES() {
   };
 
   return (
-    <div className='container'>
-    <h1>COURSES</h1>
-    <div className="COURSES">
-       
-      {selectedCourse ? (
-        <CourseDetails course={selectedCourse} onBack={handleBackClick} />
-      ) : (
-        <div className="course-grid">
-          {courses.map(course => (
-            <CourseCard key={course.id} course={course} onClick={handleCardClick} />
-          ))}
-        </div>
-      )}
-    </div>
+    <div className={styles.container}>
+      <h1>COURSES</h1>
+      <div className={styles.COURSES}>
+        {selectedCourse ? (
+          <CourseDetails course={selectedCourse} onBack={handleBackClick} />
+        ) : (
+          <div className={styles.courseGrid}>
+            {courses.map(course => (
+              <CourseCard key={course.id} course={course} onClick={handleCardClick} />
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
-
-export default COURSES;
