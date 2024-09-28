@@ -1,26 +1,17 @@
-*
-{
-margin:0;
-padding:0;
-}
-.COURSES 
-{
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     min-height: 100vh;
     background-color: #000000; 
     padding: 40px;
-  }
+}
   
-  .course-grid {
+.courseGrid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 24px;
-  }
-  .container
-  {
-    background-color: #000000;
-  }
+}

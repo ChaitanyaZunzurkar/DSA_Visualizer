@@ -12,4 +12,3 @@ function CourseCard({ course, onClick }) {
 }
 
 export default CourseCard;
-

@@ -1,0 +1,15 @@
+.container {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    justify-content: space-around;
+}
+.courseBox {
+    width: 45vw;
+    height: 300px;
+    color: white;
+    background-color: rgb(49, 45, 45);
+    text-align: center;
+    margin: 10px;
+}
