@@ -34,7 +34,7 @@ const courses = [
   {
     id: 5,
     title: 'Linked List',
-    description: 'Understand the versatile and dynamic data structure of linked lists.',
+    description: 'Understand the versatile & dynamic data structure of linked lists.',
     longDescription: 'Explore the intricacies of linked lists...',
     image: demoImg,
   },
