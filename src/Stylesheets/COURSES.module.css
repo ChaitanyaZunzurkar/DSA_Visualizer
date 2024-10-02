@@ -1,17 +1,14 @@
 .container {
-    display: flex;
+    background-color: black;
+    height: 125vh;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #000000; 
-    padding: 40px;
+
 }
-  
 .courseGrid {
-    display: flex;
+    display:flex;
+    
     flex-wrap: wrap;
+    justify-items: center;
     justify-content: center;
-    align-items: center;
-    gap: 24px;
-}
+    gap:15px;
+} 
