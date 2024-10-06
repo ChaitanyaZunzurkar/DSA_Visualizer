@@ -1,0 +1,89 @@
+/* General body styles */
+* {
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #121212;
+    color: #fff;
+    display: flex;
+}
+
+/* Fixed navigation sidebar with card-like design */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20vw;
+    height: 100vh;
+    background-color: #1e1e1e;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    padding-top: 1.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 100;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    width: 90%;
+}
+
+nav ul li {
+    display:block;
+    align-items: space-evenly;
+    margin-bottom: 2em;
+}
+
+nav ul li a {
+    display: block;
+    padding: 20px 30px;
+    font-size: 1.5em;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+/* Hover effect on nav links */
+nav ul li a:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+/* Animation for sidebar */
+nav ul li a {
+    transform: scale(0.95);
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    transform: scale(1);
+}
+
+/* Media Queries for better responsiveness */
+@media (max-width: 768px) {
+    nav {
+        width: 100%;
+        height: auto;
+    }
+    
+    .content {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    nav ul li a {
+        font-size: 1.2em;
+    }
+}
