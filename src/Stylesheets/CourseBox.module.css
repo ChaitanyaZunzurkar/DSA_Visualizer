@@ -1,15 +1,94 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text */
+}
+
+/* Main content */
 .container {
-    width: 100vw;
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto auto;
-    justify-content: space-around;
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Space between cards */
+    align-items: center;
+    padding: 20px;
+    max-width: 1200px; /* Limit container width for better layout */
+    margin: 0 auto; /* Center the container */
+    overflow: auto; /* Enable scrolling for the container if needed */
 }
-.courseBox {
-    width: 45vw;
-    height: 300px;
-    color: white;
-    background-color: rgb(49, 45, 45);
-    text-align: center;
-    margin: 10px;
+
+.card-link {
+    text-decoration: none; /* Removes link underlining */
+    width: 300px; /* Fixed card width */
+    margin: 10px; /* Space between the cards */
 }
+
+.card {
+    display: flex; /* Flexbox for layout */
+    background-color: #1e1e1e; /* Dark card background */
+    border: 1px solid white; /* Adjusted border */
+    border-radius: 10px; /* Adjusted border radius */
+    overflow: hidden; /* Prevent content overflow */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Adjusted box shadow */
+    transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Optimize transition */
+    height: 200px; /* Fixed card height */
+    width: 500px; /* Ensure card width is fixed for consistency */
+    margin: 20px; /* Space between cards */
+}
+
+.card-image {
+    width: 40%; /* Set width to match card layout */
+    object-fit: cover; /* Cover the area without distortion */
+}
+
+.card-content {
+    padding: 20px; /* Adjusted padding for the text content */
+    display: flex; /* Flexbox for vertical alignment */
+    flex-direction: column; /* Stack text vertically */
+    justify-content: center; /* Center the text vertically */
+    width: 60%; /* Ensure content takes remaining space */
+    color: #333; /* Adjusted text color */
+}
+
+.card h3 {
+    text-align: center; /* Center align heading */
+    margin: 0; /* Remove default margin */
+    font-size: 24px; /* Adjusted font size */
+    font-weight: 700; /* Bold weight for emphasis */
+    color: #333; /* Change heading color */
+}
+
+.card h5 {
+    margin: 10px 0 0; /* Space above the paragraph */
+    padding-left: 10px;
+    font-size: 15px; /* Adjusted font size */
+    color: #777; /* Adjusted paragraph color */
+    line-height: 1.4; /* Line height for readability */
+}
+
+/* Hover effects */
+.card:hover {
+    background-color: white; /* Background color on hover */
+    border: 2px solid #0064ff; /* Blue border on hover */
+    box-shadow: 0 0 15px rgba(0, 100, 255, 0.5); /* Blue glow on hover */
+}
+
+
+.card:hover .contentWrapper {
+    display: block; /* Show content wrapper on hover */
+}
+
+.contentWrapper {
+    display: none; /* Hide content wrapper initially */
+}
+
