@@ -1,9 +1,9 @@
 import styles from '../Stylesheets/COURSES.module.css';
 import CourseCard from '../Components/CourseCard.jsx';
-import { Link } from 'react-router-dom';
+import { Link , useNavigate } from 'react-router-dom';
 import demo1 from '../assets/testPaper.svg'
 import demo2 from '../assets/react.svg'
-const courses = [
+const dataStructure = [
   {
     id: 1,
     title: 'Stacks',
@@ -54,7 +54,7 @@ const courses = [
     image:demo1
   },
   {
-    id: 4,
+    id: 8,
     title: 'Graphs',
     description: 'Uncover the secrets of hierarchical and networked data structures.',
     longDescription: 'Delve into the world of trees and graphs...',
@@ -63,12 +63,18 @@ const courses = [
 ];
 
 export default function COURSES() {
+  const navigate = useNavigate();
+
+  const handleCardClick = (course) => {
+    // Navigate to the SideNav with courseId and courseTitle
+    navigate(`/courses/${course.id}/${course.title}`);
+  };
   return (
     <div className={styles.container}>
         <div className={styles.courseGrid}>
-          {courses.map(course => (
-            <Link key={course.id} to={`/courses/${course.id}`}>
-              <CourseCard course={course} />
+          {dataStructure.map(ds => (
+            <Link key={ds.id} to={`/courses/${ds.title}`}>
+              <CourseCard course={ds} onClick={handleCardClick} />
             </Link>
           ))}
         </div>

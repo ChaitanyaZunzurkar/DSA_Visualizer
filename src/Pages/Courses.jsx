@@ -15,7 +15,7 @@ export default function Courses() {
     <div className={styles.container}>
       {courses.map(course => (
         <div key={course.id} className={styles.courseBox}>
-          <Link to={`/courses/:${course.id}`}>
+          <Link to={`/courses/${course.title}`}>
             {course.title}
           </Link>
         </div>

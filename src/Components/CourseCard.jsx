@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { Link } from 'react-router-dom';
 import styles from '../Stylesheets/CourseCard.module.css';
 
 function CourseCard({ course, onClick }) {
@@ -10,11 +11,14 @@ function CourseCard({ course, onClick }) {
         backgroundSize:'contain',
       }}
     >
-      <div className={styles.contentWrapper}>
-        {/* <img src={course.image} alt={course.title} className={styles.image} /> */}
-        <h3 className={styles.title}>{course.title}</h3>
-        <p className={styles.description}>{course.description}</p>
-      </div>
+      <Link to='/courses/'>
+        <div className={styles.contentWrapper}>
+          <h3 className={styles.title}>{course.title}</h3>
+          <p className={styles.description}>{course.description}</p>
+        </div>
+      </Link>
+      
+
     </div>
   );
 }
