@@ -1,5 +1,5 @@
 /* General Styling */
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,21 +10,22 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #121212; /* Dark background */
-    color: #ffffff; /* Light text */
-}
-
+    background-color: #121212; /* Dark background 
+    color: #ffffff; /* Light text 
+} 
+*/
 /* Main content */
 .container {
     flex-grow: 1;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around; /* Space between cards */
+    justify-content: space-around; 
     align-items: center;
-    padding: 20px;
-    max-width: 1200px; /* Limit container width for better layout */
-    margin: 0 auto; /* Center the container */
-    overflow: auto; /* Enable scrolling for the container if needed */
+    padding: 20px; 
+    margin: 0 auto; 
+    overflow: hidden; 
+    width: 100vw;
+    height: 100vh;
 }
 
 .card-link {
