@@ -17,8 +17,6 @@ function CourseCard({ course, onClick }) {
           <p className={styles.description}>{course.description}</p>
         </div>
       </Link>
-      
-
     </div>
   );
 }
