@@ -27,7 +27,13 @@ import StackVisualization from './Algorithms/Stack/StackVisualization.jsx';
 import MonoStack from './Algorithms/Stack/MonoStack.jsx';
 import StackImplementation from './Algorithms/Stack/StackIMP.jsx';
 
-
+// Hashing page components 
+import HashingPage from './Algorithms/Hashing/HashingPage.jsx';
+import HashingAim from './Algorithms/Hashing/Aim.jsx';
+import HashingTest from './Algorithms/Hashing/Test.jsx';
+import HashingArticles from './Algorithms/Hashing/Articles.jsx';
+import HashingTutorials from './Algorithms/Hashing/Tutorials.jsx';
+import HashingVisualization from './Algorithms/Hashing/Visualization';
 function App() {
   return (
       <BrowserRouter>
@@ -56,10 +62,22 @@ function App() {
             <Route path="concept" element={<StackConcept />} />
             <Route path="tutorial" element={<StackTutorials />} />
             <Route path="implementation" element={<StackImplementation />} />
-            
-            
+            <Route path="*" element={<Navigate to={`./`} />} />
+            </Route>
+
+          
+            <Route path="/courses/:courseId/Hashing" element={<HashingPage />}>
+            <Route index element={<HashingAim />} />
+            <Route path="visualization" element={<HashingVisualization />} />
+            <Route path="test" element={<HashingTest />} />
+            <Route path="articles" element={<HashingArticles />} />
+            <Route path="tutorials" element={<HashingTutorials />} />
+            <Route path="*" element={<Navigate to={'./'} />} />
           </Route>
+
+
         </Routes>
+                
         <Footer />
       </BrowserRouter>
   );
