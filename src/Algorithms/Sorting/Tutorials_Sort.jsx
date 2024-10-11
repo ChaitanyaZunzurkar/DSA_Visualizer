@@ -1,4 +1,3 @@
-import React from 'react';
 
 const Tutorials_Sort = () => {
     return (
@@ -43,7 +42,7 @@ const Tutorials_Sort = () => {
                 </p>
                 <p style={styles.paragraph}>
                     Merge Sort is often preferred over other sorting algorithms (like Quick Sort) when dealing with linked lists or large datasets 
-                    that don't fit into memory, as it performs consistently well regardless of the initial order of elements.
+                    that do not fit into memory, as it performs consistently well regardless of the initial order of elements.
                 </p>
             </div>
             <a href="/" style={styles.button}>Back to Home</a>

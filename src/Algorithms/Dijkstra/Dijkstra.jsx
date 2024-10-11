@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import styles from '../../Stylesheets/Linkedlist.module.css';
 
 const Dijkstra = () => {
     return (
@@ -6,19 +7,19 @@ const Dijkstra = () => {
             <nav className={styles.nav}>
                 <ul className={styles.ul}>
                     <li className={styles.li}>
-                        <Link to="DijkstraAim" className={styles.a}>Aim</Link>
+                        <Link to="" className={styles.a}>Aim</Link>
                     </li>
                     <li className={styles.li}>
-                        <Link to="DijkstraVisualization" className={styles.a}>Visualization</Link>
+                        <Link to="visualization" className={styles.a}>Visualization</Link>
                     </li>
                     <li className={styles.li}>
-                        <Link to="DjikstraTest" className={styles.a}>Test Your Knowledge</Link>
+                        <Link to="test" className={styles.a}>Test Your Knowledge</Link>
                     </li>
                     <li className={styles.li}>
-                        <Link to="DjikstraArticle" className={styles.a}>Articles & Resources</Link>
+                        <Link to="articles" className={styles.a}>Articles & Resources</Link>
                     </li>
                     <li className={styles.li}>
-                        <Link to="DijkstraTutorials" className={styles.a}>Tutorials & Guides</Link>
+                        <Link to="tutorials" className={styles.a}>Tutorials & Guides</Link>
                     </li>
                 </ul>
             </nav>
