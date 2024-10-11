@@ -34,11 +34,28 @@ import HashingTest from './Algorithms/Hashing/Test.jsx';
 import HashingArticles from './Algorithms/Hashing/Articles.jsx';
 import HashingTutorials from './Algorithms/Hashing/Tutorials.jsx';
 import HashingVisualization from './Algorithms/Hashing/Visualization';
+
+// Sorting page components
+import SortingPage from './Algorithms/Sorting/SortingPage.jsx';
+import SortingAim from './Algorithms/Sorting/Aim_Sort.jsx';
+import SortingTest from './Algorithms/Sorting/Test_Sort.jsx';
+import SortingTutorials from './Algorithms/Sorting/Tutorials_Sort.jsx';
+import SortingArticles from './Algorithms/Sorting/Articles_Sort.jsx';
+import SortingVisualization from './Algorithms/Sorting/Visualization_Sort.jsx';
+
+import GraphsPage from './Algorithms/Dijkstra/DijkstraPage.jsx';
+import GraphsAim from './Algorithms/Dijkstra/DijkstraAim.jsx';
+import GraphsTest from './Algorithms/Dijkstra/DijkstraTest.jsx';
+import GraphsTutorials from './Algorithms/Dijkstra/DijkstraTutorials.jsx';
+import GraphsArticles from './Algorithms/Dijkstra/DijkstraArticle.jsx';
+import GraphsVisualization from './Algorithms/Dijkstra/DijkstraVisualization.jsx';
+
 function App() {
   return (
       <BrowserRouter>
         <Navbar />
         <Routes>
+
           <Route element={<HomePage />} path="/" />
           <Route element={<About />} path="/about" />
           <Route path="/courses" element={<Courses />} />
@@ -51,7 +68,7 @@ function App() {
             <Route path="test" element={<Test />} />
             <Route path="articles" element={<Articles />} />
             <Route path="tutorials" element={<Tutorials />} />
-            <Route path="*" element={<Navigate to={`./`} />} />
+            <Route path="*" element={<Navigate to={`.`} />} />
           </Route>
 
           <Route path="/courses/:courseId/Stacks" element={<StackPage />}>
@@ -62,19 +79,35 @@ function App() {
             <Route path="concept" element={<StackConcept />} />
             <Route path="tutorial" element={<StackTutorials />} />
             <Route path="implementation" element={<StackImplementation />} />
-            <Route path="*" element={<Navigate to={`./`} />} />
-            </Route>
+            <Route path="*" element={<Navigate to={`.`} />} />
+          </Route>
 
-          
-            <Route path="/courses/:courseId/Hashing" element={<HashingPage />}>
+          <Route path="/courses/:courseId/Hashing" element={<HashingPage />}>
             <Route index element={<HashingAim />} />
             <Route path="visualization" element={<HashingVisualization />} />
             <Route path="test" element={<HashingTest />} />
             <Route path="articles" element={<HashingArticles />} />
             <Route path="tutorials" element={<HashingTutorials />} />
-            <Route path="*" element={<Navigate to={'./'} />} />
+            <Route path="*" element={<Navigate to={'.'} />} />
           </Route>
 
+          <Route path="/courses/:courseId/Sorting" element={<SortingPage />}>
+            <Route index element={<SortingAim />} />
+            <Route path="visualization" element={<SortingVisualization />} />
+            <Route path="test" element={<SortingTest />} />
+            <Route path="articles" element={<SortingArticles />} />
+            <Route path="tutorials" element={<SortingTutorials />} />
+            <Route path="*" element={<Navigate to={'.'} />} />
+          </Route>
+
+          <Route path="/courses/:courseId/Graphs" element={<GraphsPage />}>
+            <Route index element={<GraphsAim />} />
+            <Route path="visualization" element={<GraphsVisualization />} />
+            <Route path="test" element={<GraphsTest />} />
+            <Route path="articles" element={<GraphsArticles />} />
+            <Route path="tutorials" element={<GraphsTutorials />} />
+            <Route path="*" element={<Navigate to={'.'} />} />
+          </Route>
 
         </Routes>
                 
@@ -84,3 +117,4 @@ function App() {
 }
 
 export default App;
+
