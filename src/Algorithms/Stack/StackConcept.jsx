@@ -1,3 +1,4 @@
+
 const StackConcept = () => {
     
 
@@ -56,7 +57,7 @@ const StackConcept = () => {
 
             <h2>Representation of Stack Data Structure:</h2>
             <p>Stack follows LIFO (Last In First Out) Principle so the element which is pushed last is popped first.</p>
-            {/* image of representation */}
+            
             
 
 
