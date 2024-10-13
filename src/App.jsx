@@ -43,12 +43,22 @@ import SortingTutorials from './Algorithms/Sorting/Tutorials_Sort.jsx';
 import SortingArticles from './Algorithms/Sorting/Articles_Sort.jsx';
 import SortingVisualization from './Algorithms/Sorting/Visualization_Sort.jsx';
 
+// graphs page components
 import GraphsPage from './Algorithms/Dijkstra/DijkstraPage.jsx';
 import GraphsAim from './Algorithms/Dijkstra/DijkstraAim.jsx';
 import GraphsTest from './Algorithms/Dijkstra/DijkstraTest.jsx';
 import GraphsTutorials from './Algorithms/Dijkstra/DijkstraTutorials.jsx';
 import GraphsArticles from './Algorithms/Dijkstra/DijkstraArticle.jsx';
 import GraphsVisualization from './Algorithms/Dijkstra/DijkstraVisualization.jsx';
+
+// queues page components
+import QueuesPage from './Algorithms/Queue/QueuePage.jsx';
+import QueuesAim from './Algorithms/Queue/AimQueue.jsx';
+import QueuesTest from './Algorithms/Queue/QueueTest.jsx';
+import QueuesTypes from './Algorithms/Queue/QueueTypes.jsx';
+import QueuesConcepts from './Algorithms/Queue/QueueConcept.jsx';
+import QueuesVisualization from './Algorithms/Queue/QueueVisualization';
+import QueueImplementation from './Algorithms/Queue/QueueImplement.jsx'
 
 function App() {
   return (
@@ -60,7 +70,6 @@ function App() {
           <Route element={<About />} path="/about" />
           <Route path="/courses" element={<Courses />} />
           <Route path="/courses/:courseId" element={<COURSES />} />
-          {/* <Route path="/courses/:courseId/:courseTitle" element={<SideNav />} /> */}
           
           <Route path="/courses/:courseId/Linked List" element={<LinkedlistPage />}>
             <Route index element={<Aim />} />
@@ -106,6 +115,16 @@ function App() {
             <Route path="test" element={<GraphsTest />} />
             <Route path="articles" element={<GraphsArticles />} />
             <Route path="tutorials" element={<GraphsTutorials />} />
+            <Route path="*" element={<Navigate to={'.'} />} />
+          </Route>
+
+          <Route path="/courses/:courseId/Queues" element={<QueuesPage />}>
+            <Route index element={<QueuesAim />} />
+            <Route path="visualization" element={<QueuesVisualization />} />
+            <Route path="implementation" element={<QueueImplementation />} />
+            <Route path="test" element={<QueuesTest />} />
+            <Route path="articles" element={<QueuesConcepts />} />
+            <Route path="type" element={<QueuesTypes />} />
             <Route path="*" element={<Navigate to={'.'} />} />
           </Route>
 
