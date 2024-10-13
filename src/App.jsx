@@ -14,7 +14,10 @@ import Aim from './Algorithms/Linkedlist/Aim.jsx';
 import Articles from './Algorithms/Linkedlist/Articles.jsx';
 import Test from './Algorithms/Linkedlist/Test.jsx';
 import Tutorials from './Algorithms/Linkedlist/Tutorials.jsx';
-import Visualization from './Algorithms/Linkedlist/Visualization.jsx';
+// import Visualization from './Algorithms/Linkedlist/Visualization.jsx';
+import Insertion from './Algorithms/Linkedlist/Insertion.jsx';
+import Deletion from './Algorithms/Linkedlist/Deletion.jsx';
+import Traversal from './Algorithms/Linkedlist/Traversal.jsx';
 
 //Stack page components
 
@@ -73,7 +76,11 @@ function App() {
           
           <Route path="/courses/:courseId/Linked List" element={<LinkedlistPage />}>
             <Route index element={<Aim />} />
-            <Route path="visualization" element={<Visualization />} />
+            <Route path="visualization">
+              <Route path="insertion" element={<Insertion />} />
+              <Route path="deletion" element={<Deletion />} />
+              <Route path="traversal" element={<Traversal />} />
+            </Route>
             <Route path="test" element={<Test />} />
             <Route path="articles" element={<Articles />} />
             <Route path="tutorials" element={<Tutorials />} />
