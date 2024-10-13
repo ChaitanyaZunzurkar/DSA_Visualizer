@@ -7,19 +7,19 @@ const Sorting = () => {
             <nav className={styles.nav}>
                 <ul className={styles.ul}>
                     <li className={styles.li}>
-                        <Link to="Aim_Sort" className={styles.a}>Aim</Link>
+                        <Link to="" className={styles.a}>Aim</Link>
                     </li>
                     <li className={styles.li}>
-                        <Link to="Visualization_Sort" className={styles.a}>Visualization</Link>
+                        <Link to="visualization" className={styles.a}>Visualization</Link>
                     </li>
                     <li className={styles.li}>
-                        <Link to="Test_Sort" className={styles.a}>Test</Link>
+                        <Link to="test" className={styles.a}>Test</Link>
                     </li>
                     <li className={styles.li}>
-                        <Link to="Articles_Sort" className={styles.a}>Articles</Link>
+                        <Link to="articles" className={styles.a}>Articles</Link>
                     </li>
                     <li className={styles.li}>
-                        <Link to="Tutorials_Sort" className={styles.a}>Tutorials</Link>
+                        <Link to="tutorials" className={styles.a}>Tutorials</Link>
                     </li>
                 </ul>
             </nav>

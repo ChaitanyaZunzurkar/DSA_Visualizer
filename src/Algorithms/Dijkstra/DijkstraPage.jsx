@@ -1,10 +1,10 @@
 import { Outlet } from 'react-router-dom';
-import DijkstraAim from '../DijkstraAim/DijkstraAim'; // Assuming you have created this new component
-
+import Dijkstra from '../Dijkstra/Dijkstra';
+import styles from '../../Stylesheets/HashingPage.module.css'
 const DijkstraPage = () => {
     return (
         <div className={styles.container}>
-            <DijkstraAim /> 
+            <Dijkstra /> 
             <div className={styles.content}> 
                 <Outlet /> 
             </div>

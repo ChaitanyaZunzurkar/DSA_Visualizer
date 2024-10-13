@@ -7,7 +7,7 @@ const LinkedList = () => {
             <nav className={styles.nav}>
                 <ul className={styles.ul}>
                     <li className={styles.li}>
-                        <Link to="aim" className={styles.a}>Aim</Link>
+                        <Link to="" className={styles.a}>Aim</Link>
                     </li>
                     <li className={styles.li}>
                         <Link to="visualization" className={styles.a}>Visualization</Link>

@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router-dom';
-import LinkedList from '../Sorting/Sorting'; 
+import Sorting from '../Sorting/Sorting'; 
+import styles from '../../Stylesheets/HashingPage.module.css'
 
 const SortingPage= () => {
     return (

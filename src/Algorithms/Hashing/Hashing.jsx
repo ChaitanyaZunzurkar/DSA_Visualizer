@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
 import styles from '../../Stylesheets/Hashing.module.css';
 
-const HASHING = () => {
+const Hashing = () => {
     return (
         <div className={styles.container}>
             <nav className={styles.nav}>
                 <ul className={styles.ul}>
                     <li className={styles.li}>
-                        <Link to="aim" className={styles.a}>Aim</Link>
+                        <Link to="" className={styles.a}>Aim</Link>
                     </li>
                     <li className={styles.li}>
                         <Link to="visualization" className={styles.a}>Visualization</Link>
@@ -27,4 +27,4 @@ const HASHING = () => {
     );
 }
 
-export default HASHING;
+export default Hashing;
