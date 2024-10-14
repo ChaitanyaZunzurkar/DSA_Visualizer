@@ -20,7 +20,6 @@ import Deletion from './Algorithms/Linkedlist/Deletion.jsx';
 import Traversal from './Algorithms/Linkedlist/Traversal.jsx';
 
 //Stack page components
-
 import StackPage from './Algorithms/Stack/StackPage.jsx';
 import AimStack from './Algorithms/Stack/AimStack.jsx';
 import StackConcept from './Algorithms/Stack/StackConcept.jsx';
@@ -32,11 +31,11 @@ import StackImplementation from './Algorithms/Stack/StackIMP.jsx';
 
 // Hashing page components 
 import HashingPage from './Algorithms/Hashing/HashingPage.jsx';
-import HashingAim from './Algorithms/Hashing/Aim.jsx';
-import HashingTest from './Algorithms/Hashing/Test.jsx';
-import HashingArticles from './Algorithms/Hashing/Articles.jsx';
-import HashingTutorials from './Algorithms/Hashing/Tutorials.jsx';
-import HashingVisualization from './Algorithms/Hashing/Visualization';
+import HashingAim from './Algorithms/Hashing/HashingAim.jsx';
+import HashingTest from './Algorithms/Hashing/HashingTest.jsx';
+import HashingConcept from './Algorithms/Hashing/HashingConcept.jsx';
+import HashingTutorials from './Algorithms/Hashing/HashingTutorials.jsx';
+import HashingVisualization from './Algorithms/Hashing/HashingVisualization.jsx';
 
 // Sorting page components
 import SortingPage from './Algorithms/Sorting/SortingPage.jsx';
@@ -62,6 +61,7 @@ import QueuesTypes from './Algorithms/Queue/QueueTypes.jsx';
 import QueuesConcepts from './Algorithms/Queue/QueueConcept.jsx';
 import QueuesVisualization from './Algorithms/Queue/QueueVisualization';
 import QueueImplementation from './Algorithms/Queue/QueueImplement.jsx'
+
 
 function App() {
   return (
@@ -102,7 +102,7 @@ function App() {
             <Route index element={<HashingAim />} />
             <Route path="visualization" element={<HashingVisualization />} />
             <Route path="test" element={<HashingTest />} />
-            <Route path="articles" element={<HashingArticles />} />
+            <Route path="concept" element={<HashingConcept />} />
             <Route path="tutorials" element={<HashingTutorials />} />
             <Route path="*" element={<Navigate to={'.'} />} />
           </Route>

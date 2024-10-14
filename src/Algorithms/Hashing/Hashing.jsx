@@ -10,13 +10,13 @@ const Hashing = () => {
                         <Link to="" className={styles.a}>Aim</Link>
                     </li>
                     <li className={styles.li}>
+                        <Link to="concept" className={styles.a}>Concept</Link>
+                    </li>
+                    <li className={styles.li}>
                         <Link to="visualization" className={styles.a}>Visualization</Link>
                     </li>
                     <li className={styles.li}>
                         <Link to="test" className={styles.a}>Test</Link>
-                    </li>
-                    <li className={styles.li}>
-                        <Link to="articles" className={styles.a}>Articles</Link>
                     </li>
                     <li className={styles.li}>
                         <Link to="tutorials" className={styles.a}>Tutorials</Link>
