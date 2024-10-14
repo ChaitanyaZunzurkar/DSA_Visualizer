@@ -50,7 +50,7 @@ const TowerOfHanoi = ({ numDisks }) => {
       setTimeout(() => {
         setCurrentMoveIndex((prev) => prev + 1);
         setIsAnimating(false);
-      }, 500); // Adjust timing for smoothness
+      }, 700); // Adjust timing for smoothness (700ms)
     }
   }, [currentMoveIndex, isAnimating, moves]);
 
@@ -78,18 +78,21 @@ const TowerOfHanoi = ({ numDisks }) => {
     resetTowers(); // Reset the towers and start again
   };
 
+  const totalMoves = Math.pow(2, numDisks) - 1;
+
   return (
     <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
       <h2>Visualization</h2>
-      <div style={{ display: "flex", justifyContent: "space-around", width: "80%", height: "300px", marginBottom: "20px", border: "2px solid #ccc", padding: "20px" }}>
+      <div style={{ display: "flex", justifyContent: "space-around", width: "80%", height: "300px", marginBottom: "20px", border: "2px solid #ccc", borderRadius: "16px", backgroundColor: "#111827", padding: "20px" }}>
         {towers.map((tower, towerIndex) => (
           <div
             key={towerIndex}
             style={{
               width: "120px",
               height: "250px",
-              backgroundColor: "#ddd",
+              backgroundColor: "#6699CC",
               border: "2px solid #333",
+              borderRadius: "8px",
               display: "flex",
               flexDirection: "column-reverse",
               justifyContent: "flex-start",
@@ -102,14 +105,15 @@ const TowerOfHanoi = ({ numDisks }) => {
               <div
                 key={diskIndex}
                 style={{
-                  width: `${disk * 30}px`, // Width based on disk size
-                  height: "20px", // Fixed height of the disk
-                  backgroundColor: "#61dafb",
-                  margin: "0", // No vertical margin
+                  width: `${disk * 29.5}px`, // Width based on disk size
+                  height: "25px", // Fixed height of the disk
+                  backgroundColor: "#2196f3",
+                  borderRadius: "6px",
+                  marginBottom: "0", // No vertical margin
                   textAlign: "center",
-                  color: "#333",
-                  fontWeight: "bold",
-                  transition: "all 0.5s ease-in-out",
+                  color: "white",
+                  border: "1px solid " + "#002D62",
+                  transition: "all 0.7s ease-in-out",
                   position: "absolute",
                   bottom: `${diskIndex * 22}px`, // Adjust for height of the disks + margin
                   zIndex: 1, // Ensure disks are on top
@@ -121,6 +125,11 @@ const TowerOfHanoi = ({ numDisks }) => {
           </div>
         ))}
       </div>
+
+      {/* Display Total Steps */}
+      <p style={{ color: "#fff", marginBottom: "20px" }}>
+        Total steps required to solve: {totalMoves}
+      </p>
 
       {/* Buttons for control */}
       <div>
@@ -142,7 +151,6 @@ const TowerOfHanoi = ({ numDisks }) => {
 
 const MonoStack = () => {
   return (
-
     <div style={{ padding: "20px" }}>
       <h1>Tower of Hanoi</h1>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
@@ -190,7 +198,6 @@ const MonoStack = () => {
         </div>
       </div>
     </div>
-    
   );
 };
 
