@@ -1,3 +1,4 @@
+
 const QueueTypes = () => {
     return (
         <div>
@@ -15,7 +16,7 @@ const QueueTypes = () => {
                 <li>Input Restricted Queue (Simple Queue)</li>
                 <li>Output Restricted Queue (Simple Queue)</li>
                 <li>Circular Queue</li>
-                <li>Double Ended Queue (Deque)</li>
+                <li>Double Ended Queue (Dequeue)</li>
                 <li>Priority Queue</li>
                 <ul>
                     <li>Ascending Priority Queue</li>
@@ -58,9 +59,9 @@ const QueueTypes = () => {
                 the front. It is used in scenarios where inputs have priority and need to be executed in order.
             </p>
 
-            <h3>4. Double Ended Queue (Deque):</h3>
+            <h3>4. Double Ended Queue (Dequeue):</h3>
             <p>
-                A Deque allows insertion and deletion from both the front and rear. It supports both stack and queue operations, 
+                A Dequeue allows insertion and deletion from both the front and rear. It supports both stack and queue operations, 
                 and rotations can be done in O(1) time, making it suitable for problems requiring operations on both ends.
             </p>
 
