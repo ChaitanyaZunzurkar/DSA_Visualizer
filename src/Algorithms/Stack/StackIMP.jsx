@@ -1,4 +1,15 @@
+import CodeCopy from '../../Components/Codecopy';
+
 const StackImplementation = () => {
+    const codeSnippet = ` 
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Hello World!";
+    return 0;
+}
+`
     return (
         <div>
             <h1>Implementation of Stack Data Structure</h1>
@@ -16,6 +27,7 @@ const StackImplementation = () => {
 
             </p>
             {/* code block and output */}
+            <CodeCopy code = { codeSnippet }/>
 
             <h3>Advantages of Array Implementation:</h3>
             <ul>

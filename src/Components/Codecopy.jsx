@@ -1,25 +1,8 @@
-import React, { useState } from 'react';
+/* eslint-disable react/prop-types */
+import { useState } from 'react';
 
-const TerminalCard = () => {
-  const codeSnippet = `
-    // This is a sample React component
-    import React from 'react';
-
-    const SampleComponent = () => {
-      const handleClick = () => {
-        console.log('Button clicked!');
-      };
-
-      return (
-        <div>
-          <h1>Hello, World!</h1>
-          <button onClick={handleClick}>Click Me</button>
-        </div>
-      );
-    };
-
-    export default SampleComponent;
-  `;
+const TerminalCard = ({ code }) => {
+  const codeSnippet = code;
   
   const [copied, setCopied] = useState(false);
 
@@ -59,7 +42,7 @@ const TerminalCard = () => {
               tabIndex="-1"
               type="button"
               onClick={handleCopy}
-              style={{ ...styles.copyToggle, backgroundColor: copied ? '#28a745' : '#202425' }}
+              style={{ ...styles.copyToggle, backgroundColor: copied ? '#28a745' : '#202425' }} 
             >
               <svg
                 width="16px"
@@ -175,3 +158,5 @@ const styles = {
 };
 
 export default TerminalCard;
+
+
