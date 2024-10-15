@@ -42,7 +42,7 @@ const TerminalCard = ({ code }) => {
               tabIndex="-1"
               type="button"
               onClick={handleCopy}
-              style={{ ...styles.copyToggle, backgroundColor: copied ? '#28a745' : '#202425' }} 
+              style={{ ...styles.copyToggle }} 
             >
               <svg
                 width="16px"
@@ -67,6 +67,7 @@ const TerminalCard = ({ code }) => {
             </pre>
           </div>
         </div>
+        {copied && <div style={styles.copiedText}>Copied!</div>}
       </div>
     </div>
   );
@@ -96,6 +97,17 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+  },
+  copiedText : {
+    position: 'fixed',
+      top: '20px',
+      left: '50%',
+      transform: 'translateX(-50%)',
+      padding: '10px 20px',
+      backgroundColor: '#f44336',
+      color: 'white',
+      borderRadius: '5px',
+      zIndex: 1000,
   },
   head: {
     display: 'flex',
