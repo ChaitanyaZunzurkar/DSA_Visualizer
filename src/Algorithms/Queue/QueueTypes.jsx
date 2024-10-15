@@ -1,5 +1,31 @@
-
+import type1 from '../../assets/QueueImages/typesofqueues.jpg';
+import deq from '../../assets/QueueImages/doubleended.jpg';
+import irq from '../../assets/QueueImages/inputrestrictedqueue.jpg';
+import orq from '../../assets/QueueImages/outputrestrictedqueue.jpg';
 const QueueTypes = () => {
+    const ing = {
+        maxWidth: '100%',
+        marginBottom: '20px',
+        borderRadius: '1px',
+        padding: '0px',
+        boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.2)',
+        height:'400px',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#f1f1f1',
+        
+    };
+    const ing2={
+        maxWidth: '100%',
+        marginBottom: '20px',
+        borderRadius: '1px',
+        padding: '0px',
+        height:'200px',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#f1f1f1',
+        boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.2)',
+    }
     return (
         <div>
             <h1>Different Types of Queues and their Applications</h1>
@@ -23,6 +49,7 @@ const QueueTypes = () => {
                     <li>Descending Priority Queue</li>
                 </ul>
             </ul>
+            <img src={type1} alt="types" style={ing}></img>
 
             <h3>1. Circular Queue:</h3>
             <p>
@@ -42,6 +69,7 @@ const QueueTypes = () => {
                 In this type of queue, input can only be added from one end (rear), while elements can be removed 
                 from both ends (front and rear). This type does not strictly follow FIFO.
             </p>
+            <img src={irq} alt="irq"style={ing2} />
             <p>Advantages:</p>
             <ul>
                 <li>Prevents overflow by limiting the number of items added.</li>
@@ -58,12 +86,14 @@ const QueueTypes = () => {
                 In this queue, elements can be added from both ends (front and rear), but deletion is allowed only from 
                 the front. It is used in scenarios where inputs have priority and need to be executed in order.
             </p>
+            <img src={orq} alt="orq"style={ing2} />
 
             <h3>4. Double Ended Queue (Dequeue):</h3>
             <p>
                 A Dequeue allows insertion and deletion from both the front and rear. It supports both stack and queue operations, 
                 and rotations can be done in O(1) time, making it suitable for problems requiring operations on both ends.
             </p>
+            <img src={deq} alt="deq" style={ing2}/>
 
             <h3>5. Priority Queue:</h3>
             <p>
@@ -106,7 +136,7 @@ const QueueTypes = () => {
                 </li>
             </ul>
 
-            <h2>Issues of Queue:</h2>
+            <h2 >Issues of Queue:</h2>
             <ul>
                 <li><strong>Queue Overflow:</strong> Occurs when the queue reaches maximum capacity, leading to data loss.</li>
                 <li><strong>Queue Underflow:</strong> Removing an element from an empty queue causes errors.</li>
@@ -117,15 +147,7 @@ const QueueTypes = () => {
                 <li><strong>Memory Management Issues:</strong> Large queues can cause memory leaks, leading to system crashes.</li>
             </ul>
 
-            <h2>References:</h2>
-            <ul>
-                <li>"Data Structures and Algorithms in Java" by Robert Lafore</li>
-                <li>"Introduction to Algorithms" by Thomas H. Cormen et al.</li>
-                <li>"Concurrency in C# Cookbook" by Stephen Cleary</li>
-                <li>"Queue (abstract data type)" on Wikipedia</li>
-                <li>"The Art of Computer Programming, Volume 1" by Donald E. Knuth</li>
-                <li>"Queues and the Producer-Consumer Problem" by Douglas C. Schmidt</li>
-            </ul>
+            
         </div>
     );
 };

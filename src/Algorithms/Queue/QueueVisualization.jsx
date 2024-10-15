@@ -51,10 +51,12 @@ const QueueVisualization = () => {
         .queue-container {
           text-align: center;
           margin: 20px;
+          
         }
 
         .queue-operations {
           margin-bottom: 20px;
+          
         }
 
         input {
@@ -88,7 +90,7 @@ const QueueVisualization = () => {
         }
 
         button:not(:disabled):hover {
-          background-color: #374151;
+          background-color: green;
           transform: scale(1.05);
         }
 
@@ -96,6 +98,7 @@ const QueueVisualization = () => {
           display: flex;
           justify-content: center;
           border: 2px solid #111827;
+          
           padding: 20px;
           width: 600px;
           min-height: 100px;
