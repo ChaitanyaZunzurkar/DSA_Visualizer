@@ -157,6 +157,7 @@ const QueueVisualization = () => {
         <button disabled={true}>isEmpty: {isEmpty() ? 'Yes' : 'No'}</button>
         <button disabled={true}>isFull: {isFull() ? 'Yes' : 'No'}</button>
         <button disabled={true}>Size: {size()}</button>
+        <button disabled={true}>Max Size: {5}</button>
       </div>
 
       <div className="queue-visual-horizontal">
