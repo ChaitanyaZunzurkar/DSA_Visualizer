@@ -1,5 +1,11 @@
+import img1 from '../../assets/QueueImages/qimp.webp';
+
 const QueueImplementation = () => {
-    return (
+    const img ={
+        height: '300px',
+        
+    };
+return (
         <div>
             <h1>Queue Data Structure</h1>
             <p>
@@ -14,6 +20,7 @@ const QueueImplementation = () => {
                 The difference between stacks and queues is in removing. In a stack, we remove the most recently added item; 
                 in a queue, we remove the item that was least recently added.
             </p>
+            <img src={img1} style={img}/>
 
             <h2>Basic Operations on Queue:</h2>
             <ul>
