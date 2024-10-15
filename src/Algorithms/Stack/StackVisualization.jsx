@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 const StackVisualization = () => {
   const [stack, setStack] = useState([]);
   const [input, setInput] = useState('');
+  const [isPopping, setIsPopping] = useState(false);
   const maxSize = 5;
 
   const handlePush = () => {
@@ -14,9 +15,13 @@ const StackVisualization = () => {
 
   const handlePop = () => {
     if (stack.length > 0) {
-      const newStack = [...stack];
-      newStack.pop();
-      setStack(newStack);
+      setIsPopping(true);
+      setTimeout(() => {
+        const newStack = [...stack];
+        newStack.pop();
+        setStack(newStack);
+        setIsPopping(false);
+      }, 500); // Match the animation duration
     }
   };
 
@@ -35,18 +40,16 @@ const StackVisualization = () => {
         .stack-container {
           text-align: center;
           margin: 20px;
-          
-          
+          align-items: center;
+          justify-content: center;
         }
-      
+
         .stack-operations {
           margin-bottom: 20px;
-          border-radius: 50% !important;
-          
         }
-      
+
         input {
-          padding: 8px 12px;
+          padding: 10px 12px;
           margin-right: 10px;
           cursor: pointer;
           font-size: 14px;
@@ -56,9 +59,9 @@ const StackVisualization = () => {
           border-radius: 5px;
           transition: background-color 0.3s, transform 0.2s;
         }
-      
+
         button {
-          padding: 8px 12px;
+          padding: 10px 20px;
           margin-right: 10px;
           cursor: pointer;
           font-size: 14px;
@@ -68,29 +71,30 @@ const StackVisualization = () => {
           border-radius: 5px;
           transition: background-color 0.3s, transform 0.2s;
         }
-      
+
         button:disabled {
           cursor: not-allowed;
           background-color: #ccc;
           color: #666;
         }
-      
+
         button:not(:disabled):hover {
           background-color: green;
           transform: scale(1.05);
         }
-      
+
         .stack-visual {
-          display: inline-block;
-          border: 2px solid #111827;
-          padding: 20px;
-          width: 100px;
+          display: flex;
+          flex-direction: column-reverse; /* Flips the visual stack */
+          border: 2px solid black;
+          padding: 25px;
+          width: 200px;
           min-height: 200px;
           position: relative;
-          border-radius:20px radius;
+          border-radius: 15px;
           background-color: #111827;
         }
-      
+
         .stack-item {
           background-color: #4caf50;
           color: white;
@@ -98,25 +102,47 @@ const StackVisualization = () => {
           margin: 5px 0;
           border-radius: 5px;
           font-weight: bold;
+          transition: transform 0.5s, opacity 0.5s;
+        }
+
+        /* Highlight the top item */
+        .stack-item.top-item {
+          background-color: #2196f3;
+        }
+
+        /* Animate the newly pushed element */
+        .stack-item.new-item {
           opacity: 0;
           animation: pushItem 0.5s forwards;
         }
-      
+
         @keyframes pushItem {
           0% {
-            transform: translateY(20px);
+            transform: translateY(-100px); /* Starting from above */
             opacity: 0;
           }
           100% {
-            transform: translateY(0);
+            transform: translateY(0px); /* Final position */
             opacity: 1;
           }
         }
-      
-        .stack-item:first-child {
-          background-color: #2196f3;
+
+        /* Animate the top item when popping */
+        .stack-item.pop-item {
+          animation: popItem 0.5s forwards;
         }
-      
+
+        @keyframes popItem {
+          0% {
+            transform: translateY(0px); /* Initial position */
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(-100px); /* Move upward */
+            opacity: 0;
+          }
+        }
+
         .stack-empty {
           color: #999;
           font-size: 14px;
@@ -141,8 +167,15 @@ const StackVisualization = () => {
 
       <div className="stack-visual">
         {stack.length > 0 ? (
-          [...stack].reverse().map((item, index) => (
-            <div key={index} className="stack-item">
+          stack.map((item, index) => (
+            <div
+              key={index}
+              className={`stack-item ${
+                index === stack.length - 1 ? 'top-item' : ''
+              } ${
+                index === stack.length - 1 && isPopping ? 'pop-item' : 'new-item'
+              }`}
+            >
               {item}
             </div>
           ))
