@@ -36,11 +36,13 @@ const StackVisualization = () => {
           text-align: center;
           margin: 20px;
           
+          
         }
       
         .stack-operations {
           margin-bottom: 20px;
           border-radius: 50% !important;
+          
         }
       
         input {
@@ -74,7 +76,7 @@ const StackVisualization = () => {
         }
       
         button:not(:disabled):hover {
-          background-color: #374151;
+          background-color: green;
           transform: scale(1.05);
         }
       
@@ -85,7 +87,7 @@ const StackVisualization = () => {
           width: 100px;
           min-height: 200px;
           position: relative;
-          border-radius:16px radius;
+          border-radius:20px radius;
           background-color: #111827;
         }
       
@@ -111,7 +113,7 @@ const StackVisualization = () => {
           }
         }
       
-        .stack-item:last-child {
+        .stack-item:first-child {
           background-color: #2196f3;
         }
       
@@ -134,6 +136,7 @@ const StackVisualization = () => {
         <button onClick={handlePeek} disabled={isEmpty()}>Peek</button>
         <button disabled={true}>isEmpty: {isEmpty() ? 'Yes' : 'No'}</button>
         <button disabled={true}>isFull: {isFull() ? 'Yes' : 'No'}</button>
+        <button disabled={true}>Maximum Size: {'5'}</button>
       </div>
 
       <div className="stack-visual">
