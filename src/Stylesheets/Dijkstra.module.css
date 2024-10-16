@@ -16,12 +16,13 @@
     margin: 0 auto;
 }
 
-#visualizeBtn {
-    display: block;
-    margin: 20px auto;
+#visualizeDijkstraBtn {
+    display: inline-block;
+    margin: 50px auto;
+    margin-top: 50px;
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #4CAF50;
+    /* background-color: red; */
     color: white;
     border: none;
     border-radius: 5px;

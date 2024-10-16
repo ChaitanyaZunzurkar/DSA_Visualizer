@@ -198,22 +198,28 @@ const DijkstraVisualization = () => {
     };
 
     return (
-        <div>
-            <h1>Dijkstra's Algorithm Visualization</h1>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <div>
+            <p style={{fontSize:'2rem'}}>Dijkstra's Algorithm Visualization</p>
             <section id="graph-container">
-                <h2>Graph</h2>
+                {/* <h2>Graph</h2> */}
                 <canvas ref={canvasRef} width="600" height="400" style={{ border: '1px solid black' }}></canvas>
             </section>
 
-            <button id="visualizeBtn" onClick={visualizeAlgorithm} disabled={visualizeDisabled}>
+            <button id='visualizeDijkstraBtn'  style={{ backgroundColor: '#4CAF50',margin : '50px' }} onClick={visualizeAlgorithm} disabled={visualizeDisabled}>
                 Visualize Algorithm
             </button>
 
             {resetVisible && (
-                <button id="resetBtn" onClick={reset}>
+                <button id="resetBtn" style={{ backgroundColor: 'grey', margin:'50px'}} onClick={reset}>
                     Reset
                 </button>
-            )}
+            )}  
+            </div>
+            <div style={{padding:'20px'}}>
+                <p>Starting node A is Selected. Node D and B are directly connected to A. D has the least distance from A so D is selected. now C and F area directly connectd to D .</p>
+            </div>
+            
         </div>
     );
 };
