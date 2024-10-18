@@ -35,7 +35,10 @@ import HashingAim from './Algorithms/Hashing/HashingAim.jsx';
 import HashingTest from './Algorithms/Hashing/HashingTest.jsx';
 import HashingConcept from './Algorithms/Hashing/HashingConcept.jsx';
 import HashingTutorials from './Algorithms/Hashing/HashingTutorials.jsx';
-import HashingVisualization from './Algorithms/Hashing/HashingVisualization.jsx';
+import HashTable from './Algorithms/Hashing/HashTable.jsx';
+import HashingChaining from './Algorithms/Hashing/HashingChaining.jsx';
+import PasswordHashingVisualization from './Algorithms/Hashing/PasswordHashingVisualization.jsx';
+// import HashingVisualization from './Algorithms/Hashing/HashingVisualization.jsx';
 
 // Sorting page components
 import SortingPage from './Algorithms/Sorting/SortingPage.jsx';
@@ -61,6 +64,7 @@ import QueuesTypes from './Algorithms/Queue/QueueTypes.jsx';
 import QueuesConcepts from './Algorithms/Queue/QueueConcept.jsx';
 import QueuesVisualization from './Algorithms/Queue/QueueVisualization';
 import QueueImplementation from './Algorithms/Queue/QueueImplement.jsx'
+
 
 
 function App() {
@@ -100,7 +104,12 @@ function App() {
 
           <Route path="/courses/:courseId/Hashing" element={<HashingPage />}>
             <Route index element={<HashingAim />} />
-            <Route path="visualization" element={<HashingVisualization />} />
+            <Route path="visualization">
+              <Route path="QuadraticProbing" element={<HashTable size={10} />} />
+              <Route path="SeparateChaining" element={<HashingChaining />} />
+            </Route>
+            
+            <Route path='password' element={<PasswordHashingVisualization />} />
             <Route path="test" element={<HashingTest />} />
             <Route path="concept" element={<HashingConcept />} />
             <Route path="tutorials" element={<HashingTutorials />} />
