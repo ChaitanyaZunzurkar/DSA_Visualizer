@@ -9,12 +9,13 @@ const HashingChaining = () => {
   const [userInput, setUserInput] = useState(''); // For the user's input
   const [dataItems, setDataItems] = useState([]); // Array to hold entered values
   const [currentIndex, setCurrentIndex] = useState(-1);
+  const [latestValue, setLatestValue] = useState(null); // Track the most recently added value
 
   useEffect(() => {
     if (dataItems.length === 0) return;
 
     const interval = setInterval(() => {
-      setCurrentIndex(prevIndex => {
+      setCurrentIndex((prevIndex) => {
         if (prevIndex < dataItems.length - 1) {
           const nextIndex = prevIndex + 1;
           const value = dataItems[nextIndex];
@@ -22,6 +23,7 @@ const HashingChaining = () => {
           const newTable = [...hashTable];
           newTable[hashedIndex] = [...newTable[hashedIndex], value]; // Insert into chain
           setHashTable(newTable);
+          setLatestValue(value); // Update the latest value
           return nextIndex;
         } else {
           clearInterval(interval);
@@ -41,9 +43,16 @@ const HashingChaining = () => {
     e.preventDefault();
     const value = Number(userInput);
     if (!isNaN(value)) {
-      setDataItems(prevItems => [...prevItems, value]); // Add new value to the array
+      setDataItems((prevItems) => [...prevItems, value]); // Add new value to the array
       setUserInput(''); // Clear the input after submitting
     }
+  };
+
+  const handleReset = () => {
+    setHashTable(new Array(10).fill(null).map(() => [])); // Reset the hash table
+    setDataItems([]); // Clear all data items
+    setCurrentIndex(-1); // Reset current index
+    setLatestValue(null); // Reset latest value
   };
 
   // Inline styles for the components
@@ -58,17 +67,18 @@ const HashingChaining = () => {
       alignItems: 'center',
       marginBottom: '20px',
     },
-    hashBucket: {
+    hashBucket: (bucketSize) => ({
       display: 'flex',
-      flexDirection: 'column',
+      flexDirection: 'row', // Extend in row direction
       alignItems: 'center',
-      width: '100px',
+      width: `${100 + bucketSize * 60}px`, // Dynamically adjust width based on the bucket size
       border: '2px solid #333',
       padding: '10px',
       borderRadius: '8px',
       backgroundColor: '#f7f7f7',
-      transition: 'background-color 0.5s ease',
-    },
+      transition: 'width 0.5s ease', // Smooth extension of width
+      marginBottom: '20px', // Added margin between hash buckets
+    }),
     bucketIndex: {
       fontSize: '14px',
       fontWeight: 'bold',
@@ -76,42 +86,20 @@ const HashingChaining = () => {
     },
     bucketChain: {
       display: 'flex',
-      flexDirection: 'column',
+      flexDirection: 'row', // Row layout for chaining
       gap: '8px',
-      marginTop: '10px',
+      marginLeft: '10px', // Add spacing between the index and the chain
     },
     emptyBucket: {
       fontSize: '12px',
       color: '#aaa',
     },
-    chainItem: isMoving => ({
-      backgroundColor: isMoving ? '#ff9800' : '#4caf50',
+    chainItem: (item) => ({
+      backgroundColor: item === latestValue ? '#ffeb3b' : '#4caf50', // Yellow for latest, green for others
       color: 'white',
-      padding: '5px 10px',
-      borderRadius: '8px',
-      transform: isMoving ? 'scale(1.2)' : 'scale(1)',
+      padding: '10px 20px', // Adjusted for oval shape
+      borderRadius: '50px', // Oval shape
       transition: 'transform 1s ease, background-color 0.5s ease',
-    }),
-    dataContainer: {
-      position: 'relative',
-      height: '500px', // Adjust height for vertical layout
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-    dataItem: isMoving => ({
-      position: 'relative',
-      width: '40px',
-      height: '40px',
-      backgroundColor: isMoving ? '#ff9800' : '#4caf50',
-      color: 'white',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      borderRadius: '50%',
-      transition: 'top 1s ease, transform 1s ease',
-      transform: isMoving ? 'scale(1.2)' : 'scale(1)',
     }),
     input: {
       padding: '8px',
@@ -120,6 +108,7 @@ const HashingChaining = () => {
       color: 'white', // White text inside input
       border: 'none',
       borderRadius: '5px',
+      marginBottom: '8px',
     },
     button: {
       marginLeft: '10px',
@@ -127,15 +116,25 @@ const HashingChaining = () => {
       backgroundColor: '#4caf50',
       color: 'white',
       border: 'none',
-      borderRadius: '5px',
+      borderRadius: '140px',
+      cursor: 'pointer',
+    },
+    resetButton: {
+      marginTop: '2px',
+      marginLeft: '10px',
+      padding: '8px',
+      backgroundColor: '#f44336',
+      color: 'white',
+      border: 'none',
+      borderRadius: '140px',
       cursor: 'pointer',
     },
   };
 
   return (
     <div style={styles.chainingContainer}>
-      <h2>Hashing with Separate Chaining Visualization (Vertical)</h2>
-      
+      <h2>Hashing with Separate Chaining Visualization</h2>
+
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -144,19 +143,25 @@ const HashingChaining = () => {
           placeholder="Enter a number"
           style={styles.input} // Apply the custom input style
         />
-        <button type="submit" style={styles.button}>Add</button>
+        <button type="submit" style={styles.button}>
+          Add
+        </button>
+
+        <button style={styles.resetButton} onClick={handleReset}>
+          Reset
+        </button>
       </form>
 
       <div style={styles.hashTable}>
         {hashTable.map((bucket, index) => (
-          <div style={styles.hashBucket} key={index}>
+          <div style={styles.hashBucket(bucket.length)} key={index}>
             <div style={styles.bucketIndex}>{index}</div>
             <div style={styles.bucketChain}>
               {bucket.length > 0 ? (
                 bucket.map((item, i) => (
                   <div
                     key={i}
-                    style={styles.chainItem(currentIndex === index && i === bucket.length - 1)}
+                    style={styles.chainItem(item)}
                   >
                     {item}
                   </div>
@@ -165,20 +170,6 @@ const HashingChaining = () => {
                 <div style={styles.emptyBucket}>Empty</div>
               )}
             </div>
-          </div>
-        ))}
-      </div>
-
-      <div style={styles.dataContainer}>
-        {dataItems.map((item, index) => (
-          <div
-            key={index}
-            style={{
-              ...styles.dataItem(currentIndex === index),
-              top: `${(index + 1) * 50}px`, // Adjust top for vertical movement
-            }}
-          >
-            {item}
           </div>
         ))}
       </div>
