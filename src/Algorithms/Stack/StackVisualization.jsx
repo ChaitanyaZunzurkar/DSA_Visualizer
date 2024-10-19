@@ -4,7 +4,6 @@ const StackVisualization = () => {
   const [stack, setStack] = useState([]);
   const [input, setInput] = useState('');
   const [isPopping, setIsPopping] = useState(false);
-  const [showPeek, setShowPeek] = useState(false);
   const maxSize = 5;
 
   const handlePush = () => {
@@ -28,7 +27,7 @@ const StackVisualization = () => {
 
   const handlePeek = () => {
     if (stack.length > 0) {
-      setShowPeek(true);
+      alert(`Top element: ${stack[stack.length - 1]}`);
     }
   };
 
@@ -44,29 +43,30 @@ const StackVisualization = () => {
           align-items: center;
           justify-content: center;
           height: 100vh;
-          background-color: #f0f2f5;
+          background-color: white;
+          border-radius: 16px;
+          
         }
 
         h2 {
-          font-size: 36px;
-          font-weight: 600;
-          color: #1f2937;
-          margin-bottom: 25px;
-          text-align: center;
-          letter-spacing: 1px;
-          text-transform: uppercase;
-          background: linear-gradient(90deg, #4caf50, #2196f3);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
+        font-size: 36px; /* Increased font size */
+        font-weight: 600; /* Semi-bold for better emphasis */
+        color: #1f2937; /* Darker shade for good contrast */
+        margin-bottom: 25px; /* Adjusted margin for better spacing */
+        text-align: center; /* Center-align the title */
+        letter-spacing: 1px; /* Slight letter-spacing for clarity */
+        text-transform: uppercase; /* Optional: Make the text uppercase */
+        
+}
+
 
         .stack-box {
-          background-color: white;
+          background-color: #f0f2f5;
           border-radius: 12px;
           padding: 30px;
-          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-          max-width: 400px;
-          width: 100%;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+          width: 550px;
+          
           text-align: center;
           display: flex;
           flex-direction: column;
@@ -129,21 +129,21 @@ const StackVisualization = () => {
         }
 
         .stack-operations button:nth-child(1):not(:disabled):hover {
-          background-color: #4caf50;
+          background-color: #4caf50; /* Green for Push */
         }
 
         .stack-operations button:nth-child(2):not(:disabled):hover {
-          background-color: #f44336;
+          background-color: #f44336; /* Red for Pop */
         }
 
         .stack-operations button:nth-child(3):not(:disabled):hover {
-          background-color: #2196f3;
+          background-color: #2196f3; /* Blue for Peek */
         }
 
         .stack-visual {
           display: flex;
-          flex-direction: column-reverse;
-          justify-content: flex-start;
+          flex-direction: column-reverse; /* This ensures the top is visually at the top */
+          justify-content: flex-start; 
           width: 250px;
           height: 333px;
           padding: 20px;
@@ -175,7 +175,7 @@ const StackVisualization = () => {
 
         @keyframes pushItem {
           0% {
-            transform: translateY(-100px);
+            transform: translateY(-100px); /* Items appear to come in from above */
             opacity: 0;
           }
           100% {
@@ -194,7 +194,7 @@ const StackVisualization = () => {
             opacity: 1;
           }
           100% {
-            transform: translateY(-100px);
+            transform: translateY(-100px); /* Items appear to go up when popped */
             opacity: 0;
           }
         }
@@ -217,56 +217,14 @@ const StackVisualization = () => {
 
         .status-buttons button {
           padding: 8px 15px;
-          color: #fff;
-        }
-
-        /* Modal styling */
-        .peek-modal {
-          position: fixed;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          background-color: #111827;
-          padding: 20px;
-          border-radius: 10px;
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-          z-index: 1000;
-          text-align: center;
+          background-color: black;
           color: white;
-        }
-
-        .peek-modal h3 {
-          font-size: 24px;
-          color: #4caf50; /* Green to match the theme */
-          margin-bottom: 10px;
-        }
-
-        .peek-modal button {
-          background-color: #2196f3;
-          color: white;
-          border: none;
-          padding: 10px 20px;
-          border-radius: 5px;
-          cursor: pointer;
-        }
-
-        .peek-modal button:hover {
-          background-color: #4caf50;
-        }
-
-        .overlay {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-color: rgba(0, 0, 0, 0.5);
-          z-index: 999;
         }
       `}</style>
 
-      <h2>Stack Visualizer</h2>
+      
       <div className="stack-box">
+      <h2>Stack Visualizer</h2>
         <div className="stack-operations">
           <input
             type="text"
@@ -276,7 +234,7 @@ const StackVisualization = () => {
           />
           <div>
             <button onClick={handlePush} disabled={isFull()}>Push</button>
-            <button onClick={handlePop} disabled={isEmpty()}>Pop</button>
+            <button onClick={handlePop} disabled={isEmpty() }>Pop</button>
             <button onClick={handlePeek} disabled={isEmpty()}>Peek</button>
           </div>
         </div>
@@ -303,19 +261,9 @@ const StackVisualization = () => {
         <div className="status-buttons">
           <button disabled>isEmpty: {isEmpty() ? 'Yes' : 'No'}</button>
           <button disabled>isFull: {isFull() ? 'Yes' : 'No'}</button>
+          <button disabled>Max Size: 5</button>
         </div>
       </div>
-
-      {showPeek && (
-        <>
-          <div className="overlay" onClick={() => setShowPeek(false)}></div>
-          <div className="peek-modal">
-            <h3>Peek Value</h3>
-            <p>{stack[stack.length - 1]}</p>
-            <button onClick={() => setShowPeek(false)}>Close</button>
-          </div>
-        </>
-      )}
     </div>
   );
 };

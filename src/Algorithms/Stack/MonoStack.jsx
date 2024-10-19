@@ -1,21 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
-const TowerOfHanoi = ({ numDisks }) => {
+const MonoStack = ({ numDisks = 4 }) => {
   const [towers, setTowers] = useState([[], [], []]);
   const [moves, setMoves] = useState([]);
   const [currentMoveIndex, setCurrentMoveIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  // Initialize Towers
   useEffect(() => {
     resetTowers();
   }, [numDisks]);
 
-  // Function to reset the towers to the initial state
   const resetTowers = () => {
     const initialTowers = [[], [], []];
     for (let i = numDisks; i >= 1; i--) {
-      initialTowers[0].push(i); // Adding disks to Tower A
+      initialTowers[0].push(i);
     }
     setTowers(initialTowers);
     setMoves([]);
@@ -23,7 +21,6 @@ const TowerOfHanoi = ({ numDisks }) => {
     generateMoves(numDisks, 0, 2, 1);
   };
 
-  // Tower of Hanoi recursive algorithm to generate move list
   const generateMoves = (n, from, to, aux) => {
     if (n === 1) {
       setMoves((prevMoves) => [...prevMoves, { from, to }]);
@@ -34,7 +31,6 @@ const TowerOfHanoi = ({ numDisks }) => {
     }
   };
 
-  // Move Disk function
   const moveDisk = (from, to) => {
     const newTowers = [...towers];
     const disk = newTowers[from].pop();
@@ -42,7 +38,6 @@ const TowerOfHanoi = ({ numDisks }) => {
     setTowers(newTowers);
   };
 
-  // Handle move based on current index with animation
   useEffect(() => {
     if (isAnimating && currentMoveIndex < moves.length) {
       const { from, to } = moves[currentMoveIndex];
@@ -50,151 +45,190 @@ const TowerOfHanoi = ({ numDisks }) => {
       setTimeout(() => {
         setCurrentMoveIndex((prev) => prev + 1);
         setIsAnimating(false);
-      }, 700); // Adjust timing for smoothness (700ms)
+      }, 700);
     }
   }, [currentMoveIndex, isAnimating, moves]);
 
-  // Function to go to the next move with animation
   const nextMove = () => {
     if (currentMoveIndex < moves.length) {
       setIsAnimating(true);
     }
   };
 
-  // Function to go to the previous move with animation
   const previousMove = () => {
     if (currentMoveIndex > 0) {
       const { from, to } = moves[currentMoveIndex - 1];
       const newTowers = [...towers];
-      const disk = newTowers[to].pop(); // Move back
-      newTowers[from].push(disk); // Put disk back
+      const disk = newTowers[to].pop();
+      newTowers[from].push(disk);
       setTowers(newTowers);
       setCurrentMoveIndex((prev) => prev - 1);
     }
   };
 
-  // Retry the visualization
   const retry = () => {
-    resetTowers(); // Reset the towers and start again
+    resetTowers();
   };
 
   const totalMoves = Math.pow(2, numDisks) - 1;
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-      <h2>Visualization</h2>
-      <div style={{ display: "flex", justifyContent: "space-around", width: "80%", height: "300px", marginBottom: "20px", border: "2px solid #ccc", borderRadius: "16px", backgroundColor: "#111827", padding: "20px" }}>
-        {towers.map((tower, towerIndex) => (
-          <div
-            key={towerIndex}
-            style={{
-              width: "120px",
-              height: "250px",
-              backgroundColor: "#6699CC",
-              border: "2px solid #333",
-              borderRadius: "8px",
-              display: "flex",
-              flexDirection: "column-reverse",
-              justifyContent: "flex-start",
-              alignItems: "center",
-              padding: "10px",
-              position: "relative",
-            }}
-          >
-            {tower.map((disk, diskIndex) => (
-              <div
-                key={diskIndex}
-                style={{
-                  width: `${disk * 29.5}px`, // Width based on disk size
-                  height: "25px", // Fixed height of the disk
-                  backgroundColor: "#2196f3",
-                  borderRadius: "6px",
-                  marginBottom: "0", // No vertical margin
-                  textAlign: "center",
-                  color: "white",
-                  border: "1px solid " + "#002D62",
-                  transition: "all 0.7s ease-in-out",
-                  position: "absolute",
-                  bottom: `${diskIndex * 22}px`, // Adjust for height of the disks + margin
-                  zIndex: 1, // Ensure disks are on top
-                }}
-              >
-                {disk}
-              </div>
-            ))}
-          </div>
-        ))}
-      </div>
+    
+    <div className='cont'>
+      
+      <div className="hanoi-container">
+        <style>{`
+          .cont {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: white;
+            border-radius: 16px;
+          }
+          .hanoi-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f2f5;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+            padding: 30px;
+            width: 100%;
+            max-width: 550px; 
+          }
 
-      {/* Display Total Steps */}
-      <p style={{ color: "#fff", marginBottom: "20px" }}>
-        Total steps required to solve: {totalMoves}
-      </p>
+          h2 {
+            font-size: 36px;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 20px;
+            text-align: center;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+          }
 
-      {/* Buttons for control */}
-      <div>
-        <button onClick={previousMove} disabled={currentMoveIndex === 0} style={{ padding: "10px 20px", backgroundColor: currentMoveIndex === 0 ? "#ccc" : "#333", color: "#fff", border: "none", cursor: currentMoveIndex === 0 ? "not-allowed" : "pointer", marginRight: "10px" }}>
-          Previous
-        </button>
+          .hanoi-towers {
+            display: flex;
+            justify-content: space-between; 
+            width: 100%;
+            margin-bottom: 20px;
+          }
 
-        <button onClick={nextMove} disabled={currentMoveIndex === moves.length} style={{ padding: "10px 20px", backgroundColor: currentMoveIndex === moves.length ? "#ccc" : "#333", color: "#fff", border: "none", cursor: currentMoveIndex === moves.length ? "not-allowed" : "pointer", marginRight: "10px" }}>
-          Next
-        </button>
+          .hanoi-tower {
+            width: 150px;
+            height: 300px;
+            background-color: #111827;
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            margin: 0 10px;
+          }
 
-        <button onClick={retry} style={{ padding: "10px 20px", backgroundColor: "#007bff", color: "#fff", border: "none", cursor: "pointer" }}>
-          Retry
-        </button>
-      </div>
-    </div>
-  );
-};
+          .hanoi-disk {
+            background-color: #4caf50;
+            color: white;
+            padding: 12px;
+            margin: 5px 0;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+          }
 
-const MonoStack = () => {
-  return (
-    <div style={{ padding: "20px" }}>
-      <h1>Tower of Hanoi</h1>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <div style={{ flex: 1, marginRight: "20px" }}>
-          <h2>Overview</h2>
-          <p>
-            The Tower of Hanoi is a classic mathematical puzzle that involves three rods and a number of disks of different sizes. The objective is to move the entire stack of disks from one rod to another, following specific rules. This problem is often used to illustrate recursion in programming and algorithm design.
-          </p>
+          .hanoi-info {
+            color: #999;
+            font-size: 16px;
+            margin-bottom: 20px;
+          }
 
-          <h2>Problem Description</h2>
-          <p>
-            <ol>
-              <li>
-                Initial Setup: The disks are stacked in ascending order on one rod (smallest on top).
-              </li>
-              <li>
-                Objective: Move the stack of disks to another rod, following these rules:
-                <ul>
-                  <li>Only one disk can be moved at a time.</li>
-                  <li>Each move consists of taking the upper disk from one of the stacks and placing it on top of another stack.</li>
-                  <li>No larger disk may be placed on top of a smaller disk.</li>
-                </ul>
-              </li>
-            </ol>
-          </p>
+          .hanoi-controls {
+            display: flex;
+            justify-content: space-between; 
+            width: 100%; 
+            margin-top: 10px;
+          }
 
-          <h2>How it Works?</h2>
-          <p>The solution to the Tower of Hanoi problem can be achieved using a recursive algorithm. Here’s a step-by-step explanation:</p>
-          <ol>
-            <li>Move n-1 disks from the source rod to the auxiliary rod, using the destination rod as a temporary holding area.</li>
-            <li>Move the nth disk from the source rod to the destination rod.</li>
-            <li>Move the n-1 disks that were left on the auxiliary rod to the destination rod, using the source rod as a temporary holding area.</li>
-          </ol>
+          button {
+            padding: 12px 20px;
+            font-size: 16px;
+            background-color: #111827;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+            flex: 1; 
+            margin: 0 5px;
+          }
 
-          <h2>Time Complexity</h2>
-          <p>The time complexity of the Tower of Hanoi problem is O(2^n) where n is the number of disks. This is because each move doubles the number of moves required for the next disk.</p>
+          button:disabled {
+            cursor: not-allowed;
+            background-color: #555;
+            color: #ccc;
+          }
 
-          <h2>Variants</h2>
-          <ul>
-            <li>Multiple Rods: The puzzle can be modified to include more than three rods, which can change the strategy and potentially reduce the number of moves required to solve the puzzle.</li>
-          </ul>
+          button:not(:disabled):hover {
+            transform: scale(1.05);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+          }
+
+          .hanoi-controls button:nth-child(1):not(:disabled):hover {
+            background-color: #4caf50; 
+          }
+
+          .hanoi-controls button:nth-child(2):not(:disabled):hover {
+            background-color: #4caf50; 
+          }
+
+          .hanoi-controls button:nth-child(3):not(:disabled):hover {
+            background-color: #f44336; 
+          }
+        `}</style>
+
+        <h2>Tower of Hanoi</h2>
+        <div className="hanoi-towers">
+          {towers.map((tower, towerIndex) => (
+            <div key={towerIndex} className="hanoi-tower">
+              {tower.map((disk, diskIndex) => (
+                <div
+                  key={diskIndex}
+                  className="hanoi-disk"
+                  style={{ width: `${disk * 30}px` }} // Dynamic width based on disk size
+                >
+                  {disk}
+                </div>
+              ))}
+            </div>
+          ))}
         </div>
-        <div style={{ flex: 1 }}>
-          <TowerOfHanoi numDisks={4} />
+        <p className="hanoi-info">
+          Total steps required to solve: {totalMoves}
+        </p>
+        <p className="hanoi-info">
+          Steps left: {totalMoves - currentMoveIndex}
+        </p>
+
+        <div className="hanoi-controls">
+          <button onClick={previousMove} disabled={currentMoveIndex === 0}>
+            Previous
+          </button>
+          <button onClick={nextMove} disabled={currentMoveIndex === moves.length}>
+            Next
+          </button>
+          <button onClick={retry}>
+            Retry
+          </button>
         </div>
       </div>
     </div>
