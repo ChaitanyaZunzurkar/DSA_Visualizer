@@ -73,162 +73,160 @@ const MonoStack = ({ numDisks = 4 }) => {
   const totalMoves = Math.pow(2, numDisks) - 1;
 
   return (
-    
-    <div className='cont'>
-      
-      <div className="hanoi-container">
-        <style>{`
-          .cont {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background-color: white;
-            border-radius: 16px;
-          }
-          .hanoi-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-color: #f0f2f5;
-            border-radius: 16px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
-            padding: 30px;
-            width: 100%;
-            max-width: 550px; 
-          }
+    <div className="monoStackContainer"> {/* Identifiable container for MonoStack */}
+      <div className='cont'>
+        <div className="hanoi-container">
+          <style>{`
+            .cont {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+            }
+            .hanoi-container {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              background-color: #f0f2f5;
+              border-radius: 16px;
+              box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+              padding: 30px;
+              width: 100%;
+              max-width: 550px; 
+            }
 
-          h2 {
-            font-size: 36px;
-            font-weight: 600;
-            color: #1f2937;
-            margin-bottom: 20px;
-            text-align: center;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-          }
+            h2 {
+              font-size: 36px;
+              font-weight: 600;
+              color: #1f2937;
+              margin-bottom: 20px;
+              text-align: center;
+              letter-spacing: 1px;
+              text-transform: uppercase;
+            }
 
-          .hanoi-towers {
-            display: flex;
-            justify-content: space-between; 
-            width: 100%;
-            margin-bottom: 20px;
-          }
+            .hanoi-towers {
+              display: flex;
+              justify-content: space-between; 
+              width: 100%;
+              margin-bottom: 20px;
+            }
 
-          .hanoi-tower {
-            width: 150px;
-            height: 300px;
-            background-color: #111827;
-            display: flex;
-            flex-direction: column-reverse;
-            justify-content: flex-start;
-            align-items: center;
-            padding: 10px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            margin: 0 10px;
-          }
+            .hanoi-tower {
+              width: 150px;
+              height: 300px;
+              background-color: #111827;
+              display: flex;
+              flex-direction: column-reverse;
+              justify-content: flex-start;
+              align-items: center;
+              padding: 10px;
+              border-radius: 12px;
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+              margin: 0 10px;
+            }
 
-          .hanoi-disk {
-            background-color: #4caf50;
-            color: white;
-            padding: 12px;
-            margin: 5px 0;
-            border-radius: 8px;
-            font-weight: bold;
-            text-align: center;
-            width: 100%;
-            box-sizing: border-box;
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-          }
+            .hanoi-disk {
+              background-color: #4caf50;
+              color: white;
+              padding: 12px;
+              margin: 5px 0;
+              border-radius: 8px;
+              font-weight: bold;
+              text-align: center;
+              width: 100%;
+              box-sizing: border-box;
+              display: flex; 
+              justify-content: center; 
+              align-items: center; 
+            }
 
-          .hanoi-info {
-            color: #999;
-            font-size: 16px;
-            margin-bottom: 20px;
-          }
+            .hanoi-info {
+              color: #999;
+              font-size: 16px;
+              margin-bottom: 20px;
+            }
 
-          .hanoi-controls {
-            display: flex;
-            justify-content: space-between; 
-            width: 100%; 
-            margin-top: 10px;
-          }
+            .hanoi-controls {
+              display: flex;
+              justify-content: space-between; 
+              width: 100%; 
+              margin-top: 10px;
+            }
 
-          button {
-            padding: 12px 20px;
-            font-size: 16px;
-            background-color: #111827;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
-            flex: 1; 
-            margin: 0 5px;
-          }
+            /* Unique class for MonoStack buttons */
+            .monoStackButton {
+              padding: 12px 20px;
+              font-size: 16px;
+              background-color: #111827;
+              color: white;
+              border: none;
+              border-radius: 8px;
+              cursor: pointer;
+              transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+              flex: 1; 
+              margin: 0 5px;
+            }
 
-          button:disabled {
-            cursor: not-allowed;
-            background-color: #555;
-            color: #ccc;
-          }
+            .monoStackButton:disabled {
+              cursor: not-allowed;
+              background-color: #555;
+              color: #ccc;
+            }
 
-          button:not(:disabled):hover {
-            transform: scale(1.05);
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-          }
+            .monoStackButton:not(:disabled):hover {
+              transform: scale(1.05);
+              box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            }
 
-          .hanoi-controls button:nth-child(1):not(:disabled):hover {
-            background-color: #4caf50; 
-          }
+            .hanoi-controls .monoStackButton:nth-child(1):not(:disabled):hover {
+              background-color: #4caf50; 
+            }
 
-          .hanoi-controls button:nth-child(2):not(:disabled):hover {
-            background-color: #4caf50; 
-          }
+            .hanoi-controls .monoStackButton:nth-child(2):not(:disabled):hover {
+              background-color: #4caf50; 
+            }
 
-          .hanoi-controls button:nth-child(3):not(:disabled):hover {
-            background-color: #f44336; 
-          }
-        `}</style>
+            .hanoi-controls .monoStackButton:nth-child(3):not(:disabled):hover {
+              background-color: #f44336; 
+            }
+          `}</style>
 
-        <h2>Tower of Hanoi</h2>
-        <div className="hanoi-towers">
-          {towers.map((tower, towerIndex) => (
-            <div key={towerIndex} className="hanoi-tower">
-              {tower.map((disk, diskIndex) => (
-                <div
-                  key={diskIndex}
-                  className="hanoi-disk"
-                  style={{ width: `${disk * 30}px` }} // Dynamic width based on disk size
-                >
-                  {disk}
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
-        <p className="hanoi-info">
-          Total steps required to solve: {totalMoves}
-        </p>
-        <p className="hanoi-info">
-          Steps left: {totalMoves - currentMoveIndex}
-        </p>
+          <h2>Tower of Hanoi</h2>
+          <div className="hanoi-towers">
+            {towers.map((tower, towerIndex) => (
+              <div key={towerIndex} className="hanoi-tower">
+                {tower.map((disk, diskIndex) => (
+                  <div
+                    key={diskIndex}
+                    className="hanoi-disk"
+                    style={{ width: `${disk * 30}px` }} // Dynamic width based on disk size
+                  >
+                    {disk}
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+          <p className="hanoi-info">
+            Total steps required to solve: {totalMoves}
+          </p>
+          <p className="hanoi-info">
+            Steps left: {totalMoves - currentMoveIndex}
+          </p>
 
-        <div className="hanoi-controls">
-          <button onClick={previousMove} disabled={currentMoveIndex === 0}>
-            Previous
-          </button>
-          <button onClick={nextMove} disabled={currentMoveIndex === moves.length}>
-            Next
-          </button>
-          <button onClick={retry}>
-            Retry
-          </button>
+          <div className="hanoi-controls">
+            <button className="monoStackButton" onClick={previousMove} disabled={currentMoveIndex === 0}>
+              Previous
+            </button>
+            <button className="monoStackButton" onClick={nextMove} disabled={currentMoveIndex === moves.length}>
+              Next
+            </button>
+            <button className="monoStackButton" onClick={retry}>
+              Retry
+            </button>
+          </div>
         </div>
       </div>
     </div>

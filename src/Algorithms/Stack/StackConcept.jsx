@@ -9,22 +9,32 @@ import rep from '../../assets/StackImages/representation.webp';
 
 const StackConcept = () => {
     const headingStyle = {
-        color: '#5bbaea',
-        marginBottom: '10px',
-        borderBottom: '2px solid #4CAF50',
-        paddingBottom: '5px',
-        textAlign: 'center',
+    marginTop: '0',
+    fontWeight: '800',
+    fontSize: '30px',
+    marginBottom: '10px',
     };
 
     const subHeadingStyle = {
-        color: '#4CAF50',
-        margin: '20px 0 20px 0',
+    marginTop: '20px',
+    fontWeight: '800',
+    fontSize: '20px',
+    marginBottom: '10px',
     };
 
+    
     const listStyle = {
-        marginLeft: '20px',
-        listStyleType: 'disc',
-    };
+        
+        fontWeight: 400,
+        lineHeight: '1.6',            
+        marginBottom: '8px',          
+        color: '#333',                
+        listStyleType: 'disc',        
+        paddingLeft: '20px',          
+      };
+      
+          
+    
     const ing = {
         maxWidth: '100%',
         marginBottom: '20px',
@@ -39,19 +49,33 @@ const StackConcept = () => {
         alignItems: 'center',
         
     };
+    const content={
+    marginLeft: '20px',
+    padding: '20px',
+    fontSize: '18px'
+    };
+    const sub={
+    marginTop: '20px',
+    fontWeight: '700',
+    fontSize: '19px',
+    marginBottom: '10px',
+    };
+    const para={
+        fontWeight: '400',
+    }
 
     return (
-        <div>
+        <div style={content}>
             <h1 style={headingStyle}>Stack Data Structure</h1>
             <h2 style={subHeadingStyle}>What is a Stack?</h2>
-            <p>
+            <p style ={para}>
                 A Stack is a linear data structure that follows a particular order in which the operations are performed. The order may be LIFO(Last In First Out) or FILO(First In Last Out). LIFO implies that the element that is inserted last comes out first and FILO implies that the element that is inserted first comes out last.
             </p>
             
             <img src={stack} alt=""  style={ing}/>
 
             <h2 style={subHeadingStyle}>What is Stack Data Structure?</h2>
-            <p>
+            <p style={para}>
                 <ul style={listStyle}>
                     <li>
                         Stack is a linear data structure based on LIFO(Last In First Out) principle in which the insertion of a new element and removal of an existing element takes place at the same end represented as the top of the stack.
@@ -95,10 +119,10 @@ const StackConcept = () => {
             <br />
 
             <h3 style={subHeadingStyle}>Push Operation in Stack Data Structure:</h3>
-            <p>
+            <p styles={para}>
                 The push operation adds a new element to the top of the stack. The top element of the stack remains unchanged. The time complexity of the push operation in a stack is O(1). If the stack is full, then it is said to be an <b>Overflow condition</b>.
             </p>
-            <h4 style={subHeadingStyle}>Algorithm for Push Operation:</h4>
+            <h4 style={sub}>Algorithm for Push Operation:</h4>
             <ul style={listStyle}>
                 <li>Before pushing the element to the stack, we check if the stack is full.</li>
                 <li>If the stack is full (top == capacity-1), then Stack Overflows and we cannot insert the element to the stack.</li>
@@ -108,10 +132,10 @@ const StackConcept = () => {
             <img src={push} alt="" style={ing}/>
 
             <h3 style={subHeadingStyle}>Pop Operation in Stack Data Structure:</h3>
-            <p>
+            <p style={para}>
                 Removes an item from the stack. The items are popped in the reversed order in which they are pushed. If the stack is empty, then it is said to be an <b>Underflow condition</b>.
             </p>
-            <h4 style={subHeadingStyle}>Algorithm for Pop Operation:</h4>
+            <h4 style={sub}>Algorithm for Pop Operation:</h4>
             <ul style={listStyle}>
                 <li>Before popping the element from the stack, we check if the stack is empty.</li>
                 <li>If the stack is empty (top == -1), then Stack Underflows and we cannot remove any element from the stack.</li>
@@ -120,10 +144,10 @@ const StackConcept = () => {
             <img src={pop} alt="" style={ing}/>
 
             <h3 style={subHeadingStyle}>Top or Peek Operation in Stack Data Structure:</h3>
-            <p>
+            <p style={para}>
                 Returns the top element of the stack.
             </p>
-            <h4 style={subHeadingStyle}>Algorithm for Top Operation:</h4>
+            <h4 style={sub}>Algorithm for Top Operation:</h4>
             <ul style={listStyle}>
                 <li>Before returning the top element from the stack, we check if the stack is empty.</li>
                 <li>If the stack is empty (top == -1), we simply print “Stack is empty”.</li>
@@ -132,10 +156,10 @@ const StackConcept = () => {
             <img src={top} alt="" style={ing}/>
 
             <h3 style={subHeadingStyle}>isEmpty Operation in Stack Data Structure:</h3>
-            <p>
+            <p style={para}>
                 Returns true if the stack is empty, else false.
             </p>
-            <h4 style={subHeadingStyle}>Algorithm for isEmpty Operation:</h4>
+            <h4 style={sub}>Algorithm for isEmpty Operation:</h4>
             <ul style={listStyle}>
                 <li>Check for the value of top in stack.</li>
                 <li>If (top == -1), then the stack is empty so return true.</li>
@@ -144,10 +168,10 @@ const StackConcept = () => {
             <img src={isEmpty} alt="" style={ing} />
 
             <h3 style={subHeadingStyle}>isFull Operation in Stack Data Structure:</h3>
-            <p>
+            <p style={para}>
                 Returns true if the stack is full, else false.
             </p>
-            <h4 style={subHeadingStyle}>Algorithm for isFull Operation:</h4>
+            <h4 style={sub}>Algorithm for isFull Operation:</h4>
             <ul style={listStyle}>
                 <li>Check for the value of top in stack.</li>
                 <li>If (top == capacity-1), then the stack is full so return true.</li>
@@ -160,17 +184,17 @@ const StackConcept = () => {
 
             <h2 style={subHeadingStyle}>Advantages of Stack Data Structure:</h2>
             <ul style={listStyle}>
-                <li>Simplicity: Stacks are a simple and easy-to-understand data structure, making them suitable for a wide range of applications.</li>
-                <li>Efficiency: Push and pop operations on a stack can be performed in constant time (O(1)), providing efficient access to data.</li>
-                <li>Last-in, First-out (LIFO): Stacks follow the LIFO principle, ensuring that the last element added to the stack is the first one to be removed.</li>
-                <li>Memory management: Stacks are used in memory management and function calls, making them essential in programming languages.</li>
+                <li><b>Simplicity:</b> Stacks are a simple and easy-to-understand data structure, making them suitable for a wide range of applications.</li>
+                <li><b>Efficiency:</b> Push and pop operations on a stack can be performed in constant time (O(1)), providing efficient access to data.</li>
+                <li><b>Last-in, First-out (LIFO):</b> Stacks follow the LIFO principle, ensuring that the last element added to the stack is the first one to be removed.</li>
+                <li><b>Memory management:</b> Stacks are used in memory management and function calls, making them essential in programming languages.</li>
             </ul>
 
             <h2 style={subHeadingStyle}>Disadvantages of Stack Data Structure:</h2>
             <ul style={listStyle}>
-                <li>Limited access: Stacks do not allow random access to elements; only the top element can be accessed directly.</li>
-                <li>Fixed size: In the case of fixed-size stacks, they may run out of space, leading to overflow errors.</li>
-                <li>Not suitable for all applications: Stacks may not be suitable for all data processing needs, especially when more complex operations are required.</li>
+                <li><b>Limited access:</b> Stacks do not allow random access to elements; only the top element can be accessed directly.</li>
+                <li><b>Fixed size:</b> In the case of fixed-size stacks, they may run out of space, leading to overflow errors.</li>
+                <li><b>Not suitable for all applications:</b> Stacks may not be suitable for all data processing needs, especially when more complex operations are required.</li>
             </ul>
         </div>
     );
