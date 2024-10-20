@@ -43,17 +43,18 @@ const QueueConcept = () => {
     };
 
     const headingStyle = {
-        color: '#5bbaea',
+        marginTop: '0',
+        fontWeight: '800',
+        fontSize: '30px',
         marginBottom: '10px',
-        borderBottom: '2px solid #4CAF50',
-        paddingBottom: '5px',
-        textAlign: 'center',
     };
 
     const subHeadingStyle = {
-        color: '#4CAF50',
-        margin: '20px 0',
-    };
+        marginTop: '20px',
+        fontWeight: '800',
+        fontSize: '20px',
+        marginBottom: '10px',
+        };
 
     const h3HeadingStyle = {
         color: '#4CAF50',
@@ -61,8 +62,12 @@ const QueueConcept = () => {
     };
 
     const listStyle = {
-        marginLeft: '20px',
-        listStyleType: 'disc',
+        fontWeight: 400,
+        lineHeight: '1.6',            
+        marginBottom: '8px',          
+        color: '#333',                
+        listStyleType: 'disc',        
+        paddingLeft: '20px',          
     };
 
     const ing = {
@@ -92,6 +97,12 @@ const QueueConcept = () => {
         
         
     };
+    const sub={
+        marginTop: '20px',
+        fontWeight: '700',
+        fontSize: '19px',
+        marginBottom: '10px',
+        };
 
     const buttonStyle = {
         margin: '5px',
@@ -103,17 +114,25 @@ const QueueConcept = () => {
         borderRadius: '5px',
         fontSize: '16px',
     };
+    const content={
+        marginLeft: '20px',
+        padding: '20px',
+        fontSize: '18px'
+        };
+        const para={
+            fontWeight: '400',
+        }
 
     return (
-        <div>
+        <div style={content}>
             <h1 style={headingStyle}>Queue Data Structure</h1>
-            <p>Queue Data Structure is a linear data structure that follows FIFO (First In First Out) Principle, so the first element inserted is the first to be popped out. In this article, we will cover all the basics of Queue, Operations on Queue, its implementation, advantages, disadvantages which will help you solve all the problems based on Queue.</p>
+            <p style ={para}>Queue Data Structure is a linear data structure that follows FIFO (First In First Out) Principle, so the first element inserted is the first to be popped out. In this article, we will cover all the basics of Queue, Operations on Queue, its implementation, advantages, disadvantages which will help you solve all the problems based on Queue.</p>
 
             <h2 style={subHeadingStyle}>What is Queue Data Structure?</h2>
-            <p>Queue Data Structure is a linear data structure that is open at both ends and the operations are performed in First In First Out (FIFO) order.</p>
+            <p style ={para}>Queue Data Structure is a linear data structure that is open at both ends and the operations are performed in First In First Out (FIFO) order.</p>
 
             <img src={img1} alt="Queue" style={ing} />
-            <h3 style={h3HeadingStyle}>FIFO Principle of Queue Data Structure:</h3>
+            <h3 style={sub}>FIFO Principle of Queue Data Structure:</h3>
             <ul style={listStyle}>
                 <li>A Queue is like a line waiting to purchase tickets, where the first person in line is the first person served.</li>
                 <li>The first entry removed is called the front of the queue, and the last entry added is called the rear.</li>
@@ -141,8 +160,8 @@ const QueueConcept = () => {
                 <li><b>isFull:</b> Checks if the queue is full.</li>
             </ul>
 
-            <h3>1. Enqueue Operation:</h3>
-            <p>Enqueue adds an element to the end of the queue. The following steps outline the algorithm:</p>
+            <h3 style={sub}>1. Enqueue Operation:</h3>
+            <p style ={para}>Enqueue adds an element to the end of the queue. The following steps outline the algorithm:</p>
             <ul style={listStyle}>
                 <li><b>Step 1:</b> Check if the queue is full.</li>
                 <li><b>Step 2:</b> Increment the rear pointer and add the element at the rear.</li>
@@ -156,8 +175,8 @@ const QueueConcept = () => {
                 </div>
             </div>
 
-            <h3>2. Dequeue Operation:</h3>
-            <p>Dequeue removes an element from the front of the queue. The following steps outline the algorithm:</p>
+            <h3 style={sub}>2. Dequeue Operation:</h3>
+            <p style ={para}>Dequeue removes an element from the front of the queue. The following steps outline the algorithm:</p>
             <ul style={listStyle}>
                 <li><b>Step 1:</b> Check if the queue is empty.</li>
                 <li><b>Step 2:</b> Increment the front pointer and remove the element.</li>
@@ -170,17 +189,17 @@ const QueueConcept = () => {
                     <button onClick={nextDequeueImage} style={buttonStyle}>Next Dequeue</button>
                 </div>
             </div>
-             <h3>3. Front Operation:</h3>
-            <p>Returns the front element without removing it.</p>
+             <h3 style={sub}>3. Front Operation:</h3>
+            <p style ={para}>Returns the front element without removing it.</p>
 
-            <h3>4. Rear Operation:</h3>
-            <p>Returns the last element (rear) without removing it.</p>
+            <h3 style={sub}>4. Rear Operation:</h3>
+            <p style ={para}>Returns the last element (rear) without removing it.</p>
 
-            <h3>5. isEmpty Operation:</h3>
-            <p>Returns true if the queue is empty, false otherwise.</p>
+            <h3 style={sub}>5. isEmpty Operation:</h3>
+            <p style ={para}>Returns true if the queue is empty, false otherwise.</p>
 
-            <h3>6. isFull Operation:</h3>
-            <p>Returns true if the queue is full, false otherwise.</p>
+            <h3 style={sub}>6. isFull Operation:</h3>
+            <p style ={para}>Returns true if the queue is full, false otherwise.</p>
 
             <h2 style={subHeadingStyle}>Applications of Queue Data Structure:</h2>
             <ul style={listStyle}>

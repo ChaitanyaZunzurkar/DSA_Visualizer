@@ -1,31 +1,31 @@
 const QueueStack = () => {
     const containerStyle = {
-        padding: '20px',
-        backgroundColor: '#f9f9f9',
-        borderRadius: '8px',
-        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-        maxWidth: '100vw',
-        height:'90vh',
-        margin: '20px auto',
-        fontFamily: 'Arial, sans-serif'
+        marginLeft: '20px',
+    padding: '20px',
+    fontSize: '18px'
     };
 
     const headingStyle = {
-        color: '#5bbaea',
-        marginBottom: '10px',
-        borderBottom: '2px solid #4CAF50',
-        paddingBottom: '5px',
-        textAlign : 'center',
+        marginTop: '0',
+    fontWeight: '800',
+    fontSize: '30px',
+    marginBottom: '10px',
     };
 
     const subHeadingStyle = {
-        color: '#4CAF50',
-        margin: '20px 0 20px 0',
+        marginTop: '20px',
+    fontWeight: '800',
+    fontSize: '20px',
+    marginBottom: '10px',
     };
 
     const listStyle = {
-        marginLeft: '20px',
-        listStyleType: 'disc',
+        fontWeight: 400,
+        lineHeight: '1.6',            
+        marginBottom: '8px',          
+        color: '#333',                
+        listStyleType: 'disc',        
+        paddingLeft: '20px', 
     };
 
     return (
