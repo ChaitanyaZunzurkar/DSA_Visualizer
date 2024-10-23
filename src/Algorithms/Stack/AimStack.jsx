@@ -1,9 +1,12 @@
+import React, { useEffect } from 'react';
+
 const AimStack = () => {
     const containerStyle = {
         marginLeft: '20px',
         padding: '20px',
         fontSize: '18px',
         height:'100vh',
+        
     };
 
     const headingStyle = {
@@ -23,11 +26,11 @@ const AimStack = () => {
 
     const listStyle = {
         fontWeight: 400,
-    lineHeight: '1.6',
-    marginBottom: '8px',
-    color: '#333',
-    listStyleType: 'disc',
-    paddingLeft: '20px',
+        lineHeight: '1.6',
+        marginBottom: '8px',
+        color: '#333',
+        listStyleType: 'disc',
+        paddingLeft: '20px',
     };
 
     const contentStyle = {
@@ -35,6 +38,8 @@ const AimStack = () => {
         padding: '20px',
         fontSize: '18px',
     };
+
+   
 
     return (
         <div style={containerStyle}>
