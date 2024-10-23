@@ -12,9 +12,9 @@ const headingStyle = {
 
 const subHeadingStyle = {
     marginTop: '20px',
-    fontWeight: '800',
-    fontSize: '20px',
-    marginBottom: '10px',
+        fontWeight: '800',
+        fontSize: '20px',
+        marginBottom: '20px',
 };
 
 const listStyle = {

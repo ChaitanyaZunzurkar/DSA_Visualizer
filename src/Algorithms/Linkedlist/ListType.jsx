@@ -250,7 +250,7 @@ const subHeadingStyle = {
     marginBottom: '20px',
     fontWeight: '800',
     fontSize: '20px',
-    marginBottom: '10px',
+   
 };
 
 const listStyle = {
