@@ -262,7 +262,6 @@ const QueueImplementation = () => {
             10 dequeued from queue<br />
             Front item is 20<br />
             Rear item is 40
-    
             </div>
             
             
