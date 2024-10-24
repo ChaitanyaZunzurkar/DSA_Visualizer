@@ -1,99 +1,170 @@
-import { Link } from 'react-router-dom';
-import img4 from '../assets/CourseBoximg/img4.jpg';
+import React from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-// Course data array with images and descriptions
-const courses = [
-  { id: 1, title: "DATA STRUCTURE 1", description: <ul><li>Sorting</li><li>Stack</li><li>Queue</li></ul>, image: img4 },
-  { id: 2, title: "DATA STRUCTURE 2", description: <ul><li>Hashing</li><li>Linked List</li><li>Trees</li></ul>, image: img4 },
-  { id: 3, title: "MACHINE LEARNING", description: "ML Basics", image: img4 },
-  { id: 4, title: "DEEP LEARNING", description: "DL Basics", image: img4 },
+const courseData = [
+  {
+    id: 1,
+    title: "Data Structures",
+    price: "Fundamentals",
+    description: "Understand stacks, queues and linked lists for effective data handling.",
+    link: "/course/beginner",
+    items: ["Stacks", "Queues", "Linked Lists"], // List for Fundamentals course
+  },
+  {
+    id: 2,
+    title: "Data Structures",
+    price: "Search & Sort",
+    description: "Learn key algorithms for efficient data searching and sorting.",
+    link: "/course/intermediate",
+    items: ["Binary Search", "Quick Sort", "Merge Sort"], // List for Search & Sort course
+  },
+  {
+    id: 3,
+    title: "Data Structures",
+    price: "Advanced",
+    description: "Dive into trees, graphs, and hashing for complex problem-solving.",
+    link: "/course/advanced",
+    items: ["Binary Trees", "Graphs", "Hash Tables"], // List for Advanced course
+  },
 ];
 
-export default function Courses() {
+const Courses = () => {
   return (
-    <div className="flex flex-wrap justify-center px-60">
-      {courses.map(course => (
-        <Link to={`/courses/${course.id}`} key={course.id} className="relative flex flex-col w-1/4 rounded-xl bg-[#575761] bg-clip-border text-white shadow-md m-20">
-          <div className="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600">
-            <img src={course.image} alt={course.title} className="object-cover w-full h-full" />
-          </div>
-          <div className="p-6">
-            <h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-white ">
-              {course.title}
-            </h5>
-            <p className="block font-sans text-base font-light leading-relaxed text-inherit  text-white antialiased">
-              {course.description}
-            </p>
-          </div>
-          <div className="p-6 pt-0">
-            <button
-              data-ripple-light="true"
-              type="button"
-              className="select-none border rounded-lg bg-blue-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-            >
-              Get started &gt; 
-            </button>
-          </div>
-        </Link>
+    <StyledWrapper>
+      {courseData.map((course) => (
+        <section className="eduzone-course-card" key={course.id}>
+          <header>
+            <h2 className="eduzone-course-title">{course.title}</h2>
+            <h1 className="eduzone-course-price">{course.price}</h1>
+          </header>
+          <p className="eduzone-course-desc">{course.description}</p>
+          <ul className="eduzone-course-lists">
+            {course.items.map((item, index) => (
+              <li className="eduzone-course-list" key={index}>
+                <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    clipRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+                <p>{item}</p>
+              </li>
+            ))}
+          </ul>
+          <Link to={course.link} className="eduzone-course-action">
+            Get Started
+          </Link>
+        </section>
       ))}
-    </div>
+    </StyledWrapper>
   );
+};
+
+const StyledWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem; 
+  height: 100vh; /* Add padding around the wrapper */
+  background: #121212; /* Fallback for browsers that don't support gradients */
+  background: linear-gradient(
+    135deg,
+    #121212 25%,
+    #1a1a1a 25%,
+    #1a1a1a 50%,
+    #121212 50%,
+    #121212 75%,
+    #1a1a1a 75%,
+    #1a1a1a
+  );
+  background-size: 40px 40px;
+
+  /* Animation */
+  animation: move 4s linear infinite;
 }
 
-// import styles from '../Stylesheets/CourseBox.module.css'; // Adjust the path as necessary
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
+}
 
-// // Card data array
-// const cards = [
-//   {
-//     id: 1,
-//     header: '',
-//     title: "How to make this material card?",
-//     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi.",
-//     tags: "#HTML #CSS",
-//     buttonText: "Get started",
-//   },
-//   {
-//     id: 2,
-//     header: '',
-//     title: "How to make this material card?",
-//     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi.",
-//     tags: "#HTML #CSS",
-//     buttonText: "Get started",
-//   },
-//   {
-//     id: 3,
-//     header: '',
-//     title: "How to make this material card?",
-//     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi.",
-//     tags: "#HTML #CSS",
-//     buttonText: "Get started",
-//   },
-//   {
-//     id: 4,
-//     header: '',
-//     title: "How to make this material card?",
-//     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi.",
-//     tags: "#HTML #CSS",
-//     buttonText: "Get started",
-//   }
-// ];
+  .eduzone-course-card {
+    flex: 1 1 300px; /* Flex-grow, flex-shrink, flex-basis */
+    max-width: 320px; /* Maximum width for cards */
+    border-radius: 1rem;
+    background-color: #020617;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column; /* Ensure vertical stacking */
+    justify-content: space-between; /* Space out elements evenly */
+    height: 50%; 
+  }
 
-// export default function MaterialCard() {
-//   return (
-//     <div className={styles.container}>
-//       {cards.map(card => (
-//         <div key={card.id} className={styles.card}>
-//           <div className={styles.header}></div>
-//           <div className={styles.info}>
-//             <p className={styles.title}>{card.title}</p>
-//             <p>{card.description}</p>
-//           </div>
-//           <div className={styles.footer}>
-//             <p className={styles.tag}>{card.tags}</p>
-//             <button type="button" className={styles.action}>{card.buttonText}</button>
-//           </div>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// }
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align header items to the left */
+  }
+
+  .eduzone-course-title {
+    font-size: 1.5rem; /* Increase font size for better readability */
+    line-height: 2rem;
+    font-weight: 700;
+    color: #f8fafc90;
+  }
+
+  .eduzone-course-price {
+    font-size: 2.5rem; /* Adjusted font size for price */
+    line-height: 1;
+    font-weight: 700;
+    color: #f8fafc;
+  }
+
+  .eduzone-course-desc {
+    margin: 0.75rem 0;
+    color: #f8fafc90;
+    flex-grow: 1; /* Allow description to grow */
+  }
+
+  .eduzone-course-lists {
+    margin-bottom: 1rem;
+    color: #f8fafc90;
+  }
+
+  .eduzone-course-list {
+    display: flex;
+    align-items: center; /* Center the icon and text */
+    margin-bottom: 0.5rem;
+  }
+
+  .eduzone-course-list svg {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 0.5rem;
+    color: #0ea5e9;
+  }
+
+  .eduzone-course-action {
+    display: inline-block;
+    background-color: #0ea5e9;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    color: #f8fafc;
+    text-align: center;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+    
+    &:hover {
+      background-color: #0284c7;
+    }
+  }
+`;
+
+export default Courses;
