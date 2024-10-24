@@ -52,6 +52,8 @@ import SortingVisualization from './Algorithms/Sorting/Visualization_Sort.jsx';
 // graphs page components
 import GraphsPage from './Algorithms/Dijkstra/DijkstraPage.jsx';
 import GraphsAim from './Algorithms/Dijkstra/DijkstraAim.jsx';
+import GraphsConcept from './Algorithms/Dijkstra/DijkstraConcept.jsx';
+import GraphsAlgorithm from './Algorithms/Dijkstra/DijkstraAlgorithm.jsx';
 import GraphsTest from './Algorithms/Dijkstra/DijkstraTest.jsx';
 import GraphsTutorials from './Algorithms/Dijkstra/DijkstraTutorials.jsx';
 import GraphsArticles from './Algorithms/Dijkstra/DijkstraArticle.jsx';
@@ -128,6 +130,8 @@ function App() {
 
           <Route path="/courses/:courseId/Graphs" element={<GraphsPage />}>
             <Route index element={<GraphsAim />} />
+            <Route path="concept" element={<GraphsConcept/>} />
+            <Route path="Algorithm" element={<GraphsAlgorithm/>} />
             <Route path="visualization" element={<GraphsVisualization />} />
             <Route path="test" element={<GraphsTest />} />
             <Route path="articles" element={<GraphsArticles />} />
