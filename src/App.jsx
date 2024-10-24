@@ -62,7 +62,7 @@ import GraphsVisualization from './Algorithms/Dijkstra/DijkstraVisualization.jsx
 // queues page components
 import QueuesPage from './Algorithms/Queue/QueuePage.jsx';
 import QueuesAim from './Algorithms/Queue/AimQueue.jsx';
-import QueuesTest from './Algorithms/Queue/QueueTest.jsx';
+import QueuesTest from './Algorithms/Queue/TestQueue.jsx';
 import QueuesTypes from './Algorithms/Queue/QueueTypes.jsx';
 import QueuesConcepts from './Algorithms/Queue/QueueConcept.jsx';
 import QueuesVisualization from './Algorithms/Queue/QueueVisualization';
