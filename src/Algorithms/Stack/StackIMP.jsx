@@ -172,7 +172,7 @@ int main() {
         marginTop: '20px',
         fontWeight: '800',
         fontSize: '20px',
-        marginBottom: '10px',
+        marginBottom: '20px',
     };
 
     const listStyle = {

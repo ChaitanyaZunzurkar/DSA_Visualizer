@@ -1,176 +1,177 @@
-import React from "react";
 
+
+import React from 'react';
+import img from '../../assets/LinkedListImages/linkedlist.webp';
+import arlin from '../../assets/LinkedListImages/arrlin.png';
+import tc from '../../assets/LinkedListImages/tc.png';
+// Replace with actual image paths
+// import img2 from './images/singlyLinkedList.png'; 
+// import img3 from './images/doublyLinkedList.png'; 
+// import img4 from './images/circularLinkedList.png'; 
 
 const Articles = () => {
-  return (
-    <div style={{ padding: "20px", fontFamily: "Arial, sans-serif", lineHeight: "1.6" }}>
-      <h1>Introduction to Linked List – Data Structure and Algorithm Tutorials</h1>
-      <p><strong>Last Updated:</strong> 10 Sep, 2024</p>
-      
-      <h2>Table of Content</h2>
-      <ul>
-        <li><a href="#what-is-linked-list">What is a Linked List?</a></li>
-        <li><a href="#terminologies">Basic Terminologies of Linked List</a></li>
-        <li><a href="#importance">Importance of Linked List</a></li>
-        <li><a href="#types">Types of Linked List</a>
-          <ul>
-            <li><a href="#singly-linked-list">Singly Linked List</a></li>
-            <li><a href="#doubly-linked-list">Doubly Linked List</a></li>
-            <li><a href="#circular-linked-list">Circular Linked List</a></li>
-          </ul>
-        </li>
-        <li><a href="#implementation">Implementation of Linked List</a></li>
-        <li><a href="#vs-array">Linked List vs. Array</a></li>
-        <li><a href="#advantages">Advantages of Linked List</a></li>
-        <li><a href="#disadvantages">Disadvantages of Linked List</a></li>
-        <li><a href="#applications">Applications of Linked List</a></li>
-        <li><a href="#faqs">Frequently Asked Questions (FAQs) about Linked List</a></li>
-      </ul>
+    const headingStyle = {
+        marginTop: '0',
+        fontWeight: '800',
+        fontSize: '30px',
+        marginBottom: '15px',
+    };
 
-      <h3 id="what-is-linked-list">What is a Linked List?</h3>
-      <p>Linked List is a linear data structure which looks like a series of nodes, where each node has two parts: data and next pointer. Unlike Arrays, Linked List elements are not stored at a contiguous location. In the linked list there is a head pointer, which points to the first element of the linked list, and if the list is empty then it simply points to null or nothing.</p>
+    const subHeadingStyle = {
+        marginTop: '30px',
+        fontWeight: '800',
+        fontSize: '20px',
+        marginBottom: '10px',
+    };
 
-      <h3 id="terminologies">Basic Terminologies of Linked List</h3>
-      <ul>
-        <li><strong>Head:</strong> The Head of a linked list is a pointer to the first node or reference of the first node of linked list. This pointer marks the beginning of the linked list.</li>
-        <li><strong>Node:</strong> Linked List consists of a series of nodes where each node has two parts: data and next pointer.</li>
-        <li><strong>Data:</strong> Data is the part of node which stores the information in the linked list.</li>
-        <li><strong>Next pointer:</strong> Next pointer is the part of the node which points to the next node of the linked list.</li>
-      </ul>
+    const h3HeadingStyle = {
+      marginTop: '20px',
+      fontWeight: '700',
+      fontSize: '19px',
+      marginBottom: '10px',
+    };
 
-      <h3 id="importance">Importance of Linked List</h3>
-      <ul>
-        <li>Dynamic Data structure: The size of memory can be allocated or de-allocated at run time based on the operation insertion or deletion.</li>
-        <li>Ease of Insertion/Deletion: The insertion and deletion of elements are simpler than arrays since no elements need to be shifted after insertion and deletion, Just the address needed to be updated.</li>
-        <li>Efficient Memory Utilization: Linked List is a dynamic data structure, the size increases or decreases as per the requirement so this avoids the wastage of memory.</li>
-      </ul>
+    const listStyle = {
+        fontWeight: 400,
+        lineHeight: '1.6',
+        marginBottom: '8px',
+        color: '#333',
+        listStyleType: 'disc',
+        paddingLeft: '20px',
+    };
 
-      <h3 id="types">Types of Linked List</h3>
-      <h4 id="singly-linked-list">1. Singly Linked List</h4>
-      <p>Singly Linked List is a type of linked list where each node has two parts: data and next pointer. The next pointer of the last node stores null as it is the last node of the linked list and there is no next node.</p>
+    const imgStyle = {
+        maxWidth: '100%',
+        marginBottom: '20px',
+        borderRadius: '5px',
+        padding: '0px',
+        backgroundColor: '#f1f1f1',
+        boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.2)',
+        height: 'auto',
+        width: 'auto',
+    };
 
-      <pre>
-        {`// Singly linked list node in Java
-class Node {
-  int data;
-  Node next;
+    const content = {
+        marginLeft: '20px',
+        padding: '20px',
+        fontSize: '18px'
+    };
 
-  Node(int new_data) {
-    data = new_data;
-    next = null;
-  }
-}`}
-      </pre>
+    const para = {
+        fontWeight: '400',
+    };
 
-      <h4 id="doubly-linked-list">2. Doubly Linked List</h4>
-      <p>Doubly Linked List is a type of linked list where each node has three parts: data, next pointer, and previous pointer.</p>
+    return (
+        <div style={content}>
+            <h1 style={headingStyle}>Introduction to Linked List</h1>
+            {/* <p style={para}>Last Updated: 22 Oct, 2024</p> */}
+            <p style={para}>
+                A Linked List is a chain of nodes where each node contains information such as data and a pointer to the next node in the chain. It is a popular data structure with a wide range of real-world applications. Unlike arrays, linked list elements are not stored at contiguous locations. In a linked list, there is a head pointer, which points to the first element of the linked list, and if the list is empty, it simply points to null or nothing.
+            </p>
+            <p style={para}>
+                In this article, we will provide a complete introduction to Linked Lists, which will help you tackle any problem based on Linked Lists.
+            </p>
 
-      <pre>
-        {`// Doubly linked list node in Java
-class Node {
-  int data;
-  Node prev;
-  Node next;
+            <img src={img} alt="linkedlist" style={imgStyle} />
 
-  Node(int new_data) {
-    this.data = new_data;
-    this.prev = null;
-    this.next = null;
-  }
-}`}
-      </pre>
+            <h2 style={subHeadingStyle}>Basic Terminologies of Linked List</h2>
+            <ul style={listStyle}>
+                <li><b>Head:</b> The head of a linked list is a pointer to the first node or reference of the first node of the linked list. This pointer marks the beginning of the linked list.</li>
+                <li><b>Node:</b> A linked list consists of a series of nodes where each node has two parts: data and the next pointer.</li>
+                <li><b>Data:</b> Data is the part of the node that stores the information in the linked list.</li>
+                <li><b>Next Pointer:</b> The next pointer is the part of the node that points to the next node of the linked list.</li>
+            </ul>
 
-      <h4 id="circular-linked-list">3. Circular Linked List</h4>
-      <p>A circular linked list is a type of linked list in which the first and the last nodes are connected to each other to form a circle, there is no NULL at the end.</p>
+            <h2 style={subHeadingStyle}>Importance of Linked List</h2>
+            <ul style={listStyle}>
+                <li><b>Dynamic Data Structure:</b> Memory can be allocated or de-allocated at runtime based on the operations of insertion or deletion.</li>
+                <li><b>Ease of Insertion/Deletion:</b> Insertion and deletion of elements are simpler than arrays since no elements need to be shifted after insertion or deletion; just the address needs to be updated.</li>
+                <li><b>Efficient Memory Utilization:</b> As a dynamic data structure, the size increases or decreases as per the requirement, avoiding wastage of memory.</li>
+                <li><b>Implementation:</b> Various advanced data structures can be implemented using a linked list, such as stacks, queues, graphs, and hash maps.</li>
+            </ul>
 
-      <h3 id="implementation">Implementation of Linked List</h3>
-      <pre>
-        {`// Java program to show the implementation of singly linked list
-class Node {
-  int data;
-  Node next;
+            <h2 style={subHeadingStyle}>Implementations of Basic Operations on Different Types of List</h2>
+            <h3 style={h3HeadingStyle}>Singly Linked List</h3>
+            <ul style={listStyle}>
+                <li><b>Insertion:</b> Can be performed in three ways: 
+                    <ul style={listStyle}l>
+                      <li>At the Beginning</li>
+                      <li>At a Specific Location</li>
+                      <li>At the End</li>
+                    </ul> 
+                  </li>
+                <li><b>Deletion:</b> Can be performed in three ways: 
+                    <ul style={listStyle}>
+                      <li>From the Beginning</li>
+                      <li>From Specific Node</li>
+                      <li>From the End</li>
+                    </ul>
+                </li>
+                <li><b>Traverse:</b> Displays the elements of a Singly Linked List.</li>
+                <li><b>Search:</b> Determines and retrieves a specific node from anywhere in the list.</li>
+            </ul>
 
-  Node(int new_data) {
-    data = new_data;
-    next = null;
-  }
-}
+            <h3 style={h3HeadingStyle}>Doubly Linked List</h3>
+            <ul style={listStyle}>
+                <li><b>Insertion:</b> Can be performed in four ways:
+                <ul style={listStyle}>
+                      <li>At the Beginning</li>
+                      <li>After a Given Node</li>
+                      <li>At the End</li>
+                      <li>Before a Given Node</li>
+                    </ul></li>
+                <li><b>Deletion:</b> Can be performed in three ways:
+                <ul style={listStyle}>
+                      <li>From the Beginning</li>
+                      <li>From Specific Node</li>
+                      <li>From the End</li>
+                    </ul></li>
+                <li><b>Display:</b> Displays the elements of a Doubly Linked List.</li>
+            </ul>
 
-public class GfG {
-  public static void printList(Node head) {
-    while (head != null) {
-      System.out.print(" " + head.data);
-      head = head.next;
-    }
-    System.out.println();
-  }
+            <h3 style={h3HeadingStyle}>Circular Linked List</h3>
+            <ul style={listStyle}>
+                <li><b>Insertion:</b> Can be performed in four ways:
+                <ul style={listStyle}>
+                  <li>In an Empty List</li>
+                  <li>At the Beginning</li>
+                  <li>At the End</li>
+                  <li>In Between Nodes</li>
+                </ul></li>
+                <li><b>Deletion:</b> Can be performed in three ways:
+                <ul style={listStyle}>
+                      <li>From the Beginning</li>
+                      <li>From Specific Node</li>
+                      <li>From the End</li>
+                    </ul></li>
+                <li><b>Display:</b> Displays the elements of a Circular Linked List.</li>
+            </ul>
 
-  public static void main(String[] args) {
-    Node head = new Node(2);
-    head.next = new Node(3);
-    head.next.next = new Node(4);
-    head.next.next.next = new Node(5);
-    head.next.next.next.next = new Node(6);
+            <h2 style={subHeadingStyle}>Linked List vs. Array:</h2>
+            <img src={arlin} style={imgStyle} />
 
-    System.out.print("Linked List:");
-    printList(head);
-  }
-}`}
-      </pre>
 
-      <h3 id="vs-array">Linked List vs. Array</h3>
-      <table border="1" cellPadding="10">
-        <thead>
-          <tr>
-            <th>Array</th>
-            <th>Linked List</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Stored in contiguous location.</td>
-            <td>Not stored in contiguous location.</td>
-          </tr>
-          <tr>
-            <td>Fixed size.</td>
-            <td>Dynamic Size.</td>
-          </tr>
-          <tr>
-            <td>Access in O(1) time.</td>
-            <td>Access by traversing, O(N) time.</td>
-          </tr>
-        </tbody>
-      </table>
+            <h2 style={subHeadingStyle}>Time Complexity Analysis of Linked List and Array:</h2>
+            <img src={tc} style={imgStyle} />
 
-      <h3 id="advantages">Advantages of Linked List</h3>
-      <ul>
-        <li>Dynamic nature</li>
-        <li>Memory efficient</li>
-        <li>Ease of Insertion and Deletion</li>
-      </ul>
+            <h2 style={subHeadingStyle}>Applications of Linked Lists</h2>
+            <ul style={listStyle}>
+                <li>Used to implement dynamic memory allocation (e.g., malloc).</li>
+                <li>Used in undo functionality in software (back and forward operations).</li>
+                <li>Used in the implementation of various data structures like stacks, queues, and graphs.</li>
+            </ul>
 
-      <h3 id="disadvantages">Disadvantages of Linked List</h3>
-      <ul>
-        <li>Memory usage</li>
-        <li>Random access not possible</li>
-        <li>Search operation costly</li>
-      </ul>
+            <h2 style={subHeadingStyle}>Issues in Linked Lists</h2>
+            <ul style={listStyle}>
+                <li><strong>Memory Overhead:</strong> Extra memory is required for storing pointers, especially in doubly linked lists.</li>
+                <li><strong>Traversal:</strong> Traversing a linked list is slower compared to arrays as elements are not stored contiguously.</li>
+                <li><strong>Complexity:</strong> Insertion and deletion operations are more complex than in arrays.</li>
+            </ul>
 
-      <h3 id="applications">Applications of Linked List</h3>
-      <ul>
-        <li>Linear data structures such as stack, queue</li>
-        <li>Dynamic memory allocation</li>
-        <li>Implementation of graphs</li>
-      </ul>
-
-      <h3 id="faqs">Frequently Asked Questions (FAQs)</h3>
-      <ul>
-        <li><strong>What is linked list?</strong> A data structure with nodes.</li>
-        <li><strong>Why is a linked list preferred over array?</strong> Dynamic, easy insertion/deletion.</li>
-        <li><strong>Best use case?</strong> For dynamic data management and where frequent insertion/deletion is required.</li>
-      </ul>
-    </div>
-  );
+            
+        </div>
+    );
 };
 
 export default Articles;
+

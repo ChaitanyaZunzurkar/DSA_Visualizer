@@ -16,7 +16,7 @@ const subHeadingStyle = {
     marginTop: '20px',
     fontWeight: '800',
     fontSize: '20px',
-    marginBottom: '10px',
+    marginBottom: '20px',
 };
 
 const listStyle = {
@@ -262,7 +262,6 @@ const QueueImplementation = () => {
             10 dequeued from queue<br />
             Front item is 20<br />
             Rear item is 40
-    
             </div>
             
             

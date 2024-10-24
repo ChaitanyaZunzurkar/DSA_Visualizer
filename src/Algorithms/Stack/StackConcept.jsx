@@ -16,10 +16,10 @@ const StackConcept = () => {
     };
 
     const subHeadingStyle = {
-    marginTop: '20px',
+    mmarginTop: '20px',
     fontWeight: '800',
     fontSize: '20px',
-    marginBottom: '10px',
+    marginBottom: '20px',
     };
 
     
