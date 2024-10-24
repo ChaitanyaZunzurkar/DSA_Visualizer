@@ -55,123 +55,195 @@ const HashingChaining = () => {
     setLatestValue(null); // Reset latest value
   };
 
-  // Inline styles for the components
-  const styles = {
-    chainingContainer: {
-      textAlign: 'center',
-      marginTop: '20px',
-    },
-    hashTable: {
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      marginBottom: '20px',
-    },
-    hashBucket: (bucketSize) => ({
-      display: 'flex',
-      flexDirection: 'row', // Extend in row direction
-      alignItems: 'center',
-      width: `${100 + bucketSize * 60}px`, // Dynamically adjust width based on the bucket size
-      border: '2px solid #333',
-      padding: '10px',
-      borderRadius: '8px',
-      backgroundColor: '#f7f7f7',
-      transition: 'width 0.5s ease', // Smooth extension of width
-      marginBottom: '20px', // Added margin between hash buckets
-    }),
-    bucketIndex: {
-      fontSize: '14px',
-      fontWeight: 'bold',
-      color: '#444',
-    },
-    bucketChain: {
-      display: 'flex',
-      flexDirection: 'row', // Row layout for chaining
-      gap: '8px',
-      marginLeft: '10px', // Add spacing between the index and the chain
-    },
-    emptyBucket: {
-      fontSize: '12px',
-      color: '#aaa',
-    },
-    chainItem: (item) => ({
-      backgroundColor: item === latestValue ? '#ffeb3b' : '#4caf50', // Yellow for latest, green for others
-      color: 'white',
-      padding: '10px 20px', // Adjusted for oval shape
-      borderRadius: '50px', // Oval shape
-      transition: 'transform 1s ease, background-color 0.5s ease',
-    }),
-    input: {
-      padding: '8px',
-      width: '300px',
-      backgroundColor: '#333', // Dark background for the input field
-      color: 'white', // White text inside input
-      border: 'none',
-      borderRadius: '5px',
-      marginBottom: '8px',
-    },
-    button: {
-      marginLeft: '10px',
-      padding: '8px',
-      backgroundColor: '#4caf50',
-      color: 'white',
-      border: 'none',
-      borderRadius: '140px',
-      cursor: 'pointer',
-    },
-    resetButton: {
-      marginTop: '2px',
-      marginLeft: '10px',
-      padding: '8px',
-      backgroundColor: '#f44336',
-      color: 'white',
-      border: 'none',
-      borderRadius: '140px',
-      cursor: 'pointer',
-    },
-  };
-
   return (
-    <div style={styles.chainingContainer}>
-      <h2>Hashing with Separate Chaining Visualization</h2>
+    <div className="hash-container">
+      <style>{`
+        .hash-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          background-color: white;
+          border-radius: 16px;
+          position: relative;
+          padding: 20px;
+        }
 
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={userInput}
-          onChange={handleInputChange}
-          placeholder="Enter a number"
-          style={styles.input} // Apply the custom input style
-        />
-        <button type="submit" style={styles.button}>
-          Add
-        </button>
+        h2 {
+          font-size: 36px;
+          font-weight: 600;
+          color: #1f2937;
+          margin-bottom: 25px;
+          text-align: center;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+        }
 
-        <button style={styles.resetButton} onClick={handleReset}>
-          Reset
-        </button>
-      </form>
+        .hash-box {
+          background-color: #f0f2f5;
+          border-radius: 12px;
+          padding: 30px;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+          width: 550px;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
 
-      <div style={styles.hashTable}>
-        {hashTable.map((bucket, index) => (
-          <div style={styles.hashBucket(bucket.length)} key={index}>
-            <div style={styles.bucketIndex}>{index}</div>
-            <div style={styles.bucketChain}>
-              {bucket.length > 0 ? (
-                bucket.map((item, i) => (
-                  <div
-                    key={i}
-                    style={styles.chainItem(item)}
-                  >
-                    {item}
-                  </div>
-                ))
-              ) : (
-                <div style={styles.emptyBucket}>Empty</div>
-              )}
-            </div>
+        .hash-operations {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          justify-content: center;
+          margin-bottom: 30px;
+          width: 100%;
+        }
+
+        .hash-operations input {
+          padding: 12px;
+          font-size: 16px;
+          background-color: #fff;
+          color: #111827;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          transition: border-color 0.3s;
+          width: 100%;
+          width: 240px;
+          margin: 0 auto;
+        }
+
+        input:focus {
+          outline: none;
+          border-color: #4caf50;
+        }
+
+        .button-group {
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+          margin-top: 10px;
+        }
+
+        button {
+          padding: 12px 20px;
+          font-size: 16px;
+          background-color: #111827;
+          color: white;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:disabled {
+          cursor: not-allowed;
+          background-color: #555;
+          color: #ccc;
+        }
+
+        button:not(:disabled):hover {
+          transform: scale(1.05);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .hash-table {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          max-height: 60vh; /* Limit the table height */
+          overflow-y: auto; /* Enable vertical scrolling */
+          margin-top: 20px;
+          position: relative;
+        }
+
+        .hash-bucket {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          border: 2px solid #4caf50;
+          border-radius: 8px;
+          padding: 10px;
+          margin-bottom: 10px;
+          background-color: #111827;
+          color: white;
+          flex-wrap: nowrap; /* Prevent wrapping */
+          white-space: nowrap; /* No line breaks */
+        }
+
+        .bucket-index {
+          font-weight: bold;
+          font-size: 16px;
+        }
+
+        .bucket-chain {
+          display: flex;
+          gap: 8px;
+          overflow-x: auto; /* Allow horizontal scrolling if chain is too long */
+        }
+
+        .chain-item {
+          background-color: #4caf50;
+          color: white;
+          padding: 8px 15px;
+          border-radius: 50px;
+          font-weight: bold;
+          transition: background-color 0.5s, transform 0.5s;
+        }
+
+        .chain-item.latest {
+          background-color: #ffeb3b;
+        }
+
+        .empty-bucket {
+          font-size: 12px;
+          color: #aaa;
+        }
+
+        .reset-button {
+          background-color: #f44336;
+        }
+      `}</style>
+
+      <div className="hash-box">
+        <h2>Hashing with Separate Chaining</h2>
+        <div className="hash-operations">
+          <input
+            type="text"
+            value={userInput}
+            onChange={handleInputChange}
+            placeholder="Enter value"
+          />
+          <div className="button-group">
+            <button onClick={handleSubmit}>Add</button>
+            <button className="reset-button" onClick={handleReset}>Reset</button>
           </div>
-        ))}
+        </div>
+
+        <div className="hash-table">
+          {hashTable.map((bucket, index) => (
+            <div className="hash-bucket" key={index}>
+              <div className="bucket-index">{index}</div>
+              <div className="bucket-chain">
+                {bucket.length > 0 ? (
+                  bucket.map((item, i) => (
+                    <div
+                      key={i}
+                      className={`chain-item ${item === latestValue ? 'latest' : ''}`}
+                    >
+                      {item}
+                    </div>
+                  ))
+                ) : (
+                  <div className="empty-bucket">Empty</div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

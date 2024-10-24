@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const HashTable = ({ size }) => {
   const [table, setTable] = useState(Array(size).fill(null));
-  const [colors, setColors] = useState(Array(size).fill('')); // Initial colors for cells
+  const [colors, setColors] = useState(Array(size).fill(''));
   const [inputValue, setInputValue] = useState('');
   const [collisionMessage, setCollisionMessage] = useState('');
   const [hashCalculation, setHashCalculation] = useState('');
@@ -45,7 +45,7 @@ const HashTable = ({ size }) => {
       }
 
       setTimeout(() => {
-        newColors[index] = ''; // Reset to original color
+        newColors[index] = '';
         setColors(newColors);
       }, 500);
     }
@@ -79,161 +79,213 @@ const HashTable = ({ size }) => {
     setCollisionCalculations([]);
   };
 
-  const styles = {
-    container: {
-      textAlign: 'center',
-      padding: '20px',
-      fontFamily: 'Arial, sans-serif',
-    },
-    form: {
-      marginBottom: '20px',
-    },
-    input: {
-      padding: '10px',
-      width: '150px',
-      marginRight: '10px',
-      color: 'white',
-      backgroundColor: '#333',
-    },
-    button: {
-      padding: '10px 20px',
-      color: 'white',
-      border: 'none',
-      cursor: 'pointer',
-      marginRight: '10px',
-    },
-    insertButton: {
-      backgroundColor: '#4caf50',
-    },
-    resetButton: {
-      backgroundColor: '#f44336',
-    },
-    tableGrid: {
-      display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(50px, 1fr))',
-      gap: '10px',
-      justifyItems: 'center',
-      margin: '20px auto',
-      maxWidth: '400px',
-    },
-    tableCell: {
-      width: '50px',
-      height: '50px',
-      border: '1px solid #ccc',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      position: 'relative',
-      transition: 'background-color 0.5s, transform 0.5s',
-    },
-    collisionMessage: {
-      marginTop: '20px',
-      fontWeight: 'bold',
-      color: '#ff0000',
-    },
-    hashCalculation: {
-      marginTop: '20px',
-      fontWeight: 'bold',
-      color: '#333',
-    },
-  };
-
   return (
-    <div style={styles.container}>
-      <h1>Hash Table with Quadratic Probing</h1>
-      <form onSubmit={handleSubmit} style={styles.form}>
-        <input
-          type='number'
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-          placeholder='Enter a non-negative number'
-          required
-          style={styles.input}
-        />
-        <button type='submit' style={{ ...styles.button, ...styles.insertButton }}>
-          Insert
-        </button>
-        <button type='button' onClick={resetTable} style={{ ...styles.button, ...styles.resetButton }}>
-          Reset
-        </button>
-      </form>
-      <div style={styles.tableGrid}>
-        {table.map((value, index) => (
-          <div
-            key={index}
-            style={{
-              ...styles.tableCell,
-              backgroundColor:
-                colors[index] === 'green'
-                  ? '#4caf50'
-                  : colors[index] === 'yellow'
-                  ? '#ffeb3b'
-                  : colors[index] === 'red'
-                  ? '#f44336'
-                  : '#f1f1f1',
-              animation:
-                colors[index] === 'green'
-                  ? 'fadeIn 0.5s'
-                  : colors[index] === 'yellow'
-                  ? 'pulse 0.5s infinite'
-                  : colors[index] === 'red'
-                  ? 'shake 0.5s'
-                  : 'none',
-            }}
-          >
-            {value !== null ? value : ' '}
-          </div>
-        ))}
-      </div>
-      <div style={styles.collisionMessage}>{collisionMessage}</div>
-      <div style={styles.hashCalculation}>{hashCalculation}</div>
-      <div style={styles.collisionCalculations}>
-        {collisionCalculations.map((calc, index) => (
-          <div key={index}>{calc}</div>
-        ))}
-      </div>
-      <style>
-        {`
-          @keyframes fadeIn {
-            from {
-              opacity: 0;
-              transform: scale(0.8);
-            }
-            to {
-              opacity: 1;
-              transform: scale(1);
-            }
-          }
-          @keyframes pulse {
-            0% {
-              transform: scale(1);
-            }
-            50% {
-              transform: scale(1.1);
-            }
-            100% {
-              transform: scale(1);
-            }
-          }
-          @keyframes shake {
-            0% {
-              transform: translateX(0);
-            }
-            25% {
-              transform: translateX(-5px);
-            }
-            50% {
-              transform: translateX(5px);
-            }
-            75% {
-              transform: translateX(-5px);
-            }
-            100% {
-              transform: translateX(0);
-            }
-          }
-        `}
+    <div className="hash-container">
+      <style>{`
+        .hash-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          background-color: white;
+          border-radius: 16px;
+        }
+
+        .hash-box {
+          background-color: #f0f2f5;
+          border-radius: 12px;
+          padding: 30px;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+          width: 550px;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .hash-operations {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          justify-content: center;
+          margin-bottom: 30px;
+          width: 100%;
+        }
+
+        .hash-operations input {
+          padding: 12px;
+          font-size: 16px;
+          background-color: #fff;
+          color: #111827;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          transition: border-color 0.3s;
+          width: 100%;
+          width: 240px;
+          margin: 0 auto;
+        }
+
+        input:focus {
+          outline: none;
+          border-color: #4caf50;
+        }
+
+        .button-group {
+          display: flex;
+          justify-content: center;
+          gap: 20px; /* Adds space between Insert and Reset buttons */
+          margin-top: 10px;
+        }
+
+        button {
+          padding: 12px 20px;
+          font-size: 16px;
+          background-color: #111827;
+          color: white;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:disabled {
+          cursor: not-allowed;
+          background-color: #555;
+          color: #ccc;
+        }
+
+        button:not(:disabled):hover {
+          transform: scale(1.05);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .hash-operations button:nth-child(1):not(:disabled):hover {
+          background-color: #4caf50;
+        }
+
+        .hash-operations button:nth-child(2):not(:disabled):hover {
+          background-color: #f44336;
+        }
+
+        .hash-visual {
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          gap: 10px;
+          justify-items: center;
+          padding: 20px;
+          border: 2px solid #4caf50;
+          border-radius: 15px;
+          background-color: #111827;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          width: 100%;
+          max-width: 550px;
+        }
+
+        .hash-cell {
+          width: 50px;
+          height: 50px;
+          border: 1px solid #ccc;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #f1f1f1;
+          transition: background-color 0.5s, transform 0.5s;
+        }
+
+        .hash-cell.green {
+          background-color: #4caf50;
+        }
+
+        .hash-cell.yellow {
+          background-color: #ffeb3b;
+        }
+
+        .hash-cell.red {
+          background-color: #f44336;
+        }
+
+        .collision-message {
+          margin-top: 20px;
+          font-weight: bold;
+          color: #ff0000;
+        }
+
+        .hash-calculation {
+          margin-top: 20px;
+          font-weight: bold;
+          color: #333;
+        }
+
+        .hash-function-details {
+          margin-top: 30px;
+          font-size: 14px;
+          color: #333;
+          text-align: left;
+        }
+
+        .hash-function-details p {
+          margin: 5px 0;
+        }
+          h2 {
+        font-size: 36px; 
+        font-weight: 600; 
+        color: #1f2937; 
+        margin-bottom: 25px; 
+        text-align: center; 
+        letter-spacing: 1px; 
+        text-transform: uppercase; 
+        
+}
+        h3
+        {
+        font-size:19px;
+        }
+
+.hash-function-details{
+font-size:17px;
+}
+      `}
       </style>
+
+      <div className="hash-box">
+        <h2>Hash Table with Quadratic Probing</h2>
+        <div className="hash-operations">
+          <input
+            type="number"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            placeholder="Enter a non-negative number"
+            required
+          />
+          <div className="button-group">
+            <button onClick={handleSubmit}>Insert</button>
+            <button type="button" onClick={resetTable}>Reset</button>
+          </div>
+        </div>
+
+        <div className="hash-visual">
+          {table.map((value, index) => (
+            <div
+              key={index}
+              className={`hash-cell ${colors[index]}`}
+            >
+              {value !== null ? value : ' '}
+            </div>
+          ))}
+        </div>
+
+        <div className="collision-message">{collisionMessage}</div>
+        <div className="hash-calculation">{hashCalculation}</div>
+
+        <div className="hash-function-details">
+          <h3>Hash Function Used:</h3>
+          <p><strong>Formula:</strong> (key % size) + (attempt²) % size</p>
+          <p><strong>key:</strong> The value being inserted into the hash table.</p>
+          <p><strong>size:</strong> The size of the hash table (total number of slots).</p>
+          <p><strong>attempt:</strong> The current attempt number for resolving collisions (starts at 0 and increments).</p>
+        </div>
+      </div>
     </div>
   );
 };
