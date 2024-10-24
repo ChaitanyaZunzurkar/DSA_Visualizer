@@ -16,6 +16,9 @@ const Dijkstra = () => {
                         <Link to="Algorithm" className={styles.a}>Algorithm</Link>
                     </li>
                     <li className={styles.li}>
+                        <Link to="tutorials" className={styles.a}>Tutorials</Link>
+                    </li>
+                    <li className={styles.li}>
                         <Link to="visualization" className={styles.a}>Visualization</Link>
                     </li>
                     <li className={styles.li}>
@@ -23,9 +26,6 @@ const Dijkstra = () => {
                     </li>
                     <li className={styles.li}>
                         <Link to="articles" className={styles.a}>Articles & Resources</Link>
-                    </li>
-                    <li className={styles.li}>
-                        <Link to="tutorials" className={styles.a}>Tutorials & Guides</Link>
                     </li>
                 </ul>
             </nav>
