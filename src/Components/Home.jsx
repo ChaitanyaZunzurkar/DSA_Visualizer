@@ -1,7 +1,5 @@
 /* eslint-disable react/prop-types */
 import style from '../Stylesheets/Home.module.css';
-import dsaimg from '../assets/DsaImg.jpg';
-
 export default function Home({ onLearnMoreClick }) {
     return (
         <div className={style.container}>

@@ -6,17 +6,22 @@
     border: 1px solid #ddd;
     border-radius: 10px;
     background-color: #f9f9f9;
+    font-family: Arial, sans-serif; /* Standard font for uniformity */
 }
 
 .heading {
     text-align: center;
-    color: #4a4a4a;
-    font-size: 30px;
-    margin: 10px;
+    color: #333; /* Darker shade for better contrast */
+    font-size: 28px; /* Slightly reduced size */
+    margin: 20px 0; /* Uniform margin */
 }
 
 .questionContainer {
     margin-bottom: 20px;
+    padding: 10px; /* Added padding for better spacing */
+    border: 1px solid #e0e0e0; /* Subtle border for question separation */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #fff; /* White background for questions */
 }
 
 ul {
@@ -25,32 +30,53 @@ ul {
 }
 
 label {
-    font-size: 16px;
+    font-size: 16px; /* Uniform font size */
     cursor: pointer;
+    font-weight: 400;
+    margin:0.5em;
+    display: block; /* Full width for easy clicking */
+    padding: 8px; /* Added padding for touch targets */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.2s ease; /* Smooth transition */
+}
+
+label:hover {
+    background-color: #f0f0f0; /* Light hover effect */
 }
 
 .correct {
-    color: green;
+    color: white; /* White text for better contrast */
     font-weight: bold;
+    max-width: fit-content;
+    background-color: #4caf50; /* Green background */
+    padding: 8px 12px; /* Padding for better spacing */
+    border-radius: 8px; /* Rounded corners */
+    margin-top: 5px; /* Space above the message */
+    transition: background-color 0.3s ease; /* Smooth transition */
 }
 
 .wrong {
-    color: red;
+    color: white; /* White text for better contrast */
     font-weight: bold;
+    max-width: fit-content;
+    background-color: #f44336; /* Red background */
+    padding: 8px 12px; /* Padding for better spacing */
+    border-radius: 8px; /* Rounded corners */
+    margin-top: 5px; /* Space above the message */
+    transition: background-color 0.3s ease; /* Smooth transition */
 }
 
 .submitButton {
-    display: block;
-    width: 100%;
-    padding: 10px 0;
-    background-color: #4caf50;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    
+          font-size: 16px;
+          background-color: #111827;
+          color: white;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+          align-items: center;
+          justify-content: center;
 }
 
 .submitButton:hover {
@@ -59,11 +85,20 @@ label {
 
 .finalScore {
     text-align: center;
-    padding: 10px;
-    font-size: 25px;
+    padding: 12px;
+    font-size: 24px; /* Slightly reduced size for uniformity */
     font-weight: bold;
-    background-color: #4caf50;
+    background-color: #2196f3;
     color: white;
     border-radius: 10px;
     margin-top: 20px;
+    font-size: 16px;
+          
+          color: white;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+          align-items: center;
+          justify-content: center;
 }
