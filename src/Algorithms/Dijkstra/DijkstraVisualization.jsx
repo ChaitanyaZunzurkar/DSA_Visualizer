@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import '../../Stylesheets/Dijkstra.module.css' // Ensure you have your styles imported
 import ContentSwitcher from './ContentSwitcher';
 
@@ -202,7 +202,7 @@ const DijkstraVisualization = () => {
         <>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <div>
-            <p style={{fontSize:'2rem'}}>Dijkstra's Algorithm Visualization</p>
+            <p style={{fontSize:'2rem'}}>Dijkstras Algorithm Visualization</p>
             <section id="graph-container">
                 {/* <h2>Graph</h2> */}
                 <canvas ref={canvasRef} width="600" height="400" style={{ border: '1px solid black' }}></canvas>
