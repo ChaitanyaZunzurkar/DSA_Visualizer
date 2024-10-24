@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import style from '../Stylesheets/Home.module.css';
-import demoImg from '../assets/dsa img.png';
+import demoImg from '../assets/dsaimg.png';
 
 export default function Home({ onLearnMoreClick }) {
     return (
