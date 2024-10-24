@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -34,14 +33,18 @@ const Courses = () => {
     <StyledWrapper>
       {courseData.map((course) => (
         <section className="eduzone-course-card" key={course.id}>
+
           <header>
             <h2 className="eduzone-course-title">{course.title}</h2>
             <h1 className="eduzone-course-price">{course.price}</h1>
           </header>
+
           <p className="eduzone-course-desc">{course.description}</p>
+
           <ul className="eduzone-course-lists">
             {course.items.map((item, index) => (
               <li className="eduzone-course-list" key={index}>
+
                 <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                   <path
                     clipRule="evenodd"
@@ -49,13 +52,16 @@ const Courses = () => {
                     fillRule="evenodd"
                   />
                 </svg>
+
                 <p>{item}</p>
               </li>
             ))}
           </ul>
-          <Link to={course.link} className="eduzone-course-action">
+
+          <Link to={`/courses/:${courseData.id}`} className="eduzone-course-action">
             Get Started
           </Link>
+
         </section>
       ))}
     </StyledWrapper>
