@@ -1,53 +1,87 @@
-.courseCard {
-  width: 300px;
-  height: 200px;
-  border: 2px solid white;
-  border-radius: 10px;
+.courseCards {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 320px;
+  
+  
+  box-shadow: 10px 25px 30px 10px rgba(41, 40, 40, 0.3);
+  background-color: black;
+  padding: 32px;
   overflow: hidden;
-}
-.courseCard:hover{
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  background-image: none !important;
-  background-color: white;
-}
-
-.courseCard img {
-  width: 48px;
-  fill: #333;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.courseCard .text-overlay {
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5); 
   border-radius: 10px;
+  z-index: 1;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  
+  
 }
 
+.contentWrappers {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  color: #e8e8e8;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
 
-.courseCard h3 {
-  text-align: center;
-  margin: 0;
-  font-size: 24px;
-  color: #333;
+.contentWrappers .title {
   font-weight: 700;
+  font-size: 32px;
 }
 
-.courseCard p {
-  margin: 10px 0 0;
-  font-size: 14px;
-  color: #777;
-  line-height: 1.4;
+.contentWrappers .description {
+  line-height: 1.5;
 }
 
-.contentWrapper {
-  padding: 0.8rem;
-  display: none;
+.contentWrappers .read{
+  color: #e8e8e8;
+  text-decoration: none;
+  padding: 10px;
+  margin-top: 1em;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(-45deg, #aa00ff 0%, #3c00ff 100%);
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-.courseCard:hover .contentWrapper {
-  display: block;
+.courseCards::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(-45deg, #aa00ff 0%, #3c00ff 100%);
+  z-index: -1;
+  transition: all 0.5s cubic-bezier(0.3, 1, 0.32, 1);
 }
+
+.courseCards:hover::before {
+  width: 100%;
+}
+
+.courseCards:hover {
+  box-shadow: 10px 25px 30px 1px rgba(6, 83, 248, 0.3);
+  transform: translate(5px)  scale(1.05);
+  ;
+}
+
+.courseCards:hover .read{
+  color: #212121;
+  background: #e8e8e8;
+}
+.contentWrappers .read:hover {
+  outline: 2px solid #e8e8e8;
+  background: transparent;
+  color: #e8e8e8;
+}
+
+.contentWrappers .read:active {
+  box-shadow: none;
+}
+
 

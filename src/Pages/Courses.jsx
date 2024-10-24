@@ -110,6 +110,14 @@ const StyledWrapper = styled.div`
     flex-direction: column; /* Ensure vertical stacking */
     justify-content: space-between; /* Space out elements evenly */
     height: 50%; 
+    box-shadow: 10px 25px 30px 10px rgba(41, 40, 40, 0.3);
+    transition: all 0.5s cubic-bezier(0.3, 1, 0.32, 1);
+    &:hover {
+      
+      transform: translate(2px)  scale(1.02);
+      background-color :black;
+  ;
+    }
   }
 
   header {
@@ -141,19 +149,29 @@ const StyledWrapper = styled.div`
   .eduzone-course-lists {
     margin-bottom: 1rem;
     color: #f8fafc90;
+    transition: transform 0.3s ease;
+    &:hover {
+    transform: scale(1.002);
+    }
   }
 
   .eduzone-course-list {
     display: flex;
     align-items: center; /* Center the icon and text */
     margin-bottom: 0.5rem;
+    
+   
   }
 
   .eduzone-course-list svg {
     height: 1.5rem;
     width: 1.5rem;
     margin-right: 0.5rem;
-    color: #0ea5e9;
+    color:  #0ea5e9;
+    &:hover {
+      color: #aa00ee;
+    }
+    
   }
 
   .eduzone-course-action {
@@ -168,7 +186,8 @@ const StyledWrapper = styled.div`
     transition: background-color 0.3s ease-in-out;
     
     &:hover {
-      background-color: #0284c7;
+      background-color: #aa00ff;
+      color:white;
     }
   }
 `;
