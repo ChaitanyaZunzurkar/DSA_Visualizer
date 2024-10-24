@@ -67,6 +67,7 @@ import QueuesTypes from './Algorithms/Queue/QueueTypes.jsx';
 import QueuesConcepts from './Algorithms/Queue/QueueConcept.jsx';
 import QueuesVisualization from './Algorithms/Queue/QueueVisualization';
 import QueueImplementation from './Algorithms/Queue/QueueImplement.jsx'
+import QueueTutorial from './Algorithms/Queue/QueueTutorial.jsx'
 
 function App() {
   return (
@@ -146,6 +147,7 @@ function App() {
             <Route path="test" element={<QueuesTest />} />
             <Route path="articles" element={<QueuesConcepts />} />
             <Route path="type" element={<QueuesTypes />} />
+            <Route path="tutorial" element={<QueueTutorial />} />
             <Route path="*" element={<Navigate to={'.'} />} />
           </Route>
 
