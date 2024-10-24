@@ -66,8 +66,6 @@ import QueuesConcepts from './Algorithms/Queue/QueueConcept.jsx';
 import QueuesVisualization from './Algorithms/Queue/QueueVisualization';
 import QueueImplementation from './Algorithms/Queue/QueueImplement.jsx'
 
-
-
 function App() {
   return (
       <BrowserRouter>
