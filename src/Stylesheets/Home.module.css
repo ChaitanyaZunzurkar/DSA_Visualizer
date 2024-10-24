@@ -1,0 +1,76 @@
+.container {
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    background-color: rgba(0, 12, 30, 0.5);
+    height: 80vh;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    background: #000000;
+    --gap: 5em;
+    --line: 1px;
+    --color: rgba(255, 255, 255, 0.2);
+  
+    background-image: linear-gradient(
+        -90deg,
+        transparent calc(var(--gap) - var(--line)),
+        var(--color) calc(var(--gap) - var(--line) + 1px),
+        var(--color) var(--gap)
+      ),
+      linear-gradient(
+        0deg,
+        transparent calc(var(--gap) - var(--line)),
+        var(--color) calc(var(--gap) - var(--line) + 1px),
+        var(--color) var(--gap)
+      );
+    background-size: var(--gap) var(--gap);
+    height: 100vh;
+}
+.tagLine {
+    color:white;
+    width: 60vw;
+    margin: 2rem;
+    height: 50vh;
+    padding: 2rem;
+    font-size: 50px;
+    display: flex;
+    /* justify-content: center; */
+    padding-top: 7rem;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0px;
+}
+.content {
+    height: 82vh;
+}
+
+.animation {
+    color:white;
+    width: 30vw;
+    margin: 2rem;
+    height: 84vh;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.LearnBtn {
+    margin: 1rem;
+    padding: 5px;
+    margin-left: 5rem;
+    width: 25vh;
+    height: 7vh;
+    background-color:rgb(7, 54, 129) ;
+}
+.LearnBtn:hover {
+    box-shadow: 2px 2px 10px rgb(109, 159, 240);
+    border: none;
+}
+
+.aniVideo {
+    height: 90vh;
+    width: 100vw;
+}
