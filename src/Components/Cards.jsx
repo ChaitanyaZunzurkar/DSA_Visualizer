@@ -13,8 +13,8 @@ const Card = ({ title, description, imageSrc }) => {
     const mouseXSpring = useSpring(x);
     const mouseYSpring = useSpring(y);
 
-    const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["12.5deg", "-12.5deg"]);
-    const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-12.5deg", "12.5deg"]);
+    const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["10.5deg", "-10.5deg"]);
+    const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10.5deg", "10.5deg"]);
 
     function handleMouseMove(event) {
         const rect = event.target.getBoundingClientRect();
@@ -50,7 +50,7 @@ const Card = ({ title, description, imageSrc }) => {
                     rotateX,
                     rotateY,
                     background: isHovered
-                    ? `radial-gradient(circle at ${backgroundPosition}, rgba(0, 213, 255 , 0.4), transparent 30%)`
+                    ? `radial-gradient(circle at ${backgroundPosition}, #aa00ff, transparent 20%)`
                     : 'transparent'
                 }}
             >

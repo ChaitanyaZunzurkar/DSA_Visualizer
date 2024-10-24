@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import style from '../Stylesheets/Home.module.css';
-import demoImg from '../assets/dsa img.png';
+import dsaimg from '../assets/DsaImg.jpg';
 
 export default function Home({ onLearnMoreClick }) {
     return (
@@ -9,6 +9,9 @@ export default function Home({ onLearnMoreClick }) {
                 <h2 className={style.tagLine}>
                     DSA sharpens problem-solving skills, unlocking efficient solutions to challenges.
                 </h2>
+                <p className={style.para}>
+                    This is to learn DSA from the tutorials, quizzes, and videos on data structures and algorithms, helping users build strong problem-solving skills efficiently.
+                </p>
                 <button
                     type="button"
                     className={style.LearnBtn}
@@ -19,7 +22,7 @@ export default function Home({ onLearnMoreClick }) {
             </section>
 
             <section className={style.animation}>
-                <img src={demoImg} alt="A representation of data structures and algorithms" />
+                <img src={dsaimg} alt="A representation of data structures and algorithms" />
             </section>
         </div>
     );

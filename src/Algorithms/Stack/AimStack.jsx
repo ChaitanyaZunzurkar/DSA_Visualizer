@@ -17,10 +17,8 @@ const AimStack = () => {
         textAlign : 'center',
         fontWeight: '800',
         fontSize: '30px',
-        marginBottom: '10px',
     };
     const para={
-        
         marginTop: '20px',
         fontWeight: '700',
         fontSize: '19px',
