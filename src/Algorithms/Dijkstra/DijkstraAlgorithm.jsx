@@ -1,107 +1,115 @@
 import CodeCopy from '../../Components/Codecopy';
+
 const DijkstraConcept = () => {
-
-        const codeSnippet = ` 
-  // C program for Dijkstra's single source shortest path
-// algorithm. The program is for adjacency matrix
-// representation of the graph
-
+const headingStyle = {
+        marginTop: '0',
+        fontWeight: '800',
+        fontSize: '30px',
+        marginBottom: '15px',
+    };
+ const subHeadingStyle = {
+        mmarginTop: '20px',
+        fontWeight: 'bold',
+        fontSize: '20px',
+        marginTop: '10px',
+    };
+const listStyle = { 
+        fontWeight: 400,
+        lineHeight: '1.6',            
+        marginBottom: '8px',          
+        color: '#333',                        
+        paddingLeft: '20px',          
+    };
+const content={
+        marginLeft: '20px',
+        padding: '20px',
+        fontSize: '18px'
+  };
+const para={
+    fontWeight: '400'
+};
+    const codeSnippet = ` 
+#include <stdio.h>
 #include <limits.h>
 #include <stdbool.h>
-#include <stdio.h>
 
-// Number of vertices in the graph
-#define V 9
+#define V 9  // Number of vertices in the graph
 
-// A utility function to find the vertex with minimum
-// distance value, from the set of vertices not yet included
-// in shortest path tree
-int minDistance(int dist[], bool sptSet[])
-{
-    // Initialize min value
+// Function to find the vertex with the shortest distance from the source
+int findMinDistance(int dist[], bool visited[]) {
     int min = INT_MAX, min_index;
 
-    for (int v = 0; v < V; v++)
-        if (sptSet[v] == false && dist[v] <= min)
-            min = dist[v], min_index = v;
+    for (int v = 0; v < V; v++) {
+        if (!visited[v] && dist[v] <= min) {
+            min = dist[v];
+            min_index = v;
+        }
+    }
 
     return min_index;
 }
 
-// A utility function to print the constructed distance
-// array
-void printSolution(int dist[])
-{
-    printf("Vertex \t\t Distance from Source\n");
-    for (int i = 0; i < V; i++)
-        printf("%d \t\t\t\t %d\n", i, dist[i]);
+// Function to print the solution, i.e., the shortest distance from the source
+void printSolution(int dist[]) {
+    printf("Vertex \ t\ t Distance from Source\ n");
+    for (int i = 0; i < V; i++) {
+        printf("%d \ t \ t %d\ n", i, dist[i]);
+    }
 }
 
-// Function that implements Dijkstra's single source
-// shortest path algorithm for a graph represented using
-// adjacency matrix representation
-void dijkstra(int graph[V][V], int src)
-{
-    int dist[V]; // The output array.  dist[i] will hold the
-                 // shortest
-    // distance from src to i
+// Implementation of Dijkstra's algorithm for a graph represented using an adjacency matrix
+void dijkstra(int graph[V][V], int src) {
+    int dist[V];     // Array to store the shortest distance from the source to each vertex
+    bool visited[V]; // Array to keep track of visited vertices
 
-    bool sptSet[V]; // sptSet[i] will be true if vertex i is
-                    // included in shortest
-    // path tree or shortest distance from src to i is
-    // finalized
-
-    // Initialize all distances as INFINITE and stpSet[] as
-    // false
-    for (int i = 0; i < V; i++)
-        dist[i] = INT_MAX, sptSet[i] = false;
-
-    // Distance of source vertex from itself is always 0
-    dist[src] = 0;
-
-    // Find shortest path for all vertices
-    for (int count = 0; count < V - 1; count++) {
-        // Pick the minimum distance vertex from the set of
-        // vertices not yet processed. u is always equal to
-        // src in the first iteration.
-        int u = minDistance(dist, sptSet);
-
-        // Mark the picked vertex as processed
-        sptSet[u] = true;
-
-        // Update dist value of the adjacent vertices of the
-        // picked vertex.
-        for (int v = 0; v < V; v++)
-
-            // Update dist[v] only if is not in sptSet,
-            // there is an edge from u to v, and total
-            // weight of path from src to  v through u is
-            // smaller than current value of dist[v]
-            if (!sptSet[v] && graph[u][v]
-                && dist[u] != INT_MAX
-                && dist[u] + graph[u][v] < dist[v])
-                dist[v] = dist[u] + graph[u][v];
+    // Step 1: Initialize distances as infinity and visited[] as false
+    for (int i = 0; i < V; i++) {
+        dist[i] = INT_MAX;  // Set all distances to infinity
+        visited[i] = false; // Mark all vertices as unvisited
     }
 
-    // print the constructed distance array
+    dist[src] = 0; // Set the distance of the source vertex to itself as 0
+
+    // Step 2: Process each vertex one by one
+    for (int count = 0; count < V - 1; count++) {
+        // Step 3: Choose the unvisited vertex with the shortest distance
+        int u = findMinDistance(dist, visited);
+
+        // Step 4: Mark the picked vertex as visited
+        visited[u] = true;
+
+        // Step 5: Update the distance value for each unvisited neighbor of the current vertex
+        for (int v = 0; v < V; v++) {
+            // Update dist[v] if:
+            // - It's not visited
+            // - There is an edge from u to v
+            // - Total weight of the path from source to v through u is smaller than the current value of dist[v]
+            if (!visited[v] && graph[u][v] && dist[u] != INT_MAX && dist[u] + graph[u][v] < dist[v]) {
+                dist[v] = dist[u] + graph[u][v];
+            }
+        }
+    }
+
+    // Step 6: Print the final distances from the source vertex to all other vertices
     printSolution(dist);
 }
 
-// driver's code
-int main()
-{
-    /* Let us create the example graph discussed above */
-    int graph[V][V] = { { 0, 4, 0, 0, 0, 0, 0, 8, 0 },
-                        { 4, 0, 8, 0, 0, 0, 0, 11, 0 },
-                        { 0, 8, 0, 7, 0, 4, 0, 0, 2 },
-                        { 0, 0, 7, 0, 9, 14, 0, 0, 0 },
-                        { 0, 0, 0, 9, 0, 10, 0, 0, 0 },
-                        { 0, 0, 4, 14, 10, 0, 2, 0, 0 },
-                        { 0, 0, 0, 0, 0, 2, 0, 1, 6 },
-                        { 8, 11, 0, 0, 0, 0, 1, 0, 7 },
-                        { 0, 0, 2, 0, 0, 0, 6, 7, 0 } };
+// Main function to test Dijkstra's algorithm
+int main() {
+    // Sample graph represented as an adjacency matrix
+    int graph[V][V] = {
+        {0, 4, 0, 0, 0, 0, 0, 8, 0},
+        {4, 0, 8, 0, 0, 0, 0, 11, 0},
+        {0, 8, 0, 7, 0, 4, 0, 0, 2},
+        {0, 0, 7, 0, 9, 14, 0, 0, 0},
+        {0, 0, 0, 9, 0, 10, 0, 0, 0},
+        {0, 0, 4, 14, 10, 0, 2, 0, 0},
+        {0, 0, 0, 0, 0, 2, 0, 1, 6},
+        {8, 11, 0, 0, 0, 0, 1, 0, 7},
+        {0, 0, 2, 0, 0, 0, 6, 7, 0}
+    };
 
-    // Function call
+    // Run Dijkstra's algorithm with vertex 0 as the source
     dijkstra(graph, 0);
 
     return 0;
@@ -110,27 +118,22 @@ int main()
     `
 
     return (
-        <div>
-            <h1>Dijkstra Algorithm</h1>
-            <div>
-                <ul>
-                    <li>Create a set sptSet (shortest path tree set) that keeps track of vertices included in the shortest path tree, i.e., whose minimum distance from the source is calculated and finalized. Initially, this set is empty.</li>
-                    <li>Assign a distance value to all vertices in the input graph. Initialize all distance values as INFINITE . Assign the distance value as 0 for the source vertex so that it is picked first.</li>
-                    <li>While sptSet doesn't include all vertices</li>
-                    <ul>
-                        <li>Pick a vertex u that is not there in sptSet and has a minimum distance value.</li>
-                        <li>Include u to sptSet .</li>
-                        <li>Then update the distance value of all adjacent vertices of u .</li>
-                        <ul>
-                            <li>To update the distance values, iterate through all adjacent vertices.</li>
-                            <li>For every adjacent vertex v, if the sum of the distance value of u (from source) and weight of edge u-v , is less than the distance value of v , then update the distance value of v . </li>
-                        </ul>
-                    </ul>
+        <div style={content}>
+            <h1 style={headingStyle}>Dijkstra Algorithm</h1>
+                <ul style={listStyle}>
+                    <li><span style={{fontWeight:'bold'}}>Step 1: </span>Set initial distances for all vertices: 0 for the source vertex, and infinity for all the other.</li>
+                    <li><span style={{fontWeight:'bold'}}>Step 2: </span>Choose the unvisited vertex with the shortest distance from the start to be the current vertex. So the algorithm will always start with the source as the current vertex.</li>
+                    <li><span style={{fontWeight:'bold'}}>Step 3: </span>For each of the current vertex's unvisited neighbor vertices, calculate the distance from the source and update the distance if the new, calculated, distance is lower.</li>
+                    <li><span style={{fontWeight:'bold'}}>Step 4: </span>We are now done with the current vertex, so we mark it as visited. A visited vertex is not checked again.</li>
+                    <li><span style={{fontWeight:'bold'}}>Step 5: </span>Go back to step 2 to choose a new current vertex, and keep repeating these steps until all vertices are visited.</li>
+                    <li><span style={{fontWeight:'bold'}}>Step 6: </span>In the end we are left with the shortest path from the source vertex to every other vertex in the graph.</li>
                 </ul>
-                <div>NOTE: Note: We use a boolean array sptSet[] to represent the set of vertices included in SPT . If a value sptSet[v] is true, then vertex v is included in SPT , otherwise not. Array dist[] is used to store the shortest distance values of all vertices.</div>
-                <h1>Code:</h1>
-                <CodeCopy code = { codeSnippet }/>
-            </div>
+            <h2 style={subHeadingStyle}>Code:</h2>
+            <CodeCopy code={codeSnippet} />
+            <h2 style={headingStyle}>Time Complexity for Dijkstra,s Algorithm</h2>
+            <h2 style={subHeadingStyle}>V as the number of vertices in our graph, the time complexity for Dijkstra's algorithm is O(V^2)</h2>
+            <p style={para}>The reason why we get this time complexity is that the vertex with the lowest distance must to be search for to choose the next current vertex, and that takes O(V)time. And since this must to be done for every vertex connected to the source, we need to factor that in, and so we get time complexity O(V2)for Dijkstra's algorithm.
+                            By using a Min-heap or Fibonacci-heap data structure for the distances instead (not yet explained in this tutorial), the time needed to search for the minimum distance vertex is reduced from O(V) to O(logV), which results in an improved time complexity for Dijkstra's algorithm <span style={{fontWeight:'bolder'}}>O(V⋅logV+E)</span></p>
         </div>
     );
 }
