@@ -5,7 +5,6 @@ const DijkstraAim = () => {
     borderRadius: '12px',
     boxShadow: '0 6px 30px rgba(0, 0, 0, 0.15)', // Deeper shadow for more depth
     maxWidth: '90vw',
-    height: '90vh',
     margin: '20px auto',
     fontFamily: "'Roboto', sans-serif", // More modern font
     color: '#444', // Darker text color for better readability
