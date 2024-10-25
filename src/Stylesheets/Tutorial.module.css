@@ -6,16 +6,19 @@
     padding: 20px;
     border-radius: 10px; 
     overflow: hidden;
+    
     height: auto; /* Let the height adjust based on content */
     /* border: 2px solid red; */
 }
 
 .videoContainer {
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+    border: 1px solid #ddd;
     /* border: 2px solid red; */
     display: flex;
+    padding-bottom:2rem;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -24,17 +27,20 @@
 
 .heading {
     font-size: 2rem; /* Font size for headings */
-    padding: 1rem; /* Space below headings */
+    padding: 2rem; /* Space below headings */
     text-align: center;
+    margin:1rem;
+    
     /* border: 2px solid red; */
 
 }
 
 .videoIframe {
-    width: 70%; 
-    height: 600px; 
-    border-radius: 2rem;
-    margin: 1rem;
-    padding:1rem;
+    width: 60%; 
+    height: 450px; 
+    border-radius: 0.5rem;
+    margin-bottom:2rem;
+    
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
 
 }
