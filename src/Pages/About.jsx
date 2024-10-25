@@ -1,7 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import img4 from '../assets/CourseBoximg/img4.jpg'; // Sample image import
-
+import img10 from '../assets/Aboutimg/aryan.png'
+import img11 from '../assets/Aboutimg/aashwath.jpeg'
+import img12 from '../assets/Aboutimg/chaitanya.jpeg'
+import img13 from '../assets/Aboutimg/amit.jpeg'
+import img14 from '../assets/Aboutimg/ashish.jpeg'
 // Team members array with social media links
 const teamMembers = [
   { 
@@ -9,7 +13,7 @@ const teamMembers = [
     name: 'Aashwath', 
     position: 'Project Manager', 
     about: "I’m Alice, a project manager dedicated to leading teams towards success and ensuring smooth project delivery.",
-    image: img4, 
+    image: img11, 
     linkedin: 'https://www.linkedin.com/in/alice', 
     github: 'https://github.com/alice', 
     twitter: 'https://twitter.com/alice',
@@ -20,7 +24,7 @@ const teamMembers = [
     name: 'Amit', 
     position: 'Lead Developer', 
     about: "I’m Bob, a passionate developer focused on creating scalable and efficient web applications.",
-    image: img4, 
+    image: img13, 
     linkedin: 'https://www.linkedin.com/in/bob', 
     github: 'https://github.com/bob', 
     twitter: 'https://twitter.com/bob' ,
@@ -31,7 +35,7 @@ const teamMembers = [
     name: 'Aryan', 
     position: 'Lead Developer', 
     about: "I’m Bob, a passionate developer focused on creating scalable and efficient web applications.",
-    image: img4, 
+    image: img10, 
     linkedin: 'https://www.linkedin.com/in/bob', 
     github: 'https://github.com/bob', 
     twitter: 'https://twitter.com/bob' ,
@@ -39,10 +43,10 @@ const teamMembers = [
   },
   { 
     id: 4, 
-    name: 'Chaitanya', 
+    name: 'chaitanya', 
     position: 'Lead Developer', 
     about: "I’m Bob, a passionate developer focused on creating scalable and efficient web applications.",
-    image: img4, 
+    image: img12, 
     linkedin: 'https://www.linkedin.com/in/bob', 
     github: 'https://github.com/bob', 
     twitter: 'https://twitter.com/bob' ,
@@ -53,7 +57,7 @@ const teamMembers = [
     name: 'Ashish', 
     position: 'Lead Developer', 
     about: "I’m Bob, a passionate developer focused on creating scalable and efficient web applications.",
-    image: img4, 
+    image: img14, 
     linkedin: 'https://www.linkedin.com/in/bob', 
     github: 'https://github.com/bob', 
     twitter: 'https://twitter.com/bob' ,
@@ -69,7 +73,7 @@ export default function TeamPage() {
       <div className="teamContainer">
         {teamMembers.map(member => (
           <div key={member.id} className="teamCard">
-            <div className="img" style={{ backgroundImage: `url(${member.image})` }} />
+            <div className="img" style={{ backgroundImage: `url(${member.image})`,backgroundSize:'contain' ,backgroundRepeat:'no-repeat',backgroundPosition:'center'}} />
             <span><h3>{member.name}</h3></span>
             <p className="teamInfo">{member.about}</p>
             <div className="teamShare">
