@@ -3,52 +3,61 @@
 }
 
 .nav {
-    width: 250px;
-    background-color: #03040ced; /* Dark blue background */
-    display: flex;
-    flex-direction: column;
-    padding-top: 20px;
-    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .li {
-    margin:  0;
-  }
-  
-  .a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    font-family: 'Arial', sans-serif;
-    padding: 15px 20px;
-    display: block;
-    transition: background-color 0.3s ease;
-  }
-  
-  .a:hover {
-    background-color: #34495e; /* Slightly lighter blue on hover */
-    border-left: 4px solid #e74c3c; /* Red highlight on hover */
-  }
-  
-  .a:active {
-    background-color: #1abc9c; /* Different background on active */
-  }
+  width: 250px;
+  background-color: #000000; /* Black background */
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  box-shadow: 2px 0 5px rgba(255, 255, 255, 0.1); /* Subtle white shadow */
+}
 
-  .btn {
-    width: 100%;
-    background-color: #03040ced;
-    font-size: 18px;
-    text-align: start;
-    border-radius: 0px;
-  }
+.ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-  .btn:hover {
-    background-color: #34495e; /* Slightly lighter blue on hover */
-    border-left: 4px solid #e74c3c; /* Red highlight on hover */
-  }
+.li {
+  margin: 0;
+}
+
+.a {
+  color: #cbd5e0; /* Equivalent to text-gray-400 */
+  text-decoration: none;
+  font-size: 19px;
+  font-family: 'Arial', sans-serif;
+  padding: 20px 20px ;
+  display: block;
+  font-weight:500;
+  text-align: left;
+  transition: color 0.3s ease; /* Equivalent to transition-colors and duration-300 */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Smooth transitions */
+}
+
+.a:hover {
+  color: #ffffff; 
+  border-left:3px solid #cbd5e0;
+  background-color: #1a1a1a/* Equivalent to hover:text-white */
+}
+
+.a:active {
+  background-color: #333333; /* Darker gray on active */
+}
+
+
+.btn {
+  width: 100%;
+  background-color: #000000; /* Black background */
+  color: #ffffff; /* White text */
+  font-size: 18px;
+  text-align: start;
+  border: 2px solid #ffffff; /* White border */
+  border-radius: 4px; /* Slightly rounded corners */
+  padding: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+}
+
+.btn:hover {
+  background-color: #1a1a1a; /* Very dark gray on hover */
+  color: #ffffff; /* White text on hover */
+}
