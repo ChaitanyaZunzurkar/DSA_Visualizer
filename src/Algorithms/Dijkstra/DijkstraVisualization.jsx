@@ -202,7 +202,7 @@ const DijkstraVisualization = () => {
         <>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <div>
-            <p style={{fontSize:'2rem'}}>Dijkstras Algorithm Visualization</p>
+            <p style={{fontSize:'2rem',fontWeight:'bold'}}>Dijkstras Algorithm Visualization</p>
             <section id="graph-container">
                 {/* <h2>Graph</h2> */}
                 <canvas ref={canvasRef} width="600" height="400" style={{ border: '1px solid black' }}></canvas>
@@ -232,9 +232,19 @@ const DijkstraVisualization = () => {
                 <div style={{fontSize:'1.3rem', fontWeight:'bold'}}>Below You can Visualize Stepwise....</div>
             </div>   
         </div>
-        <div>
               <h2 style={{ fontSize:'2rem',backgroundColor:'grey'}}>Stepwise Visualization</h2>
+           <div style={{display:'flex'}}>
+            <div>
              <ContentSwitcher />
+             </div>
+             <div style={{padding:'30px'}}>
+                <h2 style={{fontSize:'1.2rem' ,fontWeight:'bold'}}>Instructions: </h2>
+                <p>A is Source Node</p>
+                <p>Z is Destination Node</p>
+                <p>Click Next for go Forward and Previous to go back</p>
+                <p>Orange Colored nodes are Visited</p>
+                <p>Green color Nodes and Edges indicates Shortest Path</p>
+             </div>
             </div> 
         </>
     );

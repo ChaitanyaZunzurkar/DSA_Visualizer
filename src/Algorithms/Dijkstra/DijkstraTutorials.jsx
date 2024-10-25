@@ -9,7 +9,7 @@ const DijkstraTutorial = () => {
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
                     <iframe
                         width="800px"
-                        height="400px"
+                        height="420px"
                         src="https://www.youtube.com/embed/smHnz2RHJBY?start=505"
                         title="Dijkstra's Algorithm Tutorial"
                         frameBorder="0"
@@ -23,7 +23,7 @@ const DijkstraTutorial = () => {
 
             {/* Explanation Section */}
             <section>
-                <h3 style={{fontWeight:'bold',fontSize:'1.3rem',marginBottom:'10px'}}>Why Dijkstra's Algorithms fails for the Graphs having Negative Edges ?</h3>
+                <h3 style={{fontWeight:'bold',fontSize:'1.5rem',marginBottom:'10px'}}>Why Dijkstra's Algorithms fails for the Graphs having Negative Edges ?</h3>
                 <p style={{lineHeight:'2rem', fontSize:'1.1rem'}}>
                 The problem with negative weights arises from the fact that Dijkstra's algorithm assumes that once a node is added to the set of visited nodes, its distance is finalized and will not change. However, in the presence of negative weights, this assumption can lead to incorrect results.
                 </p>
