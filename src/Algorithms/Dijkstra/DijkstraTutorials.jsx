@@ -4,7 +4,7 @@ const DijkstraTutorial = () => {
         <div style={{ padding: '1rem', fontFamily: 'Arial, sans-serif', lineHeight: '1.3rem' }}>
             {/* YouTube Video Section */}
             <section style={{ marginBottom: '2rem' }}>
-                <h2 style={{ fontSize: '1.8rem', marginBottom: '1rem' ,fontWeight:'bold'}}>Dijkstras Algorithm Tutorial</h2>
+                <h2 style={{ fontSize: '1.7rem', marginBottom: '1rem' ,fontWeight:'bold'}}>Dijkstras Algorithm Tutorial</h2>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
                     <iframe
                         width="800px"

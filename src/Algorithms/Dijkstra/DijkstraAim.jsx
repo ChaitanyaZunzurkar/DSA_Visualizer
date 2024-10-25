@@ -17,7 +17,8 @@ const DijkstraAim = () => {
     borderBottom: '3px solid #27ae60', // Thicker green border for emphasis
     paddingBottom: '10px',
     textAlign: 'center',
-    fontSize: '36px', // Increased font size for prominence
+    fontSize: '2rem', 
+    fontWeight:'bold',// Increased font size for prominence
     letterSpacing: '1.5px', // Adding letter spacing for a modern look
     };
     const subHeadingStyle = {
