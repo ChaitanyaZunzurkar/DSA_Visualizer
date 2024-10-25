@@ -5,26 +5,28 @@ const Tutorials = () => {
         <div className={styles.container}> {/* Main container */}
             <div className={styles.videoContainer}> {/* Video container for the first video */}
                 <strong className={styles.heading}> {/* Heading for the first video */}
-                    Insertion and Deletion at various positions in Linked List
+                    Stack Introduction
                 </strong>
                 <iframe 
-                    src="https://www.youtube.com/embed/VaECK03Dz-g?si=iUR-N93m9j2YQdpD" 
-                    title="YouTube video player" 
-                    frameBorder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    
+                    
+                    src="https://www.youtube.com/embed/lno6Ft0tOZI?si=ZjKUMet4aDy3XhjZ"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen
+                  
                     className={styles.videoIframe} // CSS class for styling
                 />
             </div>   
 
             <div className={styles.videoContainer}> {/* Video container for the second video */}
                 <strong className={styles.heading}> {/* Heading for the second video */}
-                    Traversal through Linked List
+                    Tower of Hanoi
                 </strong>
                 <iframe
-                    src="https://www.youtube.com/embed/Nq7ok-OyEpg?si=r_DXgd_8QL8fBDjK"
+                    src="https://www.youtube.com/embed/rf6uf3jNjbo?si=SjxyM_2hZ9QLiSGA"
                     title="YouTube video player"
-                    frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen

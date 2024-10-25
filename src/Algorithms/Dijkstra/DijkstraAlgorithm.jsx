@@ -3,14 +3,14 @@ import CodeCopy from '../../Components/Codecopy';
 const DijkstraConcept = () => {
 const headingStyle = {
         marginTop: '0',
-        fontWeight: '800',
-        fontSize: '30px',
+        fontWeight: 'bold',
+        fontSize: '1.5rem',
         marginBottom: '15px',
     };
  const subHeadingStyle = {
         mmarginTop: '20px',
         fontWeight: 'bold',
-        fontSize: '20px',
+        fontSize: '1.3rem',
         marginTop: '10px',
     };
 const listStyle = { 

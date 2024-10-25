@@ -43,8 +43,8 @@ const HashingChaining = () => {
     e.preventDefault();
     const value = Number(userInput);
     if (!isNaN(value)) {
-      setDataItems((prevItems) => [...prevItems, value]); // Add new value to the array
-      setUserInput(''); // Clear the input after submitting
+      setDataItems((prevItems) => [...prevItems, value]);
+      setUserInput('');
     }
   };
 

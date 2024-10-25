@@ -26,20 +26,6 @@ const dataStructure = [
     
   },
   {
-    id: 4,
-    title: 'Trees',
-    description: 'Uncover the secrets of hierarchical and networked data structures.',
-    longDescription: 'Delve into the world of trees and graphs...',
-    
-  },
-  {
-    id: 5,
-    title: 'Searching',
-    description: 'Learn the algorithms behind efficient data processing.',
-    longDescription: 'Get to grips with the fundamental algorithms...',
-    
-  },
-  {
     id: 6,
     title: 'Linked List',
     description: 'Understand the dynamic data structure of linked lists.',

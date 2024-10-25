@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from '../assets/logotemp.jpeg';
 export default function Navbar() {
     return (
         <>
@@ -8,7 +9,7 @@ export default function Navbar() {
                         <img
                             alt="testimonial"
                             className="w-14 h-14 mb-2 object-cover object-center rounded-full inline-block border-1 border-black-800 bg-black-800 bg-opacity-10"
-                            src="https://dummyimage.com/302x302"
+                            src={logo}
                         />
                         <span className="ml-6 text-2xl">Algolens</span>
                     </a>

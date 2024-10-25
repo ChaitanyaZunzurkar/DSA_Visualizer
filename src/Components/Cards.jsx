@@ -89,7 +89,7 @@ export default function Cards() {
             />
             <Card
                 title="Tutorials"
-                description=""
+                description="Visualize complex data with intuitive, dynamic charts and graphs. Gain insights through clear, interactive visual representations."
                 imageSrc={Tutorial}
             />
             <Card
