@@ -84,7 +84,7 @@ await mergeSort(0, array.length - 1);
 setIsSorting(false);
 };
 return (
-<div className="app" style={{ backgroundColor: "#283747", borderRadius: "20px",
+<div className="app" style={{ backgroundColor: "#f0f2f5", borderRadius: "20px",
 height: "100vh", color: "#e0e0e0" }}>
 <div className="controls">
 <button onClick={handleSort} disabled={isSorting}>
@@ -107,10 +107,10 @@ key={index}
 className="bar"
 style={{
 background: comparedIndexes.includes(index)
-? "green" // Green color for bars being compared
+? "#FDFDFD" // Green color for bars being compared
 : sortedIndexes.has(index)
-? "brown" // Brown color for sorted bars
-: "#f43f5a", // Default red color for unsorted bars
+? "#2196f3" // Brown color for sorted bars
+: "yellow", // Default red color for unsorted bars
 height: `${value * 2}px`,
 }}
 >
@@ -121,13 +121,7 @@ height: `${value * 2}px`,
 <style>
 {`
 /* General App Styles */
-body {
-margin: 0;
-padding: 0;
-font-family: Arial, sans-serif;
-background-color: #0d0d0d; /* Dark theme background */
-color: #e0e0e0; /* Light text color */
-}
+
 .app {
 text-align: center;
 padding: 20px;
@@ -137,14 +131,20 @@ padding: 20px;
 margin-bottom: 20px;
 }
 button {
-background-color: #1f4068;
-color: white;
-border: none;
+
 padding: 10px 20px;
 margin-right: 10px;
 border-radius: 5px;
 cursor: pointer;
 transition: background-color 0.3s ease;
+padding: 12px 20px;
+          font-size: 16px;
+          background-color: #4caf50;
+          color: white;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
 }
 button:disabled {
 background-color: #2b2e4a;
@@ -159,9 +159,9 @@ margin-left: 10px;
 }
 span {
 margin-left: 10px;
-color: #1b6ca8;
+color: black;
 font-size: 20px;
-font-weight:700;
+font-weight:600;
 }
 /* Flex Container and Bar Styling */
 .flex-container {
@@ -185,17 +185,17 @@ opacity: 0.8;
 }
 /* Bar value styling */
 .bar-value {
-position: absolute;
-top: 50%; /* Center the text vertically */
-left: 20%; /* Center the text horizontally */
-transform: translate(-50%, -50%); /* Adjust position to center */
-color: black; /* Change color to black for better visibility */
-font-weight: bold;
-font-size: 18px; /* Increase font size for visibility */
+    position: absolute;
+    top: 50%; /* Center the text vertically */
+    left: 20%; /* Center the text horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to center */
+    color: black; /* Change color to black for better visibility */
+    font-weight: bold;
+    font-size: 18px; /* Increase font size for visibility */
 }
 /* Dark theme accent colors */
 .bar {
-background-color: #e43f5a;
+background-color: blue;
 }
 `}
 </style>
