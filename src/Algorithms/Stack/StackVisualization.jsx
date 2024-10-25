@@ -55,14 +55,14 @@ const StackVisualization = () => {
         margin-bottom: 25px; /* Adjusted margin for better spacing */
         text-align: center; /* Center-align the title */
         letter-spacing: 1px; /* Slight letter-spacing for clarity */
-        text-transform: uppercase; /* Optional: Make the text uppercase */
+         /* Optional: Make the text uppercase */
         
 }
 
 
         .stack-box {
           background-color: #f0f2f5;
-          border-radius: 12px;
+          border-radius: 6px;
           padding: 30px;
           box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
           width: 550px;
