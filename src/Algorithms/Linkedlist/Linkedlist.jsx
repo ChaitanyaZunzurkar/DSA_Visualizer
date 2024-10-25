@@ -17,7 +17,7 @@ const LinkedList = () => {
                         <Link to="" className={styles.a}>Aim</Link>
                     </li>
                     <li className={styles.li}>
-                        <Link to="articles" className={styles.a}>Articles</Link>
+                        <Link to="articles" className={styles.a}>Concept</Link>
                     </li>
                     <li className={styles.li}>
                         <Link to="type" className={styles.a}>Types of Linked Lists</Link>
