@@ -4,7 +4,7 @@ import graph3 from '../../assets/GraphImages/Graph3.png';
 
 const DijkstraConcept = () => {
     return (
-        <div style={{ padding: '1rem', fontFamily: 'Arial, sans-serif', lineHeight: '1.6' , height:'100vh'}}>
+        <div style={{ padding: '1rem', fontFamily: 'Arial, sans-serif', lineHeight: '1.6' }}>
             {/* Introduction Section */}
             <section style={{ marginBottom: '1rem' }}>
                 <h2 style={{ backgroundColor: '#f0f0f0', padding: '1rem', fontSize: '1.5rem',fontWeight:'bold',marginBottom: '10px', }}>Introduction to Graphs</h2>

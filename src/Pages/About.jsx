@@ -4,6 +4,7 @@ import img11 from '../assets/Aboutimg/aashwath.jpeg'
 import chaitanya from '../assets/chaitanyaPic.jpg'
 import img13 from '../assets/Aboutimg/amit.jpeg'
 import img14 from '../assets/Aboutimg/ashish.jpeg'
+import { transform } from 'framer-motion';
 
 const teamMembers = [
   { 
@@ -70,7 +71,7 @@ export default function TeamPage() {
         {teamMembers.map(member => (
           <div key={member.id} className="teamCard">
 
-            <div className="img" style={{ backgroundImage: `url(${member.image})`,backgroundSize:'contain' ,backgroundRepeat:'no-repeat',backgroundPosition:'center'}} />
+            <div className="img" style={{ backgroundImage: `url(${member.image})`,backgroundSize:'cover' ,backgroundRepeat:'no-repeat',backgroundPosition:'center',width:'125px'}} />
 
             <span>
               <h3 className='teamName'>{member.name}</h3>
