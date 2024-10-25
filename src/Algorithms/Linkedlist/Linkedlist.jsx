@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import { useState } from 'react'; 
+import { Link, useLocation } from 'react-router-dom';
+import { useState , useEffect} from 'react'; 
 import styles from '../../Stylesheets/Linkedlist.module.css';
 
 const LinkedList = () => {
@@ -8,6 +8,11 @@ const LinkedList = () => {
     const toggleSubMenu = () => {
         setSubMenuOpen(!isSubMenuOpen);
     };
+    const location = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0,0);
+    } , [location])
 
     return (
         <div className={styles.container}>

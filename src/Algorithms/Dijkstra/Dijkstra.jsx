@@ -1,7 +1,14 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import styles from '../../Stylesheets/Linkedlist.module.css';
+import { useEffect } from 'react';
 
 const Dijkstra = () => {
+    const location = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0,0);
+    } , [location])
+    
     return (
         <div className={styles.container}>
             <nav className={styles.nav}>

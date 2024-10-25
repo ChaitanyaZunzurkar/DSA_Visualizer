@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import img10 from '../assets/Aboutimg/aryan.png'
 import img11 from '../assets/Aboutimg/aashwath.jpeg'
-import chaitanya from '../assets/chaitanya.jpg'
+import chaitanya from '../assets/chaitanyaPic.jpg'
 import img13 from '../assets/Aboutimg/amit.jpeg'
 import img14 from '../assets/Aboutimg/ashish.jpeg'
 
@@ -176,7 +176,6 @@ const StyledWrapper = styled.div`
     justify-content: center;
     flex-wrap: wrap;
     padding: 30px 10px; // Increased padding for spacing
-    height:100vh;
   }
   .teamCard {
     width: 20em;

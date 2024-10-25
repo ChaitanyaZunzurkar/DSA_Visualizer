@@ -59,6 +59,7 @@
   text-align: left;
   transition: color 0.3s ease; /* Equivalent to transition-colors and duration-300 */
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Smooth transitions */
+  width: 100%;
 }
 
 .btn:hover {
