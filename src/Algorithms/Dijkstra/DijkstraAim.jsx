@@ -8,7 +8,8 @@ const DijkstraAim = () => {
     margin: '20px auto',
     fontFamily: "'Roboto', sans-serif", // More modern font
     color: '#444', // Darker text color for better readability
-    overflowY: 'auto', // Allow scrolling if content overflows
+    overflowY: 'auto',
+    height:'100vh' // Allow scrolling if content overflows
     };
     const headingStyle = {
     color: '#2980b9', // A slightly darker blue for the heading
@@ -43,15 +44,15 @@ const DijkstraAim = () => {
     };
     return (
     <div style={containerStyle}>
-    <h1 style={headingStyle}>Dijkstra's Algorithm</h1>
+    <h1 style={headingStyle}>Dijkstras Algorithm</h1>
     <h2 style={subHeadingStyle}>Learning Objectives of the Experiment</h2>
-    <p>In this experiment on Dijkstra's Algorithm, you will learn the following topics:</p>
+    <p>In this experiment on Dijkstras Algorithm, you will learn the following topics:</p>
     <ul style={listStyle}>
     <li style={{ ...listItemStyle, ...hoverStyle }}>
     Introduction
     <ul style={listStyle}>
     <li style={listItemStyle}>Introduction to Graphs</li>
-    <li style={listItemStyle}>What is Dijkstra's Algorithm?</li>
+    <li style={listItemStyle}>What is Dijkstras Algorithm?</li>
     </ul>
     </li>
     <li style={{ ...listItemStyle, ...hoverStyle }}>
@@ -65,7 +66,7 @@ const DijkstraAim = () => {
     <li style={{ ...listItemStyle, ...hoverStyle }}>
     Implementation
     <ul style={listStyle}>
-    <li style={listItemStyle}>Step-by-step implementation of Dijkstra's Algorithm</li>
+    <li style={listItemStyle}>Step-by-step implementation of Dijkstras Algorithm</li>
     <li style={listItemStyle}>Time complexity analysis</li>
     <li style={listItemStyle}>Use cases and real-world applications</li>
     </ul>

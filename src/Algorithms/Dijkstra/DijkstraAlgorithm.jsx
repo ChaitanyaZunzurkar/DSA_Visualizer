@@ -51,9 +51,9 @@ int findMinDistance(int dist[], bool visited[]) {
 
 // Function to print the solution, i.e., the shortest distance from the source
 void printSolution(int dist[]) {
-    printf("Vertex \ t\ t Distance from Source\ n");
+    printf("Vertex \t\t Distance from Source \n");
     for (int i = 0; i < V; i++) {
-        printf("%d \ t \ t %d\ n", i, dist[i]);
+        printf("%d \t \t %d\n", i, dist[i]);
     }
 }
 
@@ -123,7 +123,7 @@ int main() {
                 <ul style={listStyle}>
                     <li><span style={{fontWeight:'bold'}}>Step 1: </span>Set initial distances for all vertices: 0 for the source vertex, and infinity for all the other.</li>
                     <li><span style={{fontWeight:'bold'}}>Step 2: </span>Choose the unvisited vertex with the shortest distance from the start to be the current vertex. So the algorithm will always start with the source as the current vertex.</li>
-                    <li><span style={{fontWeight:'bold'}}>Step 3: </span>For each of the current vertex's unvisited neighbor vertices, calculate the distance from the source and update the distance if the new, calculated, distance is lower.</li>
+                    <li><span style={{fontWeight:'bold'}}>Step 3: </span>For each of the current vertexs unvisited neighbor vertices, calculate the distance from the source and update the distance if the new, calculated, distance is lower.</li>
                     <li><span style={{fontWeight:'bold'}}>Step 4: </span>We are now done with the current vertex, so we mark it as visited. A visited vertex is not checked again.</li>
                     <li><span style={{fontWeight:'bold'}}>Step 5: </span>Go back to step 2 to choose a new current vertex, and keep repeating these steps until all vertices are visited.</li>
                     <li><span style={{fontWeight:'bold'}}>Step 6: </span>In the end we are left with the shortest path from the source vertex to every other vertex in the graph.</li>
@@ -131,9 +131,9 @@ int main() {
             <h2 style={subHeadingStyle}>Code:</h2>
             <CodeCopy code={codeSnippet} />
             <h2 style={headingStyle}>Time Complexity for Dijkstra,s Algorithm</h2>
-            <h2 style={subHeadingStyle}>V as the number of vertices in our graph, the time complexity for Dijkstra's algorithm is O(V^2)</h2>
-            <p style={para}>The reason why we get this time complexity is that the vertex with the lowest distance must to be search for to choose the next current vertex, and that takes O(V)time. And since this must to be done for every vertex connected to the source, we need to factor that in, and so we get time complexity O(V2)for Dijkstra's algorithm.
-                            By using a Min-heap or Fibonacci-heap data structure for the distances instead (not yet explained in this tutorial), the time needed to search for the minimum distance vertex is reduced from O(V) to O(logV), which results in an improved time complexity for Dijkstra's algorithm <span style={{fontWeight:'bolder'}}>O(V⋅logV+E)</span></p>
+            <h2 style={subHeadingStyle}>V as the number of vertices in our graph, the time complexity for Dijkstras algorithm is O(V^2)</h2>
+            <p style={para}>The reason why we get this time complexity is that the vertex with the lowest distance must to be search for to choose the next current vertex, and that takes O(V)time. And since this must to be done for every vertex connected to the source, we need to factor that in, and so we get time complexity O(V2)for Dijkstras algorithm.
+                            By using a Min-heap or Fibonacci-heap data structure for the distances instead (not yet explained in this tutorial), the time needed to search for the minimum distance vertex is reduced from O(V) to O(logV), which results in an improved time complexity for Dijkstras algorithm <span style={{fontWeight:'bolder'}}>O(V⋅logV+E)</span></p>
         </div>
     );
 }

@@ -1,5 +1,3 @@
-import React from 'react';
-
 const resources = [
     {
         title: 'Understanding Dijkstra’s Algorithm',
@@ -41,7 +39,7 @@ const resources = [
 
 const ArticlesAndResources = () => {
     return (
-        <div style={{ padding: '1.5rem', fontFamily: 'Arial, sans-serif' }}>
+        <div style={{ padding: '1.5rem', fontFamily: 'Arial, sans-serif' , height:'100vh'}}>
             <h2 style={{ fontSize: '1.7rem', marginBottom: '1rem',fontWeight:'bold' }}>Articles and Resources</h2>
             <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
                 {resources.map((resource, index) => (

@@ -1,60 +1,3 @@
-// import  { useState } from 'react';
-// import '../../Stylesheets/PasswordHashingVisualization.module.css'
-// import crypto from 'crypto';
-// import { MdLock } from 'react-icons/md'; 
-
-// const PasswordHashingVisualization = () => {
-//     const [password, setPassword] = useState('');
-//     const [hashedPassword, setHashedPassword] = useState('');
-
-//     const hashPassword = (text) => {
-//         return crypto.createHash('sha256').update(text).digest('hex');
-//     };
-
-//     const handleInputChange = (e) => {
-//         const text = e.target.value;
-//         setPassword(text);
-//         setHashedPassword(hashPassword(text));
-//     };
-
-//     const clearInput = () => {
-//         setPassword('');
-//         setHashedPassword('');
-//     };
-
-//     return (
-//         <div className="password-hashing-visualization">
-//             <h1>Password Hashing Visualization</h1>
-//             <div className="input-container">
-//                 <MdLock className="lock-icon" />
-//                 <input
-//                     type="password"
-//                     value={password}
-//                     onChange={handleInputChange}
-//                     placeholder="Enter your password"
-//                 />
-//             </div>
-//             <button className="clear-button" onClick={clearInput}>Clear</button>
-//             <div className="output">
-//                 <h2>Original Password:</h2>
-//                 <p>{password ? password : 'No password entered'}</p>
-//                 <h2>Hashed Password:</h2>
-//                 <p>{hashedPassword || 'Hash will appear here'}</p>
-//             </div>
-//             <div className="note">
-//                 <h3>Why Hash Passwords?</h3>
-//                 <p>
-//                     Hashing ensures that even if someone gains access to the database,
-//                     they won't see your actual password, only its hashed representation.
-//                 </p>
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default PasswordHashingVisualization;
-
-
 import { useState } from 'react';
 import CryptoJS from 'crypto-js';
 import { MdLock } from 'react-icons/md'; 
@@ -64,13 +7,13 @@ const PasswordHashingVisualization = () => {
     const [hashedPassword, setHashedPassword] = useState('');
 
     const hashPassword = (text) => {
-        return CryptoJS.SHA256(text).toString(); // Use crypto-js to hash the password
+        return CryptoJS.SHA256(text).toString(); 
     };
 
     const handleInputChange = (e) => {
         const text = e.target.value;
         setPassword(text);
-        setHashedPassword(hashPassword(text)); // Update the hashed password
+        setHashedPassword(hashPassword(text)); 
     };
 
     const clearInput = () => {
@@ -89,6 +32,7 @@ const PasswordHashingVisualization = () => {
             fontFamily: 'Arial, sans-serif',
             animation: 'fadeIn 0.5s',
             overflow: 'hidden',
+            height:'100vh'
         },
         fadeIn: {
             from: { opacity: 0 },
@@ -194,7 +138,7 @@ const PasswordHashingVisualization = () => {
                 <h3>Why Hash Passwords?</h3>
                 <p>
                     Hashing ensures that even if someone gains access to the database,
-                    they won't see your actual password, only its hashed representation.
+                    they wont see your actual password, only its hashed representation.
                 </p>
             </div>
         </div>

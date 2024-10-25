@@ -1,11 +1,10 @@
-import React from 'react';
 import Failure from '../../assets/GraphImages/Failure.jpg';
 const DijkstraTutorial = () => {
     return (
         <div style={{ padding: '1rem', fontFamily: 'Arial, sans-serif', lineHeight: '1.3rem' }}>
             {/* YouTube Video Section */}
             <section style={{ marginBottom: '2rem' }}>
-                <h2 style={{ fontSize: '1.8rem', marginBottom: '1rem' ,fontWeight:'bold'}}>Dijkstra's Algorithm Tutorial</h2>
+                <h2 style={{ fontSize: '1.8rem', marginBottom: '1rem' ,fontWeight:'bold'}}>Dijkstras Algorithm Tutorial</h2>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
                     <iframe
                         width="800px"
@@ -23,9 +22,9 @@ const DijkstraTutorial = () => {
 
             {/* Explanation Section */}
             <section>
-                <h3 style={{fontWeight:'bold',fontSize:'1.5rem',marginBottom:'10px'}}>Why Dijkstra's Algorithms fails for the Graphs having Negative Edges ?</h3>
+                <h3 style={{fontWeight:'bold',fontSize:'1.5rem',marginBottom:'10px'}}>Why Dijkstras Algorithms fails for the Graphs having Negative Edges ?</h3>
                 <p style={{lineHeight:'2rem', fontSize:'1.1rem'}}>
-                The problem with negative weights arises from the fact that Dijkstra's algorithm assumes that once a node is added to the set of visited nodes, its distance is finalized and will not change. However, in the presence of negative weights, this assumption can lead to incorrect results.
+                The problem with negative weights arises from the fact that Dijkstras algorithm assumes that once a node is added to the set of visited nodes, its distance is finalized and will not change. However, in the presence of negative weights, this assumption can lead to incorrect results.
                 </p>
                 <img src={Failure} alt="Dijkstra Failure" style={{ maxWidth: '70%', height: 'auto', marginTop: '1rem' }} />
                 <p style={{lineHeight:'2rem', fontSize:'1.1rem'}}>

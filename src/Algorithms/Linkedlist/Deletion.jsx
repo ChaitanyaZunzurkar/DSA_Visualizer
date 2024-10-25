@@ -71,6 +71,7 @@ const Deletion = () => {
         container: {
             padding: '20px',
             textAlign: 'center',
+            height:'100vh'
         },
         visualization: {
             display: 'flex',

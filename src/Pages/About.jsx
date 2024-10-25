@@ -1,12 +1,10 @@
-import React from 'react';
 import styled from 'styled-components';
-import img4 from '../assets/CourseBoximg/img4.jpg'; // Sample image import
 import img10 from '../assets/Aboutimg/aryan.png'
 import img11 from '../assets/Aboutimg/aashwath.jpeg'
-import img12 from '../assets/Aboutimg/chaitanya.jpeg'
+import chaitanya from '../assets/chaitanya.jpg'
 import img13 from '../assets/Aboutimg/amit.jpeg'
 import img14 from '../assets/Aboutimg/ashish.jpeg'
-// Team members array with social media links
+
 const teamMembers = [
   { 
     id: 1, 
@@ -17,7 +15,7 @@ const teamMembers = [
     linkedin: 'https://www.linkedin.com/in/alice', 
     github: 'https://github.com/alice', 
     twitter: 'https://twitter.com/alice',
-    message: 'aryanparas2004@gmail.com'
+    message: 'yadavar@rknec.edu'
   },
   { 
     id: 2, 
@@ -28,7 +26,7 @@ const teamMembers = [
     linkedin: 'https://www.linkedin.com/in/bob', 
     github: 'https://github.com/bob', 
     twitter: 'https://twitter.com/bob' ,
-    message: 'aryanparas2004@gmail.com'
+    message: 'sawar@rknec.edu'
   },
   { 
     id: 3, 
@@ -39,18 +37,18 @@ const teamMembers = [
     linkedin: 'https://www.linkedin.com/in/aryan-akhare-897205247/ ', 
     github: 'https://github.com/AryanAkhare', 
     twitter: 'https://x.com/AkhareAryan' ,
-    message: 'https://www.instagram.com/aryan_akhare/'
+    message: 'aryanparas2004@gmail.com'
   },
   { 
     id: 4, 
     name: 'Chaitanya Zunzurkar', 
     position: 'Lead Developer', 
     about: "I’m Bob, a passionate developer focused on creating scalable and efficient web applications.",
-    image: img12, 
-    linkedin: 'https://www.linkedin.com/in/bob', 
-    github: 'https://github.com/bob', 
-    twitter: 'https://twitter.com/bob' ,
-    message: 'aryanparas2004@gmail.com'
+    image: chaitanya, 
+    linkedin: 'https://www.linkedin.com/in/chaitanya-zunzurkar', 
+    github: 'https://github.com/ChaitanyaZunzurkar', 
+    twitter: 'https://x.com/CZunzurkar' ,
+    message: 'chaitanyazunzurkar09@gmail.com'
   },
   { 
     id: 5, 
@@ -60,11 +58,9 @@ const teamMembers = [
     image: img14, 
     linkedin: 'https://www.linkedin.com/in/bob', 
     github: 'https://github.com/bob', 
-    twitter: 'https://twitter.com/bob' ,
-    message: 'aryanparas2004@gmail.com'
+    twitter: 'https://twitter.com/bob',
+    message: 'kambleac@rknec.edu'
   },
-  
-  // Add more team members as needed
 ];
 
 export default function TeamPage() {
@@ -86,7 +82,7 @@ export default function TeamPage() {
             <div className="teamShare">
 
               <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-linkedin" viewBox="0 0 16 16">
               <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
               </svg>
               </a>
@@ -105,17 +101,9 @@ export default function TeamPage() {
               </a>
             </div>
 
-            {/* <a href={`mailto: ${member.message}`} target="_blank" rel="noopener noreferrer">
-            <StyledButton>Send Message</StyledButton> {/* Button to link to the message */}
-             {/*tried this not working*/}
-
-            <a href={member.message}>
+            <a href={`mailto:${member.message}`} target="_blank" >
               <StyledButton>Send Message</StyledButton>
-
             </a>
-
-            
-            
             
           </div>
           
@@ -188,6 +176,7 @@ const StyledWrapper = styled.div`
     justify-content: center;
     flex-wrap: wrap;
     padding: 30px 10px; // Increased padding for spacing
+    height:100vh;
   }
   .teamCard {
     width: 20em;

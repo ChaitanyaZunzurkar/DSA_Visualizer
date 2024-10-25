@@ -4,12 +4,12 @@ import graph3 from '../../assets/GraphImages/Graph3.png';
 
 const DijkstraConcept = () => {
     return (
-        <div style={{ padding: '1rem', fontFamily: 'Arial, sans-serif', lineHeight: '1.6' }}>
+        <div style={{ padding: '1rem', fontFamily: 'Arial, sans-serif', lineHeight: '1.6' , height:'100vh'}}>
             {/* Introduction Section */}
             <section style={{ marginBottom: '1rem' }}>
                 <h2 style={{ backgroundColor: '#f0f0f0', padding: '1rem', fontSize: '1.5rem',fontWeight:'bold',marginBottom: '10px', }}>Introduction to Graphs</h2>
                 <p>
-                    Graphs are non-linear data structures representing the "connections" between elements. These
+                    Graphs are non-linear data structures representing the connections between elements. These
                     elements are known as Vertices, and the lines or arcs that connect any two vertices in the graph are
                     known as Edges. Formally, a Graph comprises a set of Vertices (V) and a set of Edges (E). The Graph
                     is denoted by G(V, E).
@@ -36,8 +36,8 @@ const DijkstraConcept = () => {
             <section style={{ marginBottom: '2rem' }}>
                 <h3 style={{fontSize:'1.3rem', fontWeight:'bold'}}>Weighted Graphs</h3>
                 <p>
-                    A weighted graph is a graph whose edges have a "weight" or "cost". The weight of an edge can represent
-                    distance, time, or anything that models the "connection" between the pair of nodes it connects.
+                    A weighted graph is a graph whose edges have a weight or cost. The weight of an edge can represent
+                    distance, time, or anything that models the connection between the pair of nodes it connects.
                 </p>
                 <p>
                     For example, in the weighted graph below, you can see a number next to each edge. This number represents
@@ -48,11 +48,11 @@ const DijkstraConcept = () => {
 
             {/* Dijkstra Algorithm Section */}
             <section>
-            <h2 style={{ backgroundColor: '#f0f0f0', padding: '1rem', fontSize: '1.5rem',fontWeight:'bold',marginBottom: '10px', }}> Dijkstra's Algorithm</h2>
+            <h2 style={{ backgroundColor: '#f0f0f0', padding: '1rem', fontSize: '1.5rem',fontWeight:'bold',marginBottom: '10px', }}> Dijkstras Algorithm</h2>
                 <p>
-                Dijkstra's algorithm is often considered to be the most straightforward algorithm for solving the shortest path problem.<br/>
-                Dijkstra's algorithm is used for solving single-source shortest path problems for directed or undirected paths. Single-source means that one vertex is chosen to be the start, and the algorithm will find the shortest path from that vertex to all other vertices.<br/>
-                To find the shortest path, Dijkstra's algorithm needs to know which vertex is the source, it needs a way to mark vertices as visited, and it needs an overview of the current shortest distance to each vertex as it works its way through the graph, updating these distances when a shorter distance is found.<br/>
+                Dijkstras algorithm is often considered to be the most straightforward algorithm for solving the shortest path problem.<br/>
+                Dijkstras algorithm is used for solving single-source shortest path problems for directed or undirected paths. Single-source means that one vertex is chosen to be the start, and the algorithm will find the shortest path from that vertex to all other vertices.<br/>
+                To find the shortest path, Dijkstras algorithm needs to know which vertex is the source, it needs a way to mark vertices as visited, and it needs an overview of the current shortest distance to each vertex as it works its way through the graph, updating these distances when a shorter distance is found.<br/>
                 </p>
                 <div style={{ padding: '0.6rem', fontFamily: 'Arial, sans-serif' }}>
                 <h3 style={{fontSize:'1.3rem', fontWeight:'bold'}}>Advantages</h3>
@@ -71,7 +71,7 @@ const DijkstraConcept = () => {
                 </div>
 
                 <div style={{ padding: '0.6rem', fontFamily: 'Arial, sans-serif' }}>
-                <h3 style={{fontSize:'1.3rem', fontWeight:'bold'}}>Applications of Dijkstra's Algorithm</h3>
+                <h3 style={{fontSize:'1.3rem', fontWeight:'bold'}}>Applications of Dijkstras Algorithm</h3>
                      <ul style={{ listStyleType: 'disc' }}>
                       <li>Google maps uses Dijkstra algorithm to show shortest distance between source and destination.</li>
                       <li>In computer networking , Dijkstra’s algorithm forms the basis for various routing protocols, such as OSPF (Open Shortest Path First) and IS-IS (Intermediate System to Intermediate System).</li>
