@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import styles from '../../Stylesheets/Hashing.module.css';
+import styles from '../../Stylesheets/Linkedlist.module.css';
 import { useState } from 'react'
 const Hashing = () => {
     const [isSubMenuOpen, setSubMenuOpen] = useState(false);

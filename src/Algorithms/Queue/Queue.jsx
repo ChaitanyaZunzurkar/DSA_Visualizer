@@ -26,6 +26,10 @@ const Queue = () => {
                     <li className={styles.li}>
                         <Link to="test" className={styles.a}>Test</Link>
                     </li>
+
+                    <li className={styles.li}>
+                        <Link to="tutorial" className={styles.a}>Tutorial</Link>
+                    </li>
                     
                     
                 </ul>

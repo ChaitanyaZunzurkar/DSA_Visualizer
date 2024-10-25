@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from '../../Stylesheets/Test.module.css'; // Import the CSS module
-
+const space='          ';
 const questionsPool = [
     {
         question: "What is a stack?",
@@ -230,7 +230,8 @@ const StacksTest = () => {
             <form onSubmit={(e) => e.preventDefault()}>
                 {questions.map((question, questionIndex) => (
                     <div key={questionIndex} className={styles.questionContainer}>
-                        <p><b>{questionIndex +1 }. {question.question}</b></p>
+{/* added a space */}
+                        <p><b>{questionIndex +1 }.  {question.question}</b></p> 
                         <ul>
                             {question.options.map((option, optionIndex) => (
                                 <li key={optionIndex}>
@@ -240,8 +241,7 @@ const StacksTest = () => {
                                             name={`question-${questionIndex}`}
                                             checked={answers[questionIndex] === optionIndex}
                                             onChange={() => handleOptionSelect(questionIndex, optionIndex)}
-                                        />
-                                        {option}
+                                        />{space}{ option}
                                     </label>
                                 </li>
                             ))}

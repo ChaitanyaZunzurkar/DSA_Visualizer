@@ -14,6 +14,7 @@ import Aim from './Algorithms/Linkedlist/Aim.jsx';
 import Articles from './Algorithms/Linkedlist/Articles.jsx';
 import Test from './Algorithms/Linkedlist/Test.jsx';
 import Tutorials from './Algorithms/Linkedlist/Tutorials.jsx';
+import Type from './Algorithms/Linkedlist/ListType.jsx';
 // import Visualization from './Algorithms/Linkedlist/Visualization.jsx';
 import Insertion from './Algorithms/Linkedlist/Insertion.jsx';
 import Deletion from './Algorithms/Linkedlist/Deletion.jsx';
@@ -51,6 +52,8 @@ import SortingVisualization from './Algorithms/Sorting/Visualization_Sort.jsx';
 // graphs page components
 import GraphsPage from './Algorithms/Dijkstra/DijkstraPage.jsx';
 import GraphsAim from './Algorithms/Dijkstra/DijkstraAim.jsx';
+import GraphsConcept from './Algorithms/Dijkstra/DijkstraConcept.jsx';
+import GraphsAlgorithm from './Algorithms/Dijkstra/DijkstraAlgorithm.jsx';
 import GraphsTest from './Algorithms/Dijkstra/DijkstraTest.jsx';
 import GraphsTutorials from './Algorithms/Dijkstra/DijkstraTutorials.jsx';
 import GraphsArticles from './Algorithms/Dijkstra/DijkstraArticle.jsx';
@@ -59,13 +62,12 @@ import GraphsVisualization from './Algorithms/Dijkstra/DijkstraVisualization.jsx
 // queues page components
 import QueuesPage from './Algorithms/Queue/QueuePage.jsx';
 import QueuesAim from './Algorithms/Queue/AimQueue.jsx';
-import QueuesTest from './Algorithms/Queue/QueueTest.jsx';
+import QueuesTest from './Algorithms/Queue/TestQueue.jsx';
 import QueuesTypes from './Algorithms/Queue/QueueTypes.jsx';
 import QueuesConcepts from './Algorithms/Queue/QueueConcept.jsx';
 import QueuesVisualization from './Algorithms/Queue/QueueVisualization';
 import QueueImplementation from './Algorithms/Queue/QueueImplement.jsx'
-
-
+import QueueTutorial from './Algorithms/Queue/QueueTutorial.jsx'
 
 function App() {
   return (
@@ -80,13 +82,15 @@ function App() {
           
           <Route path="/courses/:courseId/Linked List" element={<LinkedlistPage />}>
             <Route index element={<Aim />} />
+            <Route path="articles" element={<Articles />} />
+            <Route path="type" element={<Type />} />
             <Route path="visualization">
               <Route path="insertion" element={<Insertion />} />
               <Route path="deletion" element={<Deletion />} />
               <Route path="traversal" element={<Traversal />} />
             </Route>
             <Route path="test" element={<Test />} />
-            <Route path="articles" element={<Articles />} />
+            
             <Route path="tutorials" element={<Tutorials />} />
             <Route path="*" element={<Navigate to={`.`} />} />
           </Route>
@@ -127,6 +131,8 @@ function App() {
 
           <Route path="/courses/:courseId/Graphs" element={<GraphsPage />}>
             <Route index element={<GraphsAim />} />
+            <Route path="concept" element={<GraphsConcept/>} />
+            <Route path="Algorithm" element={<GraphsAlgorithm/>} />
             <Route path="visualization" element={<GraphsVisualization />} />
             <Route path="test" element={<GraphsTest />} />
             <Route path="articles" element={<GraphsArticles />} />
@@ -141,6 +147,7 @@ function App() {
             <Route path="test" element={<QueuesTest />} />
             <Route path="articles" element={<QueuesConcepts />} />
             <Route path="type" element={<QueuesTypes />} />
+            <Route path="tutorial" element={<QueueTutorial />} />
             <Route path="*" element={<Navigate to={'.'} />} />
           </Route>
 

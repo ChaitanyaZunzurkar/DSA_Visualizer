@@ -19,7 +19,7 @@ const Stack = () => {
                         <Link to="visualization" className={styles.a}>Visualization</Link>
                     </li>
                     <li className={styles.li}>
-                        <Link to="mono" className={styles.a}>Tower of Hanoi(Special Implementation)</Link>
+                        <Link to="mono" className={styles.a}>Tower of Hanoi</Link>
                     </li>
                     
                     <li className={styles.li}>
@@ -29,6 +29,10 @@ const Stack = () => {
                     <li className={styles.li}>
                         <Link to="test" className={styles.a}>Test</Link>
                     </li>
+                    
+                    {/* <li className={styles.li}>
+                        <Link to="test" className={styles.a}>Test</Link>
+                    </li> */}
                     
                     
                 </ul>

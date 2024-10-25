@@ -1,23 +1,72 @@
-import React, { useEffect } from 'react';
-
 const AimStack = () => {
-
-    return (
-    <div style={containerStyle}>
-    <h1 style={headingStyle}>Stack</h1>
-    <h2 style={subHeadingStyle}>Learning Objectives of the Experiment</h2>
-    <p style={contentStyle}>In this experiment, you will learn about:</p>
-    <ul style={listStyle}>
-    <li style={{ ...listItemStyle, ...hoverStyle }}>What is a Stack?</li>
-    <li style={{ ...listItemStyle, ...hoverStyle }}>Applications, Advantages, and Disadvantages of Stack</li>
-    <li style={{ ...listItemStyle, ...hoverStyle }}>Gain a basic understanding of Stacks as an abstract data type.</li>
-    <li style={{ ...listItemStyle, ...hoverStyle }}>Understand stack operations associated with time complexity through interactive animations.</li>
-    <li style={{ ...listItemStyle, ...hoverStyle }}>Understand applications of Stacks.</li>
-    <li style={{ ...listItemStyle, ...hoverStyle }}>Special Implementation of Stack for Problem Solving - Monotonic Implementation</li>
-    </ul>
-    </div>
-    );
+    const containerStyle = {
+        padding: '20px',
+        backgroundColor: '',
+        borderRadius: '8px',
+        
+        maxWidth: '100vw',
+        height:'90vh',
+        margin: '20px auto',
+        fontFamily: 'Arial, sans-serif'
+    };
+    const headingStyle = {
+        color: '#5bbaea',
+        marginBottom: '10px',
+        borderBottom: '2px solid #4CAF50',
+        paddingBottom: '5px',
+        textAlign : 'center',
+        fontWeight: '800',
+        fontSize: '30px',
+    };
+    const para={
+        marginTop: '20px',
+        fontWeight: '700',
+        fontSize: '19px',
+        marginBottom: '10px',
     }
-    export default AimStack; 
-    
-    
+    const subHeadingStyle = {
+        color: '#4CAF50',
+        margin: '20px 0 20px 0',
+        marginTop: '20px',
+        fontWeight: '800',
+        fontSize: '20px',
+        marginBottom: '20px',
+    };
+    const listStyle = {
+        marginLeft: '20px',
+        marginTop: '20px',
+        fontWeight: 700,
+        lineHeight: '1.6',            
+        marginBottom: '8px',          
+        color: '#333',                
+        listStyleType: 'disc',        
+                  
+    };
+    return (
+        <div style={containerStyle}>
+            <h1 style={headingStyle}>Stack</h1>
+            <h2 style={subHeadingStyle}>Learning Objectives of the Experiment</h2>
+            <p style={para}>In this experiment, you will be learn about :</p>
+            <ul style={listStyle}>
+                
+                    
+                    
+                        <li>What is a Stack?</li>
+                        <li>Applications, Advantages and Disadvantages of Stack</li>
+                    
+                
+                <li>
+                Gain a basic understanding of Stacks  as an abstract data type.
+                </li>
+                <li>
+                Understand stack operations associated time complexity through interactive animations.
+                </li>
+                <li>
+                Understand applications of Stacks.
+                </li>
+                <li>Special Implementation of Stack -Tower of Hanoi</li>
+            </ul>
+        </div>
+    );
+}
+export default AimStack;

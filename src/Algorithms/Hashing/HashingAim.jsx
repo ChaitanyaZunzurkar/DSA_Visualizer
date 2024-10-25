@@ -1,84 +1,74 @@
-const HashingAim = () => {
+const Aim = () => {
     const containerStyle = {
-    padding: '30px',
-    backgroundColor: '#ffffff', // Change to white for a cleaner look
-    borderRadius: '12px',
-    boxShadow: '0 6px 30px rgba(0, 0, 0, 0.15)', // Deeper shadow for more depth
-    maxWidth: '90vw',
-    height: '90vh',
-    margin: '20px auto',
-    fontFamily: "'Roboto', sans-serif", // Modern font
-    color: '#444', // Darker text color for better readability
-    overflowY: 'auto', // Allow scrolling if content overflows
+        padding: '20px',
+        backgroundColor: '#ffffff',
+        borderRadius: '8px',
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+        maxWidth: '1200px',
+        height: 'auto',
+        margin: '20px auto',
+        fontFamily: 'Roboto, sans-serif',
+        lineHeight: '1.6',
+        color: '#333',
     };
+
     const headingStyle = {
-    color: '#2980b9', // A vibrant blue for the heading
-    marginBottom: '15px',
-    borderBottom: '3px solid #27ae60', // Thicker green border for emphasis
-    paddingBottom: '10px',
-    textAlign: 'center',
-    fontSize: '36px', // Increased font size for prominence
-    letterSpacing: '1.5px', // Adding letter spacing for a modern look
+        color: '#0f9d58',
+        fontSize: '2rem',
+        marginBottom: '10px',
+        borderBottom: '3px solid #0f9d58',
+        paddingBottom: '5px',
+        textAlign: 'center',
     };
+
     const subHeadingStyle = {
-    color: '#27ae60', // Green color for subheading
-    margin: '20px 0',
-    fontSize: '24px', // Slightly larger font for subheading
-    fontWeight: '600',
+        color: '#0f9d58',
+        fontSize: '1.5rem',
+        margin: '20px 0',
+        textAlign: 'left',
     };
+
     const listStyle = {
-    marginLeft: '20px',
-    listStyleType: 'disc',
-    lineHeight: '1.6', // Improved line height for readability
+        marginLeft: '40px',
+        listStyleType: 'disc',
     };
-    const listItemStyle = {
-    padding: '8px 0', // Added padding for spacing between items
-    transition: 'transform 0.3s ease, background-color 0.3s ease', // Smooth transitions for hover effect
-    cursor: 'pointer',
+
+    const innerListStyle = {
+        marginLeft: '20px',
+        listStyleType: 'circle',
     };
-    const hoverStyle = {
-    ':hover': {
-    transform: 'translateY(-2px)', // Slight lift on hover
-    backgroundColor: '#ecf0f1', // Light background change on hover
-    }
-    };
+
     return (
-    <div style={containerStyle}>
-    <h1 style={headingStyle}>Hashing</h1>
-    <h2 style={subHeadingStyle}>Learning Objectives of the Experiment</h2>
-    <p>In this experiment on Hashing, you will learn the following topics:</p>
-    <ul style={listStyle}>
-    <li style={{ ...listItemStyle, ...hoverStyle }}>
-    Introduction
-    <ul style={listStyle}>
-    <li style={listItemStyle}>What is hashing?</li>
-    <li style={listItemStyle}>Why is hashing used?</li>
-    </ul>
-    </li>
-    <li style={{ ...listItemStyle, ...hoverStyle }}>
-    Hash Functions
-    <ul style={listStyle}>
-    <li style={listItemStyle}>Properties of a good hash function</li>
-    <li style={listItemStyle}>Common hashing techniques (e.g., Division, Multiplication)</li>
-    </ul>
-    </li>
-    <li style={{ ...listItemStyle, ...hoverStyle }}>
-    Collision Resolution
-    <ul style={listStyle}>
-    <li style={listItemStyle}>Open Addressing (Linear probing, Quadratic probing, Double hashing)</li>
-    <li style={listItemStyle}>Chaining</li>
-    </ul>
-    </li>
-    <li style={{ ...listItemStyle, ...hoverStyle }}>
-    Applications of Hashing
-    <ul style={listStyle}>
-    <li style={listItemStyle}>Hash tables</li>
-    <li style={listItemStyle}>Cryptography</li>
-    </ul>
-    </li>
-    </ul>
-    </div>
+        <div style={containerStyle}>
+            <h1 style={headingStyle}>Introduction to Hashing</h1>
+            <h2 style={subHeadingStyle}>Learning Objectives of the Experiment</h2>
+            <p>In this experiment on Hashing, you will learn the following topics:</p>
+            <ul style={listStyle}>
+                <li>
+                    Introduction
+                    <ul style={innerListStyle}>
+                        <li>What is hashing?</li>
+                        <li>How does Hashing work?</li>
+                        <li>What is a Hash function?</li>
+                    </ul>
+                </li>
+                <li>
+                    Hash Functions
+                    <ul style={innerListStyle}>
+                        <li>Properties of a good hash function</li>
+                        <li>Common hashing techniques (e.g., Division, Multiplication)</li>
+                    </ul>
+                </li>
+                <li>
+                    Collision Resolution
+                    <ul style={innerListStyle}>
+                        <li>Open Addressing (Linear probing, Quadratic probing, Double hashing)</li>
+                        <li>Chaining</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     );
-    }
-    export default HashingAim; 
-    
+}
+
+export default Aim;

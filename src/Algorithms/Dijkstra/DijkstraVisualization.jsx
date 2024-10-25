@@ -1,5 +1,6 @@
-import React, { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import '../../Stylesheets/Dijkstra.module.css' // Ensure you have your styles imported
+import ContentSwitcher from './ContentSwitcher';
 
 const DijkstraVisualization = () => {
     const canvasRef = useRef(null);
@@ -198,9 +199,10 @@ const DijkstraVisualization = () => {
     };
 
     return (
+        <>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <div>
-            <p style={{fontSize:'2rem'}}>Dijkstra's Algorithm Visualization</p>
+            <p style={{fontSize:'2rem',fontWeight:'bold'}}>Dijkstras Algorithm Visualization</p>
             <section id="graph-container">
                 {/* <h2>Graph</h2> */}
                 <canvas ref={canvasRef} width="600" height="400" style={{ border: '1px solid black' }}></canvas>
@@ -217,10 +219,34 @@ const DijkstraVisualization = () => {
             )}  
             </div>
             <div style={{padding:'20px'}}>
-                <p>Starting node A is Selected. Node D and B are directly connected to A. D has the least distance from A so D is selected. now C and F area directly connectd to D .</p>
-            </div>
-            
+                <div style={{fontSize:'1.3rem', fontWeight:'bold'}}>Initialization:</div>
+                <p>Set the distance to the source node as 0. Set the distance to all other nodes as ∞ (infinity).Mark all nodes as unvisited.</p>
+                <div style={{fontSize:'1.3rem', fontWeight:'bold'}}>Select the Starting Node:</div>
+                <p>Choose the unvisited node with the smallest distance (initially the source node).</p>
+                <div style={{fontSize:'1.3rem', fontWeight:'bold'}}>Update Neighboring Nodes:</div>
+                <p>For the selected node, consider all of its unvisited neighboring nodes.For each neighbor, calculate the tentative distance from the source to that neighbor:Tentative Distance = Distance to Current Node + Edge Weight to NeighborIf the tentative distance is smaller than the currently known distance for that neighbor, update the distance for the neighbor.Mark Node as Visited</p>
+                <div style={{fontSize:'1.3rem', fontWeight:'bold'}}>Repeat</div>
+                <p>Repeat until all nodes have been visited or the destination node has been reached.</p>
+                <div style={{fontSize:'1.3rem', fontWeight:'bold'}}>Termination:</div>
+                <p>When all nodes have been visited, or the shortest distance to the destination node is found, the algorithm terminates.</p>
+                <div style={{fontSize:'1.3rem', fontWeight:'bold'}}>Below You can Visualize Stepwise....</div>
+            </div>   
         </div>
+              <h2 style={{ fontSize:'2rem',backgroundColor:'grey'}}>Stepwise Visualization</h2>
+           <div style={{display:'flex'}}>
+            <div>
+             <ContentSwitcher />
+             </div>
+             <div style={{padding:'30px'}}>
+                <h2 style={{fontSize:'1.2rem' ,fontWeight:'bold'}}>Instructions: </h2>
+                <p>A is Source Node</p>
+                <p>Z is Destination Node</p>
+                <p>Click Next for go Forward and Previous to go back</p>
+                <p>Orange Colored nodes are Visited</p>
+                <p>Green color Nodes and Edges indicates Shortest Path</p>
+             </div>
+            </div> 
+        </>
     );
 };
 

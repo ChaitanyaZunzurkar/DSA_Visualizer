@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const QueueVisualization = () => {
   const [queue, setQueue] = useState([]);
@@ -42,27 +42,25 @@ const QueueVisualization = () => {
           margin: 0; /* Reset default body margin */
           font-family: Arial, sans-serif; /* Set a default font */
         }
-
         .queue-container {
           display: flex;
-          flex-direction: column;
           align-items: center;
           justify-content: center;
           height: 100vh; /* Full viewport height */
-          width: 100vw; /* Full viewport width */
+          width: 80vw; /* Full viewport width */
           background-color: white;
           padding: 20px; /* Reduced padding for better mobile view */
           box-sizing: border-box; /* Include padding in width calculations */
         }
 
-        h2 {
+        .queue-head {
           font-size: 36px;
           font-weight: 600;
           color: #1f2937;
-          margin-bottom: 25px;
+          margin: 25px;
           text-align: center;
           letter-spacing: 1px;
-          text-transform: uppercase;
+          
         }
 
         .queue-box {
@@ -115,6 +113,8 @@ const QueueVisualization = () => {
           font-size: 16px;
           background-color: #111827;
           color: white;
+          margin-top:15px;
+          
           border: none;
           border-radius: 8px;
           cursor: pointer;
@@ -138,7 +138,7 @@ const QueueVisualization = () => {
           border: 2px solid #4caf50;
           padding: 20px;
           width: 100%; /* Use full width */
-          max-width: 600px; /* Limit max width */
+          max-width: 400px; /* Limit max width */
           min-height: 100px;
           background-color: #111827;
           border-radius: 15px;
@@ -203,9 +203,10 @@ const QueueVisualization = () => {
           color: white;
         }
       `}</style>
+    <div className='queue-container'>
 
       <div className="queue-box">
-        <h2>Queue Visualization</h2>
+        <h2 className="queue-head">Queue Visualization</h2>
         <div className="queue-operations">
           <input
             type="text"
@@ -225,8 +226,8 @@ const QueueVisualization = () => {
           {queue.length > 0 ? (
             queue.map((item, index) => (
               <div
-                key={index}
-                className={`queue-item-horizontal ${index === 0 ? 'front-item' : ''} ${index === queue.length - 1 ? 'rear-item' : ''}`}
+              key={index}
+              className={`queue-item-horizontal ${index === 0 ? 'front-item' : ''} ${index === queue.length - 1 ? 'rear-item' : ''}`}
               >
                 {item}
               </div>
@@ -242,6 +243,7 @@ const QueueVisualization = () => {
           <button disabled>Max Size: 5</button>
         </div>
       </div>
+    </div>
     </div>
   );
 };

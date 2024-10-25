@@ -5,7 +5,6 @@ const DijkstraAim = () => {
     borderRadius: '12px',
     boxShadow: '0 6px 30px rgba(0, 0, 0, 0.15)', // Deeper shadow for more depth
     maxWidth: '90vw',
-    height: '90vh',
     margin: '20px auto',
     fontFamily: "'Roboto', sans-serif", // More modern font
     color: '#444', // Darker text color for better readability
@@ -51,8 +50,8 @@ const DijkstraAim = () => {
     <li style={{ ...listItemStyle, ...hoverStyle }}>
     Introduction
     <ul style={listStyle}>
+    <li style={listItemStyle}>Introduction to Graphs</li>
     <li style={listItemStyle}>What is Dijkstra's Algorithm?</li>
-    <li style={listItemStyle}>How does Dijkstra's Algorithm work?</li>
     </ul>
     </li>
     <li style={{ ...listItemStyle, ...hoverStyle }}>
@@ -60,7 +59,7 @@ const DijkstraAim = () => {
     <ul style={listStyle}>
     <li style={listItemStyle}>Graph representation (adjacency matrix/list)</li>
     <li style={listItemStyle}>Understanding weighted graphs</li>
-    <li style={listItemStyle}>Priority queues</li>
+    <li style={listItemStyle}>Directed and Undirected Graphs</li>
     </ul>
     </li>
     <li style={{ ...listItemStyle, ...hoverStyle }}>

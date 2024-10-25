@@ -2,6 +2,12 @@ import { useState } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import style from '../Stylesheets/Cards.module.css';
 import '../App.css';
+import test from '../assets/testPaper.svg'
+import code from '../assets/web-development.png'
+import visual from '../assets/visual-communication.png'
+import example from '../assets/written.png'
+import Tutorial from '../assets/youtube.png'
+import concept from '../assets/lightbulb.png'
 
 // eslint-disable-next-line react/prop-types
 const Card = ({ title, description, imageSrc }) => {
@@ -13,8 +19,8 @@ const Card = ({ title, description, imageSrc }) => {
     const mouseXSpring = useSpring(x);
     const mouseYSpring = useSpring(y);
 
-    const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["12.5deg", "-12.5deg"]);
-    const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-12.5deg", "12.5deg"]);
+    const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["10.5deg", "-10.5deg"]);
+    const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10.5deg", "10.5deg"]);
 
     function handleMouseMove(event) {
         const rect = event.target.getBoundingClientRect();
@@ -50,7 +56,7 @@ const Card = ({ title, description, imageSrc }) => {
                     rotateX,
                     rotateY,
                     background: isHovered
-                    ? `radial-gradient(circle at ${backgroundPosition}, rgba(0, 213, 255 , 0.4), transparent 30%)`
+                    ? `radial-gradient(circle at ${backgroundPosition}, #aa00ff, transparent 20%)`
                     : 'transparent'
                 }}
             >
@@ -68,33 +74,33 @@ export default function Cards() {
         <div className={style.container}>
             <Card
                 title="Test"
-                description="Dive into interactive tests on Data Structures and Algorithms. Challenge yourself with quizzes, Start your journey to becoming a DSA expert today!"
-                imageSrc="src\assets\testPaper.svg"
+                description="Explore our interactive test section to assess your knowledge and skills. Engage with tailored challenges designed to help you learn and improve"
+                imageSrc={test}
             />
             <Card
                 title="Visualization"
-                description="Visualize complex algorithms with interactive animations. Understand data structures and processes in real-time. Dive in and watch algorithms come to life!"
-                imageSrc="src\assets\testPaper.svg"
+                description="Visualize complex data with intuitive, dynamic charts and graphs. Gain insights through clear, interactive visual representations."
+                imageSrc={visual}
             />
             <Card
-                title="Test"
+                title="Concepts"
                 description="Dive into interactive tests on Data Structures and Algorithms. Challenge yourself with quizzes, Start your journey to becoming a DSA expert today!"
-                imageSrc="src\assets\testPaper.svg"
+                imageSrc={concept}
             />
             <Card
-                title="Visualization"
-                description="Visualize complex algorithms with interactive animations. Understand data structures and processes in real-time. Dive in and watch algorithms come to life!"
-                imageSrc="src\assets\testPaper.svg"
+                title="Tutorials"
+                description="Visualize complex data with intuitive, dynamic charts and graphs. Gain insights through clear, interactive visual representations."
+                imageSrc={Tutorial}
             />
             <Card
-                title="Test"
+                title="Code"
                 description="Dive into interactive tests on Data Structures and Algorithms. Challenge yourself with quizzes, Start your journey to becoming a DSA expert today!"
-                imageSrc="src\assets\testPaper.svg"
+                imageSrc={code}
             />
             <Card
-                title="Visualization"
+                title="Examples"
                 description="Visualize complex algorithms with interactive animations. Understand data structures and processes in real-time. Dive in and watch algorithms come to life!"
-                imageSrc="src\assets\testPaper.svg"
+                imageSrc={example}
             />
         </div>
     );

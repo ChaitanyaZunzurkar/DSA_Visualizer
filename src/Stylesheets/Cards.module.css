@@ -2,13 +2,12 @@
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    padding: 1rem;
     
-    
-  
     background: #000000;
     --gap: 5em;
     --line: 1px;
@@ -37,6 +36,7 @@
     transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.1s ease;
     overflow: hidden;
     flex: 1 1 400px; 
+    margin: 0.5rem;
 }
 
 .Cards h1 {
@@ -52,10 +52,11 @@
 }
 
 .Cards.hovered {
-    background: radial-gradient(circle at 50% 50%, rgba(0, 213, 255, 0.2), transparent 20%);
-    box-shadow: 5px 5px 15px rgba(0, 213, 255, 0.5);
-    border: 5px solid rgba(0, 213, 255, 0.5);
+    background: radial-gradient(circle at 50% 50%, #aa00ff 0%, #3c00ff 100%);
+    box-shadow: 5px 5px 15px rgba(170, 0, 255, 0.7); /* Use a solid color with transparency */
+    border: 5px solid #aa00ff; /* Gradients aren't supported in borders */
 }
+
 
 .featureIcons {
     width: 30%;

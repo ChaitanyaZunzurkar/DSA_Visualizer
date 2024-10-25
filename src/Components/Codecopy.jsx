@@ -134,8 +134,8 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: '0.2rem',
-    border: '0.65px solid',
+    padding: '0.25rem',
+    border: '0.65px solid #8e8e8e',
     marginLeft: 'auto',
     borderRadius: '6px',
     color: '#8e8e8e',
@@ -168,5 +168,3 @@ const styles = {
 };
 
 export default TerminalCard;
-
-

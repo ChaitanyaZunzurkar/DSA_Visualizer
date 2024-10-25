@@ -7,16 +7,16 @@ import CodeCopy from '../../Components/Codecopy';
 // Define styles
 const headingStyle = {
     marginTop: '0',
-    fontWeight: '800',
-    fontSize: '30px',
-    marginBottom: '10px',
+        fontWeight: '700',
+        fontSize: '40px',
+        marginBottom: '10px',
 };
 
 const subHeadingStyle = {
     marginTop: '20px',
-    fontWeight: '800',
-    fontSize: '20px',
-    marginBottom: '10px',
+        fontWeight: '700',
+        fontSize: '25px',
+        marginBottom: '20px',
 };
 
 const listStyle = {
@@ -30,7 +30,7 @@ const listStyle = {
 const contentStyle = {
     marginLeft: '20px',
     padding: '20px',
-    fontSize: '18px',
+    fontSize: '21px'
 };
 
 const paraStyle = {
@@ -64,9 +64,9 @@ const ing = {
 };
 const sub={
     marginTop: '20px',
-    fontWeight: '700',
-    fontSize: '19px',
-    marginBottom: '10px',
+        fontWeight: '700',
+        fontSize: '21px',
+        marginBottom: '10px',
     };
     const code = `
     // C program for array implementation of queue
@@ -262,7 +262,6 @@ const QueueImplementation = () => {
             10 dequeued from queue<br />
             Front item is 20<br />
             Rear item is 40
-    
             </div>
             
             
