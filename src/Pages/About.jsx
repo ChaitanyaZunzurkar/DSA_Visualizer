@@ -4,7 +4,6 @@ import img11 from '../assets/Aboutimg/aashwath.jpeg'
 import chaitanya from '../assets/chaitanyaPic.jpg'
 import img13 from '../assets/Aboutimg/amit.jpeg'
 import img14 from '../assets/Aboutimg/ashish.jpeg'
-import { transform } from 'framer-motion';
 
 const teamMembers = [
   { 
@@ -24,9 +23,9 @@ const teamMembers = [
     position: 'Contributor', 
     about: "I’m Bob, a passionate developer focused on creating scalable and efficient web applications.",
     image: img13, 
-    linkedin: 'https://www.linkedin.com/in/bob', 
-    github: 'https://github.com/bob', 
-    twitter: 'https://twitter.com/bob' ,
+    linkedin: 'https://www.linkedin.com/in/amitsaw/', 
+    github: 'https://github.com/Amit-Saw', 
+    twitter: 'https://x.com/09Saw69047' ,
     message: 'sawar@rknec.edu'
   },
   { 
@@ -57,9 +56,9 @@ const teamMembers = [
     position: 'Contributor', 
     about: "I’m Bob, a passionate developer focused on creating scalable and efficient web applications.",
     image: img14, 
-    linkedin: 'https://www.linkedin.com/in/bob', 
-    github: 'https://github.com/bob', 
-    twitter: 'https://twitter.com/bob',
+    linkedin: 'https://www.linkedin.com/in/ashish-kamble', 
+    github: 'https://github.com/Ashish8668', 
+    twitter: '',
     message: 'kambleac@rknec.edu'
   },
 ];
