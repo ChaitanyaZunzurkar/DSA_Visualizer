@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const MonoStack = ({ numDisks = 4 }) => {
+const TowerofHanoi = ({ numDisks = 4 }) => {
   const [towers, setTowers] = useState([[], [], []]);
   const [moves, setMoves] = useState([]);
   const [currentMoveIndex, setCurrentMoveIndex] = useState(0);
@@ -230,6 +230,61 @@ const MonoStack = ({ numDisks = 4 }) => {
         </div>
       </div>
     </div>
+  );
+};
+
+
+const MonoStack = () => {
+  return (
+
+    <div style={{ padding: "20px" }}>
+      <h1>Tower of Hanoi</h1>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div style={{ flex: 1, marginRight: "20px" }}>
+          <h2>Overview</h2>
+          <p>
+            The Tower of Hanoi is a classic mathematical puzzle that involves three rods and a number of disks of different sizes. The objective is to move the entire stack of disks from one rod to another, following specific rules. This problem is often used to illustrate recursion in programming and algorithm design.
+          </p>
+
+          <h2>Problem Description</h2>
+          <p>
+            <ol>
+              <li>
+                Initial Setup: The disks are stacked in ascending order on one rod (smallest on top).
+              </li>
+              <li>
+                Objective: Move the stack of disks to another rod, following these rules:
+                <ul>
+                  <li>Only one disk can be moved at a time.</li>
+                  <li>Each move consists of taking the upper disk from one of the stacks and placing it on top of another stack.</li>
+                  <li>No larger disk may be placed on top of a smaller disk.</li>
+                </ul>
+              </li>
+            </ol>
+          </p>
+
+          <h2>How it Works?</h2>
+          <p>The solution to the Tower of Hanoi problem can be achieved using a recursive algorithm. Here’s a step-by-step explanation:</p>
+          <ol>
+            <li>Move n-1 disks from the source rod to the auxiliary rod, using the destination rod as a temporary holding area.</li>
+            <li>Move the nth disk from the source rod to the destination rod.</li>
+            <li>Move the n-1 disks that were left on the auxiliary rod to the destination rod, using the source rod as a temporary holding area.</li>
+          </ol>
+
+          <h2>Time Complexity</h2>
+          <p>The time complexity of the Tower of Hanoi problem is O(2^n) where n is the number of disks. This is because each move doubles the number of moves required for the next disk.</p>
+
+          <h2>Variants</h2>
+          <ul>
+            <li>Multiple Rods: The puzzle can be modified to include more than three rods, which can change the strategy and potentially reduce the number of moves required to solve the puzzle.</li>
+          </ul>
+        </div>
+        <div style={{ flex: 1 }}>
+          <TowerofHanoi numDisks={4} />
+        </div>
+      </div>
+    </div>
+    
   );
 };
 
