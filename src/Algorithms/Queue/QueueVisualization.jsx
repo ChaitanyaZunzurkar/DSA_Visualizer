@@ -53,14 +53,14 @@ const QueueVisualization = () => {
           box-sizing: border-box; /* Include padding in width calculations */
         }
 
-        h2 {
+        .queue-head {
           font-size: 36px;
           font-weight: 600;
           color: #1f2937;
-          margin-bottom: 25px;
+          margin: 25px;
           text-align: center;
           letter-spacing: 1px;
-          text-transform: uppercase;
+          
         }
 
         .queue-box {
@@ -113,6 +113,8 @@ const QueueVisualization = () => {
           font-size: 16px;
           background-color: #111827;
           color: white;
+          margin-top:15px;
+          
           border: none;
           border-radius: 8px;
           cursor: pointer;
@@ -136,7 +138,7 @@ const QueueVisualization = () => {
           border: 2px solid #4caf50;
           padding: 20px;
           width: 100%; /* Use full width */
-          max-width: 600px; /* Limit max width */
+          max-width: 400px; /* Limit max width */
           min-height: 100px;
           background-color: #111827;
           border-radius: 15px;
@@ -204,7 +206,7 @@ const QueueVisualization = () => {
     <div className='queue-container'>
 
       <div className="queue-box">
-        <h2>Queue Visualization</h2>
+        <h2 className="queue-head">Queue Visualization</h2>
         <div className="queue-operations">
           <input
             type="text"

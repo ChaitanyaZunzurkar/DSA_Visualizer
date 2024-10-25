@@ -44,15 +44,15 @@ const QueueConcept = () => {
 
     const headingStyle = {
         marginTop: '0',
-        fontWeight: '800',
-        fontSize: '30px',
+        fontWeight: '700',
+        fontSize: '40px',
         marginBottom: '10px',
     };
 
     const subHeadingStyle = {
         marginTop: '20px',
-        fontWeight: '800',
-        fontSize: '20px',
+        fontWeight: '700',
+        fontSize: '25px',
         marginBottom: '20px',
         };
 
@@ -100,7 +100,7 @@ const QueueConcept = () => {
     const sub={
         marginTop: '20px',
         fontWeight: '700',
-        fontSize: '19px',
+        fontSize: '21px',
         marginBottom: '10px',
         };
 
@@ -117,7 +117,7 @@ const QueueConcept = () => {
     const content={
         marginLeft: '20px',
         padding: '20px',
-        fontSize: '18px'
+        fontSize: '21px'
         };
         const para={
             fontWeight: '400',
@@ -126,10 +126,10 @@ const QueueConcept = () => {
     return (
         <div style={content}>
             <h1 style={headingStyle}>Queue Data Structure</h1>
-            <p style ={para}>Queue Data Structure is a linear data structure that follows FIFO (First In First Out) Principle, so the first element inserted is the first to be popped out. In this article, we will cover all the basics of Queue, Operations on Queue, its implementation, advantages, disadvantages which will help you solve all the problems based on Queue.</p>
+            <p style ={para}>Queue Data Structure is a linear data structure that follows <b>FIFO (First In First Out)</b>  Principle, so the first element inserted is the first to be popped out. In this article, we will cover all the basics of Queue, Operations on Queue, its implementation, advantages, disadvantages which will help you solve all the problems based on Queue.</p>
 
             <h2 style={subHeadingStyle}>What is Queue Data Structure?</h2>
-            <p style ={para}>Queue Data Structure is a linear data structure that is open at both ends and the operations are performed in First In First Out (FIFO) order.</p>
+            <p style ={para}>Queue Data Structure is a linear data structure that is open at both ends and the operations are performed in <b>FIFO (First In First Out)</b> order.</p>
 
             <img src={img1} alt="Queue" style={ing} />
             <h3 style={sub}>FIFO Principle of Queue Data Structure:</h3>
@@ -215,7 +215,7 @@ const QueueConcept = () => {
             <h2 style={subHeadingStyle}>Advantages of Queue Data Structure:</h2>
             <ul style={listStyle}>
                 <li>A large amount of data can be managed efficiently with ease.</li>
-                <li>Operations like insertion and deletion are simple due to the First In First Out (FIFO) rule.</li>
+                <li>Operations like insertion and deletion are simple due to the <b>FIFO (First In First Out)</b> rule.</li>
                 <li>Queues are useful when multiple consumers need to use a particular service.</li>
                 <li>Queues offer fast performance for inter-process communication.</li>
                 <li>Queues can be used in the implementation of other data structures.</li>
@@ -225,7 +225,7 @@ const QueueConcept = () => {
             <h2 style={subHeadingStyle}>Disadvantages of Queue Data Structure:</h2>
             <ul style={listStyle}>
                 <li>Operations such as inserting or deleting elements from the middle are time-consuming.</li>
-                <li>Searching for an element takes O(N) time.</li>
+                <li>Searching for an element takes <b>O(n)</b>  time.</li>
                 <li>The maximum size of a queue must be predefined in the case of array-based implementations.</li>
 </ul>
         </div>

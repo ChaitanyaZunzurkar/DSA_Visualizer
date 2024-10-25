@@ -10,15 +10,15 @@ import rep from '../../assets/StackImages/representation.webp';
 const StackConcept = () => {
     const headingStyle = {
     marginTop: '0',
-    fontWeight: '800',
-    fontSize: '30px',
+    fontWeight: '700',
+    fontSize: '40px',
     marginBottom: '10px',
     };
 
     const subHeadingStyle = {
     marginTop: '20px',
-    fontWeight: '800',
-    fontSize: '20px',
+    fontWeight: '700',
+    fontSize: '25px',
     marginBottom: '20px',
     };
 
@@ -52,12 +52,12 @@ const StackConcept = () => {
     const content={
     marginLeft: '20px',
     padding: '20px',
-    fontSize: '18px'
+    fontSize: '21px'
     };
     const sub={
     marginTop: '20px',
     fontWeight: '700',
-    fontSize: '19px',
+    fontSize: '21px',
     marginBottom: '10px',
     };
     const para={
@@ -84,7 +84,7 @@ const StackConcept = () => {
                         To implement the stack, it is required to maintain the pointer to the top of the stack, which is the last element to be inserted because we can access the elements only on the top of the stack.
                     </li>
                     <li>
-                        <h3 style={subHeadingStyle}>
+                        <h3 style={sub}>
                             LIFO(Last In First Out) Principle in Stack Data Structure:
                         </h3>
                         <p>This strategy states that the element that is inserted last will come out first. You can take a pile of plates kept on top of each other as a real-life example. The plate which we put last is on the top and since we remove the plate that is at the top, we can say that the plate that was put last comes out first.</p>

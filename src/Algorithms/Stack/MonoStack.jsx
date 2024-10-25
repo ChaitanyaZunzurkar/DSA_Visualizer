@@ -82,6 +82,7 @@ const TowerofHanoi = ({ numDisks = 4 }) => {
               flex-direction: column;
               align-items: center;
               justify-content: center;
+              
             }
             .hanoi-container {
               display: flex;
@@ -94,16 +95,17 @@ const TowerofHanoi = ({ numDisks = 4 }) => {
               padding: 30px;
               width: 100%;
               max-width: 550px; 
+              margin:20px;
             }
 
-            h2 {
+            .hanoi-head{
               font-size: 36px;
               font-weight: 600;
               color: #1f2937;
               margin-bottom: 20px;
               text-align: center;
               letter-spacing: 1px;
-              text-transform: uppercase;
+              
             }
 
             .hanoi-towers {
@@ -193,7 +195,7 @@ const TowerofHanoi = ({ numDisks = 4 }) => {
             }
           `}</style>
 
-          <h2>Tower of Hanoi</h2>
+          <h2 className="hanoi-head">Tower of Hanoi</h2>
           <div className="hanoi-towers">
             {towers.map((tower, towerIndex) => (
               <div key={towerIndex} className="hanoi-tower">
@@ -232,59 +234,91 @@ const TowerofHanoi = ({ numDisks = 4 }) => {
     </div>
   );
 };
+const headingStyle = {
+  marginTop: '0',
+  fontWeight: '700',
+  fontSize: '40px',
+  marginBottom: '10px',
+};
 
+const subHeadingStyle = {
+  marginTop: '20px',
+  fontWeight: '700',
+  fontSize: '25px',
+  marginBottom: '20px',
+  textAlign: 'left',
+};
+
+const listStyle = {
+  fontWeight: 400,
+  lineHeight: '1.6',
+  marginBottom: '8px',
+  color: '#333',
+  listStyleType: 'disc',
+  paddingLeft: '20px',
+};
+
+const content = {
+  paddingLeft: '20px',
+  padding: '20px',
+  fontSize: '21px'
+};
+
+const para = {
+  fontWeight: '400',
+};
 
 const MonoStack = () => {
   return (
-
-    <div style={{ padding: "20px" }}>
-      <h1>Tower of Hanoi</h1>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <div style={{ flex: 1, marginRight: "20px" }}>
-          <h2>Overview</h2>
-          <p>
-            The Tower of Hanoi is a classic mathematical puzzle that involves three rods and a number of disks of different sizes. The objective is to move the entire stack of disks from one rod to another, following specific rules. This problem is often used to illustrate recursion in programming and algorithm design.
+    <div style={content}>
+      <h1 style={headingStyle}>Tower of Hanoi</h1>
+      <div>
+        <div>
+          <h2 style={subHeadingStyle}>Overview</h2>
+          <p style={para}>
+            The <b>Tower of Hanoi</b> is a classic mathematical puzzle that involves three rods and a number of disks of different sizes. The <b>objective</b> is to move the entire stack of disks from one rod to another, following specific rules. This problem is often used to illustrate <b>recursion</b> in programming and <b>algorithm design</b>.
           </p>
 
-          <h2>Problem Description</h2>
+          <h2 style={subHeadingStyle}>Problem Description</h2>
           <p>
-            <ol>
+            <ol style={listStyle}>
               <li>
-                Initial Setup: The disks are stacked in ascending order on one rod (smallest on top).
+                <b>Initial Setup</b>: The disks are stacked in ascending order on one rod (smallest on top).
               </li>
               <li>
-                Objective: Move the stack of disks to another rod, following these rules:
-                <ul>
-                  <li>Only one disk can be moved at a time.</li>
-                  <li>Each move consists of taking the upper disk from one of the stacks and placing it on top of another stack.</li>
-                  <li>No larger disk may be placed on top of a smaller disk.</li>
+                <b>Objective</b>: Move the stack of disks to another rod, following these rules:
+                <ul style={listStyle}>
+                  <li>Only <b>one disk</b> can be moved at a time.</li>
+                  <li>Each move consists of taking the <b>upper disk</b> from one of the stacks and placing it on top of another stack.</li>
+                  <li>No <b>larger disk</b> may be placed on top of a smaller disk.</li>
                 </ul>
               </li>
             </ol>
           </p>
 
-          <h2>How it Works?</h2>
-          <p>The solution to the Tower of Hanoi problem can be achieved using a recursive algorithm. Here’s a step-by-step explanation:</p>
-          <ol>
-            <li>Move n-1 disks from the source rod to the auxiliary rod, using the destination rod as a temporary holding area.</li>
-            <li>Move the nth disk from the source rod to the destination rod.</li>
-            <li>Move the n-1 disks that were left on the auxiliary rod to the destination rod, using the source rod as a temporary holding area.</li>
+          <h2 style={subHeadingStyle}>How it Works?</h2>
+          <p style={para}>The solution to the Tower of Hanoi problem can be achieved using a <b>recursive algorithm</b>. Here’s a step-by-step explanation:</p>
+          <ol style={listStyle}>
+            <li>Move <b>n-1 disks</b> from the source rod to the auxiliary rod, using the destination rod as a temporary holding area.</li>
+            <li>Move the <b>nth disk</b> from the source rod to the destination rod.</li>
+            <li>Move the <b>n-1 disks</b> that were left on the auxiliary rod to the destination rod, using the source rod as a temporary holding area.</li>
           </ol>
 
-          <h2>Time Complexity</h2>
-          <p>The time complexity of the Tower of Hanoi problem is O(2^n) where n is the number of disks. This is because each move doubles the number of moves required for the next disk.</p>
+          <h2 style={subHeadingStyle}>Visualizing Tower of Hanoi</h2>
+          <div style={{ flex: 1 }}>
+            <TowerofHanoi numDisks={4} />
+          </div>
 
-          <h2>Variants</h2>
-          <ul>
-            <li>Multiple Rods: The puzzle can be modified to include more than three rods, which can change the strategy and potentially reduce the number of moves required to solve the puzzle.</li>
+          <h2 style={subHeadingStyle}>Time Complexity</h2>
+          <p style={para}>The <b>time complexity</b> of the Tower of Hanoi problem is <b>O(2^n)</b>, where n is the number of disks. This is because each move doubles the number of moves required for the next disk.</p>
+
+          <h2 style={subHeadingStyle}>Variants</h2>
+          <ul style={para}>
+            <li><b>Multiple Rods</b>: The puzzle can be modified to include more than three rods, which can change the strategy and potentially reduce the number of moves required to solve the puzzle.</li>
           </ul>
-        </div>
-        <div style={{ flex: 1 }}>
-          <TowerofHanoi numDisks={4} />
         </div>
       </div>
     </div>
-    
   );
 };
 
