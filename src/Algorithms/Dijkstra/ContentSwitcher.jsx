@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import graph0 from '../../assets/GraphImages/100.drawio.png';
 import graph1 from '../../assets/GraphImages/101.drawio.png';
 import graph2 from '../../assets/GraphImages/102.drawio.png';

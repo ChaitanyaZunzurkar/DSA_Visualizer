@@ -7,7 +7,7 @@ const DijkstraConcept = () => {
         <div style={{ padding: '1rem', fontFamily: 'Arial, sans-serif', lineHeight: '1.6' }}>
             {/* Introduction Section */}
             <section style={{ marginBottom: '1rem' }}>
-                <h2 style={{ backgroundColor: '#f0f0f0', padding: '1rem', fontSize: '1.5rem',fontWeight:'bold' }}>Introduction to Graphs</h2>
+                <h2 style={{ backgroundColor: '#f0f0f0', padding: '1rem', fontSize: '1.5rem',fontWeight:'bold',marginBottom: '10px', }}>Introduction to Graphs</h2>
                 <p>
                     Graphs are non-linear data structures representing the "connections" between elements. These
                     elements are known as Vertices, and the lines or arcs that connect any two vertices in the graph are
@@ -48,7 +48,7 @@ const DijkstraConcept = () => {
 
             {/* Dijkstra Algorithm Section */}
             <section>
-            <h2 style={{ backgroundColor: '#f0f0f0', padding: '1rem', fontSize: '1.5rem',fontWeight:'bold' }}> Dijkstra's Algorithm</h2>
+            <h2 style={{ backgroundColor: '#f0f0f0', padding: '1rem', fontSize: '1.5rem',fontWeight:'bold',marginBottom: '10px', }}> Dijkstra's Algorithm</h2>
                 <p>
                 Dijkstra's algorithm is often considered to be the most straightforward algorithm for solving the shortest path problem.<br/>
                 Dijkstra's algorithm is used for solving single-source shortest path problems for directed or undirected paths. Single-source means that one vertex is chosen to be the start, and the algorithm will find the shortest path from that vertex to all other vertices.<br/>

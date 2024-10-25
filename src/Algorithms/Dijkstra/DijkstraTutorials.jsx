@@ -1,38 +1,43 @@
-import styles from '../../Stylesheets/Tutorial.module.css';
-
-const Tutorials = () => {
+import React from 'react';
+import Failure from '../../assets/GraphImages/Failure.jpg';
+const DijkstraTutorial = () => {
     return (
-        <div className={styles.container}> {/* Main container */}
-            <div className={styles.videoContainer}> {/* Video container for the first video */}
-                <strong className={styles.heading}> {/* Heading for the first video */}
-                    Insertion and Deletion at various positions in Linked List
-                </strong>
-                <iframe 
-                    src="https://www.youtube.com/embed/VaECK03Dz-g?si=iUR-N93m9j2YQdpD" 
-                    title="YouTube video player" 
-                    frameBorder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    allowFullScreen
-                    className={styles.videoIframe} // CSS class for styling
-                />
-            </div>   
+        <div style={{ padding: '1rem', fontFamily: 'Arial, sans-serif', lineHeight: '1.3rem' }}>
+            {/* YouTube Video Section */}
+            <section style={{ marginBottom: '2rem' }}>
+                <h2 style={{ fontSize: '1.8rem', marginBottom: '1rem' ,fontWeight:'bold'}}>Dijkstra's Algorithm Tutorial</h2>
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <iframe
+                        width="800px"
+                        height="400px"
+                        src="https://www.youtube.com/embed/smHnz2RHJBY?start=505"
+                        title="Dijkstra's Algorithm Tutorial"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        style={{ maxWidth: '100%',  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)' }}
+                    ></iframe>
+                </div>
+            </section>
 
-            <div className={styles.videoContainer}> {/* Video container for the second video */}
-                <strong className={styles.heading}> {/* Heading for the second video */}
-                    Traversal through Linked List
-                </strong>
-                <iframe
-                    src="https://www.youtube.com/embed/Nq7ok-OyEpg?si=r_DXgd_8QL8fBDjK"
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                    className={styles.videoIframe} // CSS class for styling
-                />
-            </div>
+
+            {/* Explanation Section */}
+            <section>
+                <h3 style={{fontWeight:'bold',fontSize:'1.3rem',marginBottom:'10px'}}>Why Dijkstra's Algorithms fails for the Graphs having Negative Edges ?</h3>
+                <p style={{lineHeight:'2rem', fontSize:'1.1rem'}}>
+                The problem with negative weights arises from the fact that Dijkstra's algorithm assumes that once a node is added to the set of visited nodes, its distance is finalized and will not change. However, in the presence of negative weights, this assumption can lead to incorrect results.
+                </p>
+                <img src={Failure} alt="Dijkstra Failure" style={{ maxWidth: '70%', height: 'auto', marginTop: '1rem' }} />
+                <p style={{lineHeight:'2rem', fontSize:'1.1rem'}}>
+                    In the above graph, A is the source node, among the edges A to B and A to C , A to B is the smaller weight and Dijkstra assigns the shortest distance of B as 2, but because of existence of a negative edge from C to B , the actual shortest distance reduces to 1 which Dijkstra fails to detect.
+                </p>
+            </section>
         </div>
     );
 }
 
-export default Tutorials;
+
+export default DijkstraTutorial;
+
+
+
