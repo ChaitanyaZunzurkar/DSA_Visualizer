@@ -5,13 +5,13 @@ const Tutorials = () => {
         <div className={styles.container}> {/* Main container */}
             <div className={styles.videoContainer}> {/* Video container for the first video */}
                 <strong className={styles.heading}> {/* Heading for the first video */}
-                    Insertion and Deletion at various positions in Linked List
+                    Introduction to Queue using Example
                 </strong>
                 <iframe 
-                    src="https://www.youtube.com/embed/VaECK03Dz-g?si=iUR-N93m9j2YQdpD" 
-                    title="YouTube video player" 
-                    frameBorder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    src="https://www.youtube.com/embed/yzj0Ch01Exo?si=uupGgVK4VjSH6F-7"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen
                     className={styles.videoIframe} // CSS class for styling
                 />
@@ -19,17 +19,31 @@ const Tutorials = () => {
 
             <div className={styles.videoContainer}> {/* Video container for the second video */}
                 <strong className={styles.heading}> {/* Heading for the second video */}
-                    Traversal through Linked List
+                    Queue using Linked List
                 </strong>
                 <iframe
-                    src="https://www.youtube.com/embed/Nq7ok-OyEpg?si=r_DXgd_8QL8fBDjK"
+                    src="https://www.youtube.com/embed/LwYQo8mVPBs?si=oitvwBmc7MBZSwNX"
                     title="YouTube video player"
-                    frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen
                     className={styles.videoIframe} // CSS class for styling
                 />
+
+            </div>
+            <div className={styles.videoContainer}> {/* Video container for the second video */}
+                <strong className={styles.heading}> {/* Heading for the second video */}
+                    Queue using Linked List
+                </strong>
+                <iframe
+                    src="https://www.youtube.com/embed/KQsSp_pkZdE?si=8zzDC98WN3rw2XWb"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                    className={styles.videoIframe} // CSS class for styling
+                />
+                
             </div>
         </div>
     );
