@@ -1,5 +1,5 @@
 import React from 'react';
-
+import logo from '../assets/logotemp.jpeg';
 const footerLinks = [
   { id: 1, text: 'Services', href: '#' },
   { id: 2, text: 'FAQ', href: '#' },
@@ -20,7 +20,7 @@ export default function Footer() {
       </div>
       <div style={styles.logoContainer}>
         <img
-          src="https://dummyimage.com/100x100" // Replace with your logo URL
+          src={logo} // Replace with your logo URL
           alt="Logo"
           style={styles.logo}
         />
@@ -118,7 +118,7 @@ const styles = {
     width: '55px', // Adjust logo size as needed
     height: '55px', // Set height to match width for a perfect circle
     borderRadius: '50%', // 50% for circular shape
-    border: '3px solid #ffcc00', // Add border with desired color and thickness
+    border: '0px solid #ffcc00', // Add border with desired color and thickness
     objectFit: 'cover', // Ensures the image covers the area without distortion
   },
   linksContainer: {
