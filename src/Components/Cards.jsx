@@ -74,32 +74,32 @@ export default function Cards() {
         <div className={style.container}>
             <Card
                 title="Test"
-                description="Explore our interactive test section to assess your knowledge and skills. Engage with tailored challenges designed to help you learn and improve"
+                description="Assess your understanding of DSA concepts through interactive tests designed to challenge your problem-solving skills."
                 imageSrc={test}
             />
             <Card
                 title="Visualization"
-                description="Visualize complex data with intuitive, dynamic charts and graphs. Gain insights through clear, interactive visual representations."
+                description=" Visualize complex DSA algorithms with interactive animations that make learning easier and more intuitive."
                 imageSrc={visual}
             />
             <Card
                 title="Concepts"
-                description="Dive into interactive tests on Data Structures and Algorithms. Challenge yourself with quizzes, Start your journey to becoming a DSA expert today!"
+                description="Explore in-depth explanations of fundamental DSA concepts with examples to build a strong foundation."
                 imageSrc={concept}
             />
             <Card
                 title="Tutorials"
-                description="Visualize complex data with intuitive, dynamic charts and graphs. Gain insights through clear, interactive visual representations."
+                description="Follow comprehensive tutorials to master DSA techniques, from beginner to advanced levels."
                 imageSrc={Tutorial}
             />
             <Card
                 title="Code"
-                description="Dive into interactive tests on Data Structures and Algorithms. Challenge yourself with quizzes, Start your journey to becoming a DSA expert today!"
+                description="Access ready-to-run code for popular DSA problems, allowing for hands-on practice and experimentation."
                 imageSrc={code}
             />
             <Card
                 title="Examples"
-                description="Visualize complex algorithms with interactive animations. Understand data structures and processes in real-time. Dive in and watch algorithms come to life!"
+                description="Learn through detailed examples that demonstrate the practical application of DSA algorithms step-by-step."
                 imageSrc={example}
             />
         </div>

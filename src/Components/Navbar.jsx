@@ -8,7 +8,8 @@ export default function Navbar() {
                     <a className="flex title-font font-medium items-center text-white mb-4 md:mb-0">
                         <img
                             alt="testimonial"
-                            className="w-14 h-14 mb-2 object-cover object-center rounded-full inline-block border-1 border-black-800 bg-black-800 bg-opacity-10"
+                            // className="w-14 h-14 mb-2 object-cover object-center rounded-full inline-block border-1 border-black-800 bg-black-800 bg-opacity-10"
+                            className="w-14 h-14 mb-2 object-cover object-center rounded-full inline-block border border-white bg-black bg-opacity-10"
                             src={logo}
                         />
                         <span className="ml-6 text-2xl">Algolens</span>
@@ -32,20 +33,6 @@ export default function Navbar() {
                             </li>
                         </ul>
                     </nav>
-                    {/* <button className="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0"> 
-                        Button
-                        <svg
-                            fill="none"
-                            stroke="currentColor"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            className="w-4 h-4 ml-1"
-                            viewBox="0 0 24 24"
-                        >
-                            <path d="M5 12h14M12 5l7 7-7 7"></path>
-                        </svg>
-                    </button>*/}
                 </div>
             </header>
         </>

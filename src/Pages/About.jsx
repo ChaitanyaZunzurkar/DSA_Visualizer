@@ -10,7 +10,7 @@ const teamMembers = [
     id: 1, 
     name: 'Aashwath Yadav', 
     position: 'Contributor', 
-    about: "I’m Bob, a passionate developer focused on creating scalable and efficient web applications.",
+    //about: "I’m Bob, a passionate developer focused on creating scalable and efficient web applications.",
     image: img11, 
     linkedin: 'https://www.linkedin.com/in/alice', 
     github: 'https://github.com/alice', 
@@ -21,7 +21,7 @@ const teamMembers = [
     id: 2, 
     name: 'Amit Saw', 
     position: 'Contributor', 
-    about: "I’m Bob, a passionate developer focused on creating scalable and efficient web applications.",
+    //about: "I’m Bob, a passionate developer focused on creating scalable and efficient web applications.",
     image: img13, 
     linkedin: 'https://www.linkedin.com/in/amitsaw/', 
     github: 'https://github.com/Amit-Saw', 
@@ -32,7 +32,7 @@ const teamMembers = [
     id: 3, 
     name: 'Aryan Akhare', 
     position: 'Contributor', 
-    about: "I’m Aryan, a student learning to build web applications that help others in their learning journey.",
+    //about: "I’m Aryan, a student learning to build web applications that help others in their learning journey.",
     image: img10, 
     linkedin: 'https://www.linkedin.com/in/aryan-akhare-897205247/ ', 
     github: 'https://github.com/AryanAkhare', 
@@ -42,8 +42,8 @@ const teamMembers = [
   { 
     id: 4, 
     name: 'Chaitanya Zunzurkar', 
-    position: 'Lead Developer', 
-    about: "I’m Bob, a passionate developer focused on creating scalable and efficient web applications.",
+    position: 'Team Leader', 
+    //about: "I’m Bob, a passionate developer focused on creating scalable and efficient web applications.",
     image: chaitanya, 
     linkedin: 'https://www.linkedin.com/in/chaitanya-zunzurkar', 
     github: 'https://github.com/ChaitanyaZunzurkar', 
@@ -54,7 +54,7 @@ const teamMembers = [
     id: 5, 
     name: 'Ashish Kamble', 
     position: 'Contributor', 
-    about: "I’m Bob, a passionate developer focused on creating scalable and efficient web applications.",
+    //about: "I’m Bob, a passionate developer focused on creating scalable and efficient web applications.",
     image: img14, 
     linkedin: 'https://www.linkedin.com/in/ashish-kamble', 
     github: 'https://github.com/Ashish8668', 
@@ -70,14 +70,14 @@ export default function TeamPage() {
         {teamMembers.map(member => (
           <div key={member.id} className="teamCard">
 
-            <div className="img" style={{ backgroundImage: `url(${member.image})`,backgroundSize:'cover' ,backgroundRepeat:'no-repeat',backgroundPosition:'center',width:'125px'}} />
+            <div className="img" style={{ backgroundImage: `url(${member.image})`,backgroundSize:'cover' ,backgroundRepeat:'no-repeat',backgroundPosition:'center',width:'125px' , marginBottom:'10px' , marginTop:'10px'}} />
 
             <span>
               <h3 className='teamName'>{member.name}</h3>
               <h4 className='teamPosition'>{member.position}</h4>
             </span>
 
-            <p className="teamInfo">{member.about}</p>
+            {/* <p className="teamInfo">{member.about}</p> */}
 
             <div className="teamShare">
 
@@ -174,13 +174,16 @@ const StyledWrapper = styled.div`
   .teamContainer {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     padding: 30px 10px; // Increased padding for spacing
   }
   .teamCard {
     width: 20em;
     margin:20px;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 30em;
     background: black;
     padding:30px;
